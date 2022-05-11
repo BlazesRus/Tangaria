@@ -8316,7 +8316,6 @@ effect:RESTORE_STAT:CON
 power:5
 effect:TIMED_INC:CON
 dice:25+1d10
-
 desc:Restores all Constitution and boost Constitution for duration
 
 spell:See Invisible:40:70:90:90:0
@@ -8338,6 +8337,30 @@ book-desc:A standard nature book with a few verses.
 spell:Ancient Lore:22:30:80:20:0
 effect:IDENTIFY
 desc:Reveals an unknown rune on an object.
+
+book:prayer book:town:[Chants and Blessings]:9:divine
+book-graphics:?:G
+book-properties:400:40:10 to 100
+
+spell:Sense Invisible:11:8:42:4
+effect:TIMED_INC:SINVIS
+dice:24+d24
+desc:Enables you to see invisible monsters for 24+1d24 turns.
+
+book:prayer book:dungeon:[Ethereal Openings]:6:divine
+book-graphics:?:g
+book-properties:10000:15:40 to 100
+
+spell:Blink:3:3:50:6
+effect:TELEPORT
+dice:10
+desc:Teleports you randomly up to 10 squares away.
+
+spell:Command:45:40:60:250
+effect:COMMAND
+dice:5+1d10
+desc:Allows you to take control of a monster, and move it instead of yourself.
+desc:  Possible actions are move, stand still, 'd'rop, 'm'agic, or 'r'elease.
 
 ############### Grey MAGE Placeholder ###############
 # specialisation: Debuff and Drain
@@ -8499,15 +8522,11 @@ effect:TIMED_INC:MEDITATE
 dice:20+1d20
 desc:Helps increasing your mana capacity at the cost of hit points.
 
-spell:Recharging:24:26:70:19:0
-effect:RECHARGE
+spell:Ice Storm:27:11:75:24
+effect:BALL:ICE:3
 dice:$B
-expr:B:PLAYER_LEVEL:/ 8 + 6
-desc:Adds charges to a stack of wands or staves.
-desc: Chance of success and number of charges gained increase with your
-desc: level and decrease with level of wand or staff and number of charges.
-desc: A failed attempt to recharge destroys one wand or staff from the stack.
-
+expr:B:PLAYER_LEVEL:* 2 + 50
+desc:Shoots a radius-3 cold ball.
 
 book:magic book:dungeon:[Sorcery and Evocations]:7:arcane
 
@@ -8636,11 +8655,42 @@ book:magic book:town:[Magic for Beginners]:8:arcane
 equip:magic book:[Magic for Beginners]:1:1:none
 #Level 1 - 15 Spells here
 
+spell:Electric Arc:2:2:34:4
+effect:SHORT_BEAM:ELEC:0:1
+dice:$Dd6
+expr:D:PLAYER_LEVEL:- 1 / 5 + 3
+desc:Creates an electrical discharge that hurts monsters and destroys
+desc: vulnerable items in its path.  Length of the effect increases
+desc: with player level.
+
+spell:Lightning Strike:12:6:35:8:0
+effect:STRIKE:SOUND:3
+dice:$B
+expr:B:PLAYER_LEVEL:+ 5
+effect:STRIKE:ELEC:0
+dice:$Dd4
+expr:D:PLAYER_LEVEL:/ 4 + 1
+msg_other: strikes lightning from above.
+desc:Strikes a target from above with a lightning bolt, followed by a clap
+desc: of thunder. Target grid must be targetable and known to the player;
+desc: no target grid will mean the player grid is hit.
+
 book:magic book:town:[Incantations and Illusions]:8:arcane
 #Level 17 to Level 28 Spells here
 
+spell:Mana Channel:25:10:50:20
+effect:TIMED_INC:FASTCAST
+dice:5+1d5
+desc:Doubles spellcasting speed for 5+1d5 turns.
+
 book:magic book:dungeon:[Wizard's Tome of Power]:7:arcane
 #Level 36 to 47(Potential Strong Spells here)
+
+spell:River of Lightning:43:35:75:100
+effect:ARC:PLASMA:0:20
+dice:$Dd8
+expr:D:PLAYER_LEVEL:+ 10
+desc:Spews plasma in a long narrow cone from the player.
 
 #effect:MELEE_BLOWS:MISSILE
 #dice:$B
@@ -8818,3 +8868,9 @@ dice:$B+10d10
 expr:B:PLAYER_LEVEL:* 5
 msg_other: invokes a darkness storm.
 desc:Shoots a radius-3 darkness ball.
+
+spell:Command:45:40:60:250
+effect:COMMAND
+dice:5+1d10
+desc:Allows you to take control of a monster, and move it instead of yourself.
+desc:  Possible actions are move, stand still, 'd'rop, 'm'agic, or 'r'elease.

@@ -420,7 +420,7 @@ static void show_obj_list(olist_detail_t mode)
 		int quiver_slots = (player->upkeep->quiver_cnt + z_info->quiver_slot_size - 1) / z_info->quiver_slot_size;
 
 		/* Quiver may take multiple lines */
-		for (j = 0; j < quiver_slots; j++, ++i) {
+		for (j = 0; j < quiver_slots; ++j, ++i) {
 			const char *fmt = "in Quiver: %d missile%s";
 			char letter = all_letters_nohjkl[in_term ? i - 1 : i];
 
@@ -510,7 +510,7 @@ void show_quiver(int mode, item_tester tester)
 	wipe_obj_list();
 
 	/* Find the last occupied quiver slot */
-	for (i = 0; i < z_info->quiver_size; i++)
+	for (i = 0; i < z_info->quiver_size; ++i)
 		if (player->upkeep->quiver[i] != NULL) last_slot = i;
 
 	/* Build the object list */
@@ -548,7 +548,7 @@ void show_equip(int mode, item_tester tester)
 		num_obj++;
 
 		/* Find the last occupied quiver slot */
-		for (i = 0; i < z_info->quiver_size; i++)
+		for (i = 0; i < z_info->quiver_size; ++i)
 			if (player->upkeep->quiver[i] != NULL) last_slot = i;
 
 		/* Extend the object list */
@@ -1009,7 +1009,7 @@ static void item_menu_browser(int oid, void *data, const region *local_area)
 	/* If we're printing pack slots the quiver takes up */
 	if (olist_mode & OLIST_QUIVER && player->upkeep->command_wrk == USE_INVEN) {
 		/* Quiver may take multiple lines */
-		for (j = 0; j < quiver_slots; j++, ++i) {
+		for (j = 0; j < quiver_slots; ++j, ++i) {
 			const char *fmt = "in Quiver: %d missile%s\n";
 			char letter = all_letters_nohjkl[i];
 
@@ -1036,7 +1036,7 @@ static void item_menu_browser(int oid, void *data, const region *local_area)
 
 	/* Blank out whole tiles */
 	while ((tile_height > 1) && ((local_area->row + i) % tile_height != 0)) {
-		i++;
+		++i;
 		prt("", local_area->row + i, MAX(0, local_area->col - 1));
 	}
 
@@ -1069,7 +1069,7 @@ static struct object *item_menu(cmd_code cmd, int prompt_size, int mode)
 
 	/* Get inscriptions */
 	m->inscriptions = mem_zalloc(10 * sizeof(char));
-	for (inscrip = 0; inscrip < 10; inscrip++) {
+	for (inscrip = 0; inscrip < 10; ++inscrip) {
 		/* Look up the tag */
 		if (get_tag(&obj, (char)inscrip + '0', item_cmd,
 					item_mode & QUIVER_TAGS)) {

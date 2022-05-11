@@ -133,7 +133,7 @@ static void wr_item(const struct object *obj)
 	}
 	wr_byte(obj->notice);
 
-	for (i = 0; i < OF_SIZE; i++)
+	for (i = 0; i < OF_SIZE; ++i)
 		wr_byte(obj->flags[i]);
 
 	for (i = 0; i < OBJ_MOD_MAX; ++i) {
@@ -222,16 +222,16 @@ static void wr_monster(const struct monster *mon)
 	wr_byte(mon->energy);
 	wr_byte(MON_TMD_MAX);
 
-	for (j = 0; j < MON_TMD_MAX; j++)
+	for (j = 0; j < MON_TMD_MAX; ++j)
 		wr_s16b(mon->m_timed[j]);
 
-	for (j = 0; j < MFLAG_SIZE; j++)
+	for (j = 0; j < MFLAG_SIZE; ++j)
 		wr_byte(mon->mflag[j]);
 
-	for (j = 0; j < OF_SIZE; j++)
+	for (j = 0; j < OF_SIZE; ++j)
 		wr_byte(mon->known_pstate.flags[j]);
 
-	for (j = 0; j < ELEM_MAX; j++)
+	for (j = 0; j < ELEM_MAX; ++j)
 		wr_s16b(mon->known_pstate.el_info[j].res_level);
 
 	/* Write mimicked object marker, if any */
@@ -272,7 +272,7 @@ static void wr_trap(struct trap *trap)
 	wr_byte(trap->power);
 	wr_byte(trap->timeout);
 
-	for (i = 0; i < TRF_SIZE; i++)
+	for (i = 0; i < TRF_SIZE; ++i)
 		wr_byte(trap->flags[i]);
 }
 
@@ -299,11 +299,11 @@ void wr_randomizer(void)
 	wr_u32b(z2);
 
 	/* RNG state */
-	for (i = 0; i < RAND_DEG; i++)
+	for (i = 0; i < RAND_DEG; ++i)
 		wr_u32b(STATE[i]);
 
 	/* NULL padding */
-	for (i = 0; i < 59 - RAND_DEG; i++)
+	for (i = 0; i < 59 - RAND_DEG; ++i)
 		wr_u32b(0);
 }
 
@@ -359,7 +359,7 @@ void wr_monster_memory(void)
 
 	wr_byte(MFLAG_SIZE);
 
-	for (r_idx = 0; r_idx < z_info->r_max; r_idx++) {
+	for (r_idx = 0; r_idx < z_info->r_max; ++r_idx) {
 		struct monster_race *race = &r_info[r_idx];
 		struct monster_lore *lore = &l_list[r_idx];
 
@@ -498,7 +498,7 @@ void wr_player(void)
 	wr_byte(TMD_MAX);
 
 	/* Read all the effects, in a loop */
-	for (i = 0; i < TMD_MAX; i++)
+	for (i = 0; i < TMD_MAX; ++i)
 		wr_s16b(player->timed[i]);
 
 	/* Total energy used so far */
@@ -507,7 +507,7 @@ void wr_player(void)
 	wr_u32b(player->resting_turn);
 
 	/* Future use */
-	for (i = 0; i < 8; i++) wr_u32b(0L);
+	for (i = 0; i < 8; ++i) wr_u32b(0L);
 }
 
 
@@ -536,11 +536,11 @@ void wr_ignore(void)
 
 		/* Figure out and write the ignore flags */
 		itype_wipe(itypes);
-		for (j = ITYPE_NONE; j < ITYPE_MAX; j++)
+		for (j = ITYPE_NONE; j < ITYPE_MAX; ++j)
 			if (ego_is_ignored(i, j))
 				itype_on(itypes, j);
 
-		for (j = 0; j < ITYPE_SIZE; j++)
+		for (j = 0; j < ITYPE_SIZE; ++j)
 			wr_byte(itypes[j]);
 	}
 
@@ -1055,7 +1055,7 @@ void wr_history(void)
 	wr_byte(HIST_SIZE);
 	wr_u32b(length);
 	for (i = 0; i < length; ++i) {
-		for (j = 0; j < HIST_SIZE; j++)
+		for (j = 0; j < HIST_SIZE; ++j)
 			wr_byte(history_list[i].type[j]);
 		wr_s32b(history_list[i].turn);
 		wr_s16b(history_list[i].dlev);

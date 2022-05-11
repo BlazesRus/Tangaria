@@ -112,7 +112,7 @@ static void display_area(const wchar_t *text, const uint8_t *attrs,
 
 	for (i = 0; i < n_lines; ++i) {
 		Term_erase(area.col, area.row + i, area.width);
-		for (j = 0; j < line_lengths[line_from + i]; j++) {
+		for (j = 0; j < line_lengths[line_from + i]; ++j) {
 			Term_putch(area.col + j, area.row + i,
 					attrs[line_starts[line_from + i] + j],
 					text[line_starts[line_from + i] + j]);
@@ -135,7 +135,7 @@ void textui_textblock_place(textblock *tb, region orig_area, const char *header)
 			&line_starts, &line_lengths, area.width);
 
 	if (header != NULL) {
-		++area.page_rows;
+		--area.page_rows;
 		c_prt(COLOUR_L_BLUE, header, area.row, area.col);
 		++area.row;
 	}
@@ -172,7 +172,7 @@ struct keypress textui_textblock_show(textblock *tb, region orig_area, const cha
 	area.page_rows -= 2;
 
 	if (header != NULL) {
-		area.page_rows--;
+		--area.page_rows;
 		c_prt(COLOUR_L_BLUE, header, area.row, area.col);
 		++area.row;
 	}
@@ -274,7 +274,7 @@ void text_out_to_screen(uint8_t a, const char *str)
 		wrap = wid;
 
 	/* Process the string */
-	for (s = buf; *s; s++) {
+	for (s = buf; *s; ++s) {
 		wchar_t ch;
 
 		/* Force wrap */

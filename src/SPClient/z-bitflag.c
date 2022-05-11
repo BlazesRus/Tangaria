@@ -96,7 +96,7 @@ int flag_count(const bitflag *flags, const size_t size)
 	int count = 0;
 
 	for (i = 0; i < size; ++i) {
-		for (j = 1; j <= FLAG_WIDTH; j++) {
+		for (j = 1; j <= FLAG_WIDTH; ++j) {
 			if (flags[i] & FLAG_BINARY(j)) {
 				count++;
 			}
@@ -117,7 +117,7 @@ bool flag_is_empty(const bitflag *flags, const size_t size)
 {
 	size_t i;
 
-	for (i = 0; i < size; i++)
+	for (i = 0; i < size; ++i)
 		if (flags[i] > 0) return false;
 
 	return true;
@@ -134,7 +134,7 @@ bool flag_is_full(const bitflag *flags, const size_t size)
 {
 	size_t i;
 
-	for (i = 0; i < size; i++)
+	for (i = 0; i < size; ++i)
 		if (flags[i] != (bitflag) -1) return false;
 
 	return true;
@@ -152,7 +152,7 @@ bool flag_is_inter(const bitflag *flags1, const bitflag *flags2,
 {
 	size_t i;
 
-	for (i = 0; i < size; i++)
+	for (i = 0; i < size; ++i)
 		if (flags1[i] & flags2[i]) return true;
 
 	return false;
@@ -170,7 +170,7 @@ bool flag_is_subset(const bitflag *flags1, const bitflag *flags2,
 {
 	size_t i;
 
-	for (i = 0; i < size; i++)
+	for (i = 0; i < size; ++i)
 		if (~flags1[i] & flags2[i]) return false;
 
 	return true;

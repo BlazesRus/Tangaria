@@ -173,7 +173,7 @@ int color_char_to_attr(char c)
 	if (c == '\0' || c == ' ') return (COLOUR_DARK);
 
 	/* Search the color table */
-	for (a = 0; a < BASIC_COLORS; a++)
+	for (a = 0; a < BASIC_COLORS; ++a)
 	{
 		/* Look for the index */
 		if (color_table[a].index_char == c) break;
@@ -240,7 +240,7 @@ uint8_t get_color(uint8_t a, int attr, int n)
 	/* Translate the color N times */
 	while (n > 0) {
 		a = color_table[a].color_translate[attr];
-		n--;
+		--n;
 	}
 
 	/* Return the modified color */
@@ -345,7 +345,7 @@ void build_gamma_table(int gamma)
 
 		while (diff) {
 			value += diff;
-			n++;
+			++n;
 
 			/*
 			 * Use the following identiy to calculate the gamma table.

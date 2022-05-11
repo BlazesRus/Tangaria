@@ -1516,7 +1516,7 @@ static void clearing_stats(void)
 	int depth;
 
 	/* Do many iterations of the game */
-	for (iter = 0; iter < tries; iter++) {
+	for (iter = 0; iter < tries; ++iter) {
 		/* Move all artifacts to uncreated */
 		uncreate_artifacts();
 
@@ -1568,7 +1568,7 @@ static void clearing_stats(void)
 	}
 
 	/* Print to file */
-	for (depth = 0 ;depth < MAX_LVL; depth++)
+	for (depth = 0 ;depth < MAX_LVL; ++depth)
 		print_stats(depth);
 
 	/* Post processing */
@@ -1704,10 +1704,10 @@ static void calc_cave_distances(int **cave_dist)
 		struct loc *gtmp;
 
 		n_new = 0;
-		dist++;
+		++dist;
 
 		/* Loop over all visited squares of the previous iteration */
-		for (i = 0; i < n_old; i++){
+		for (i = 0; i < n_old; ++i){
 			int d;
 			/* Get the square we want to look at */
 			int oy = ogrids[i].y;
@@ -1782,7 +1782,7 @@ void pit_stats(int nsim, int pittype, int depth)
 	/* Initialize hist */
 	hist = mem_zalloc(z_info->pit_max * sizeof(*hist));
 
-	for (j = 0; j < nsim; j++) {
+	for (j = 0; j < nsim; ++j) {
 		int i;
 		int pit_idx = 0;
 		int pit_dist = 999;
@@ -1802,10 +1802,10 @@ void pit_stats(int nsim, int pittype, int depth)
 			}
 		}
 
-		hist[pit_idx]++;
+		++hist[pit_idx];
 	}
 
-	for (p = 0; p < z_info->pit_max; p++) {
+	for (p = 0; p < z_info->pit_max; ++p) {
 		struct pit_profile *pit = &pit_info[p];
 		if (pit->name)
 			msg("Type: %s, Number: %d.", pit->name, hist[p]);

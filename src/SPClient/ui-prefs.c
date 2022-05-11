@@ -1361,7 +1361,7 @@ void reset_visuals(bool load_prefs)
 		struct trap_kind *trap = &trap_info[i];
 
 		/* Default attr/char */
-		for (j = 0; j < LIGHTING_MAX; j++) {
+		for (j = 0; j < LIGHTING_MAX; ++j) {
 			trap_x_attr[j][i] = trap->d_attr;
 			trap_x_char[j][i] = trap->d_char;
 		}

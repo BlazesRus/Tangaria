@@ -106,7 +106,7 @@ void Rand_state_init(uint32_t seed)
 	STATE[0] = seed;
 
 	/* Propagate the seed */
-	for (i = 1; i < RAND_DEG; i++)
+	for (i = 1; i < RAND_DEG; ++i)
 		STATE[i] = LCRNG(STATE[i - 1]);
 
 	/* Cycle the table ten times per degree */
@@ -404,7 +404,7 @@ static int simulate_division(int dividend, int divisor)
 {
 	int quotient  = dividend / divisor;
 	int remainder = dividend % divisor;
-	if (randint0(divisor) < remainder) quotient++;
+	if (randint0(divisor) < remainder) ++quotient;
 	return quotient;
 }
 

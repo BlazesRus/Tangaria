@@ -233,8 +233,8 @@ void spoil_obj_desc(const char *fname)
 		/* Write out the group title */
 		if (group_item[i].name) {
 			/* Hack -- bubble-sort by cost and then level */
-			for (s = 0; s < n - 1; s++) {
-				for (t = 0; t < n - 1; t++) {
+			for (s = 0; s < n - 1; ++s) {
+				for (t = 0; t < n - 1; ++t) {
 					int i1 = t;
 					int i2 = t + 1;
 
@@ -256,7 +256,7 @@ void spoil_obj_desc(const char *fname)
 			}
 
 			/* Spoil each item */
-			for (s = 0; s < n; s++) {
+			for (s = 0; s < n; ++s) {
 				int e;
 				int32_t v;
 				size_t u8len;
@@ -301,7 +301,7 @@ void spoil_obj_desc(const char *fname)
 		}
 
 		/* Get legal item types */
-		for (k = 1; k < z_info->k_max; k++) {
+		for (k = 1; k < z_info->k_max; ++k) {
 			struct object_kind *kind = &k_info[k];
 
 			/* Skip wrong tvals */
@@ -656,7 +656,7 @@ void spoil_mon_info(const char *fname)
 	sort(who, count, sizeof(*who), cmp_monsters);
 
 	/* List all monsters in order. */
-	for (n = 0; n < count; n++) {
+	for (n = 0; n < count; ++n) {
 		int r_idx = who[n];
 		const struct monster_race *race = &r_info[r_idx];
 		const struct monster_lore *lore = &l_list[r_idx];

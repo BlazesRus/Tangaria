@@ -170,9 +170,7 @@
 /**
  * Include the support for loading bitmaps
  */
-#ifdef UseOldPNGCode
 #include "win/readdib.h"
-#endif
 
 #include <wingdi.h>
 

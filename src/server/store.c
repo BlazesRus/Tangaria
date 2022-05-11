@@ -3365,12 +3365,16 @@ void do_cmd_store(struct player *p, int pstore)
     if (s->type == STORE_HOME)
         sound(p, MSG_STORE_HOME);
 
+    /* Music volume down */
+    sound(p, MSG_SILENT100);
+
     /* Background sounds for stores */
     switch (s->type)
     {
         case STORE_OTHER:
             if (streq(s->name, "Sonya the cat")) sound(p, MSG_NPC_CAT);
-            else if (streq(s->name, "Shtukensia the tavernkeeper")) sound(p, MSG_STORE_OTHER_SOUND);
+            else if (streq(s->name, "Halbarad, the old ranger")) sound(p, MSG_NPC_HI);
+            else if (streq(s->name, "Shtukensia the tavernkeeper")) sound(p, MSG_NPC_GIRL);
             else if (streq(s->name, "Torog")) sound(p, MSG_AFRAID);
             else if (streq(s->name, "Alchemy Shop")) sound(p, MSG_STORE_ALCHEMY);
             else if (streq(s->name, "Magic Shop")) sound(p, MSG_STORE_MAGIC);

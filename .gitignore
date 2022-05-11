@@ -42,3 +42,5 @@ src/bcb6/Win64/Release/
 *.lnk
 __astcache
 */__astcache/*
+SPLib/*
+src/SPProjectFiles/

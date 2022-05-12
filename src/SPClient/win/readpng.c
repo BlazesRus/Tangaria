@@ -76,7 +76,7 @@ bool ReadDIB2_PNG(HWND hWnd, LPSTR lpFileName, DIBINIT *pInfo, DIBINIT *pMask, b
     errno_t fileErrorCode;
     FILE *filePointer = NULL;
     fileErrorCode = _tfopen_s(&filePointer, lpFileName, "rb");
-	if(fileErrorCode==0)//(!filePointer)
+	if(fileErrorCode!=0)//(!filePointer)
 	{
 		/*plog_fmt("Unable to open PNG file."); */
 		return (false);

@@ -202,7 +202,7 @@ struct magic_realm *class_magic_realms(const struct player_class *c, int *count)
 		r_test = mem_zalloc(sizeof(struct magic_realm));
 		r_test->next = r;
 		r = r_test;
-		(*count)++;
+		++(*count);
 	}
 
 	return r;
@@ -218,7 +218,7 @@ const struct class_book *object_kind_to_book(const struct object_kind *kind)
 	while (class) {
 		int i;
 
-		for (i = 0; i < class->magic.num_books; i++)
+		for (i = 0; i < class->magic.num_books; ++i)
 		if ((kind->tval == class->magic.books[i].tval) &&
 			(kind->sval == class->magic.books[i].sval)) {
 			return &class->magic.books[i];
@@ -278,14 +278,14 @@ int spell_collect_from_book(const struct player *p, const struct object *obj,
 	}
 
 	/* Count the spells */
-	for (i = 0; i < book->num_spells; i++)
+	for (i = 0; i < book->num_spells; ++i)
 		n_spells++;
 
 	/* Allocate the array */
 	*spells = mem_zalloc(n_spells * sizeof(*spells));
 
 	/* Write the spells */
-	for (i = 0; i < book->num_spells; i++)
+	for (i = 0; i < book->num_spells; ++i)
 		(*spells)[i] = book->spells[i].sidx;
 
 	return n_spells;
@@ -305,7 +305,7 @@ int spell_book_count_spells(const struct player *p, const struct object *obj,
 		return n_spells;
 	}
 
-	for (i = 0; i < book->num_spells; i++)
+	for (i = 0; i < book->num_spells; ++i)
 		if (tester(p, book->spells[i].sidx))
 			n_spells++;
 
@@ -323,7 +323,7 @@ bool spell_okay_list(const struct player *p,
 	int i;
 	bool okay = false;
 
-	for (i = 0; i < n_spells; i++)
+	for (i = 0; i < n_spells; ++i)
 		if (spell_test(p, spells[i]))
 			okay = true;
 
@@ -460,7 +460,7 @@ void spell_learn(int spell_index)
 	player->spell_flags[spell_index] |= PY_SPELL_LEARNED;
 
 	/* Find the next open entry in "spell_order[]" */
-	for (i = 0; i < player->class->magic.total_spells; i++)
+	for (i = 0; i < player->class->magic.total_spells; ++i)
 		if (player->spell_order[i] == 99) break;
 
 	/* Add the spell to the known list */
@@ -471,7 +471,7 @@ void spell_learn(int spell_index)
 		 spell->name);
 
 	/* One less spell available */
-	player->upkeep->new_spells--;
+	--player->upkeep->new_spells;
 
 	/* Message if needed */
 	if (player->upkeep->new_spells)

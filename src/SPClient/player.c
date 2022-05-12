@@ -149,7 +149,7 @@ bool player_stat_inc(struct player *p, int stat)
 	if (v >= 18 + 100)
 		return false;
 	if (v < 18) {
-		p->stat_cur[stat]++;
+		++p->stat_cur[stat];
 	} else if (v < 18 + 90) {
 		int gain = (((18 + 100) - v) / 2 + 3) / 2;
 		if (gain < 1)
@@ -462,7 +462,7 @@ void player_cleanup_members(struct player *p)
 		object_pile_free(NULL, NULL, p->gear_k);
 	}
 	if (p->body.slots) {
-		for (int i = 0; i < p->body.count; i++)
+		for (int i = 0; i < p->body.count; ++i)
 			string_free(p->body.slots[i].name);
 		mem_free(p->body.slots);
 	}

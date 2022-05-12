@@ -3595,7 +3595,7 @@ static void init_paths(void)
 	/* Hack -- Validate the basic font */
 	validate_file(path);
 
-	for (i = 0; i < MAX_FONTS; i++)
+	for (i = 0; i < MAX_FONTS; ++i)
 		FontList[i] = NULL;
 
 	/* Open the fonts directory */

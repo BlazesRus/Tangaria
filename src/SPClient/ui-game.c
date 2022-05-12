@@ -805,7 +805,7 @@ static void select_savefile(bool retry, bool *new_game)
 		if (default_entry && arg_force_name) {
 			/*
 			 * Name set by front end is already in use and names
-			 * are forced so that doesn't allow the new game option.
+			 * are forced so that it doesn't allow the new game option.
 			 */
 			int i;
 
@@ -1085,7 +1085,7 @@ void close_game(bool prompt_failed_save)
 	signals_ignore_tstp();
 
 	/* Hack -- Increase "icky" depth */
-	screen_save_depth++;
+	++screen_save_depth;
 
 	/* Deal with the randarts file */
 	if (OPT(player, birth_randarts)) {
@@ -1129,7 +1129,7 @@ void close_game(bool prompt_failed_save)
 	wipe_mon_list(cave, player);
 
 	/* Hack -- Decrease "icky" depth */
-	screen_save_depth--;
+	--screen_save_depth;
 
 	/* Tell the UI we're done with the game state */
 	event_signal(EVENT_LEAVE_GAME);

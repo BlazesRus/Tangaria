@@ -1289,9 +1289,9 @@ bool textui_get_item(struct object **choice, const char *pmt, const char *str,
 
 	/* Restrict inventory indexes */
 	while ((i1 <= i2) && (!object_test(tester, player->upkeep->inven[i1])))
-		i1++;
+		++i1;
 	while ((i1 <= i2) && (!object_test(tester, player->upkeep->inven[i2])))
-		i2--;
+		--i2;
 
 	/* Accept inventory */
 	if ((i1 <= i2) || allow_all)
@@ -1405,15 +1405,15 @@ bool textui_get_item(struct object **choice, const char *pmt, const char *str,
 
 			/* If inven or equip is on the main screen, and only one of them
 			 * is slated for a subwindow, we should show the opposite there */
-			for (j = 0; j < ANGBAND_TERM_MAX; j++) {
+			for (j = 0; j < ANGBAND_TERM_MAX; ++j) {
 				/* Unused */
 				if (!angband_term[j]) continue;
 
 				/* Count windows displaying inven */
-				if (window_flag[j] & (PW_INVEN)) ni++;
+				if (window_flag[j] & (PW_INVEN)) ++ni;
 
 				/* Count windows displaying equip */
-				if (window_flag[j] & (PW_EQUIP)) ne++;
+				if (window_flag[j] & (PW_EQUIP)) ++ne;
 			}
 
 			/* Are we in the situation where toggling makes sense? */

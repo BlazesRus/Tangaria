@@ -52,6 +52,9 @@ sound:ambient_day:amb_thunder_rain ambient/outside/rain_light ambient_crow ambie
 # Town during the night.
 sound:ambient_nite:amb_thunder_roll tomenet/weather/thunder/thunder tomenet/weather/thunder/thunder2 tomenet/weather/thunder/thunder3 tomenet/ambient/persistent/watery/crickets tomenet/ambient/timed/owl/owl tomenet/ambient/timed/owl/owl2 ambient_crow ambient_wings ambient_fox ambient_wind_1 ambient_wind_night ambient_wind_night_1 ambient_wind_2 ambient_wind_3
 
+# real town (npc city)
+sound:town:dog_small
+
 # Long rain
 sound:wild_rain:tomenet/weather/rain/rain
 
@@ -74,10 +77,10 @@ sound:wild_grass:tomenet/ambient/timed/birdofprey/birdofprey tomenet/ambient/tim
 sound:wild_wood:wild_grass tomenet/ambient/timed/bird/bird tomenet/ambient/timed/bird/bird2 tomenet/ambient/timed/bird/bird3 ambient_forest_birds ambient_wings ambient_birds ambient_birds_1 ambient_crow ambient_fox ambient_wind_1 ambient_wind_2 ambient_wind_3 ambient_forest_birds
 
 # Mountain
-sound:wild_mountain:wild_wolf tomenet/ambient/timed/wolf/wolf ambient_wind_1 ambient_wind_2 ambient_wind_3
+sound:wild_mountain:wild_wolf tomenet/ambient/timed/wolf/wolf ambient_wind_1 ambient_wind_2 ambient_wind_3 vulture
 
 # Desert
-sound:wild_desert:wild_desert ambient_wind_1 ambient_wind_2 ambient_wind_3
+sound:wild_desert:wild_desert ambient_wind_1 ambient_wind_2 ambient_wind_3 vulture
 
 # Glacier
 sound:wild_glacier:wild_glacier
@@ -163,7 +166,7 @@ sound:store_leave:plm_door_bolt tomenet/store/doorbell_leave
 sound:store_other_sound:tomenet/ambient/persistent/inn/fireplace
 sound:store_general_sound:tomenet/ambient/persistent/inn/fireplace
 sound:store_temple_sound:tomenet/ambient/persistent/inn/fireplace
-sound:store_bookseller_sound:tomenet/ambient/persistent/inn/fireplace
+sound:store_bookseller_sound:ambient/store/clock
 sound:store_b_market_sound:tomenet/ambient/persistent/inn/fireplace
 sound:store_xbm_sound:tomenet/ambient/persistent/inn/fireplace
 sound:store_tavern_sound:tomenet/ambient/persistent/inn/fireplace
@@ -614,6 +617,9 @@ sound:kill_slime:kill_slime kill_slime_1 kill_slime_2 kill_slime_3 kill_slime_4 
 
 # stinger, giant beetle
 sound:kill_stinger:kill_stinger
+
+# mushroom
+sound:kill_mushroom:kill_mushroom_1 kill_mushroom_2 kill_mushroom_3 kill_mushroom_4 kill_mushroom_5 kill_mushroom_6 kill_mushroom_7 kill_mushroom_8 kill_mushroom_9 kill_mushroom_10 kill_mushroom_11
 
 # Attack - hit
 sound:mon_hit:mco_hit_whip

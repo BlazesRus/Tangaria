@@ -893,6 +893,7 @@ static void mass_produce(struct object *obj)
         case TV_SHADOW_BOOK:
         case TV_PSI_BOOK:
         case TV_ELEM_BOOK:
+        case TV_TRAVEL_BOOK:
         {
             if (cost <= 50) size += mass_roll(2, 3);
             if (cost <= 500) size += mass_roll(1, 3);
@@ -3375,7 +3376,6 @@ void do_cmd_store(struct player *p, int pstore)
             if (streq(s->name, "Sonya the cat")) sound(p, MSG_NPC_CAT);
             else if (streq(s->name, "Halbarad, the old ranger")) sound(p, MSG_NPC_HI);
             else if (streq(s->name, "Shtukensia the tavernkeeper")) sound(p, MSG_NPC_GIRL);
-            else if (streq(s->name, "Torog")) sound(p, MSG_AFRAID);
             else if (streq(s->name, "Alchemy Shop")) sound(p, MSG_STORE_ALCHEMY);
             else if (streq(s->name, "Magic Shop")) sound(p, MSG_STORE_MAGIC);
             break;

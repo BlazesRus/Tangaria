@@ -38,8 +38,8 @@
  * that this program was compiled with.
  */
 void ReadFileFunc(png_structp png_ptr, png_bytep data, png_size_t length) {
-    FILE *file = (FILE *)png_get_io_ptr(png_ptr);
-    fread(data, sizeof(png_byte), length, file);
+	FILE *file = (FILE *)png_get_io_ptr(png_ptr);
+	fread(data, sizeof(png_byte), length, file);
 }
 
 /**
@@ -52,37 +52,40 @@ void ReadFileFunc(png_structp png_ptr, png_bytep data, png_size_t length) {
  * appropriate handles, and false if something went wrong.
  */
 bool ReadDIB2_PNG(HWND hWnd, LPSTR lpFileName, DIBINIT *pInfo, DIBINIT *pMask, bool premultiply) {
-    png_structp png_ptr;
-    png_infop info_ptr;
-    byte header[8];
-    png_bytep *row_pointers;
-    
-    bool noerror = true;
-    
-    HBITMAP hBitmap;
-    HPALETTE hPalette, hOldPal;
-    BITMAPINFO bi, biSrc;
-    HDC hDC;
-    
-    png_byte color_type;
-    png_byte bit_depth;
-    int width, height;
-    int y;
+	png_structp png_ptr;
+	png_infop info_ptr;
+	byte header[8];
+	png_bytep *row_pointers;
+	
+	bool noerror = true;
+	
+	HBITMAP hBitmap;
+	HPALETTE hPalette, hOldPal;
+	BITMAPINFO bi, biSrc;
+	HDC hDC;
+	
+	png_byte color_type;
+	png_byte bit_depth;
+	int width, height;
+	int y;
 
-    bool update = false;
-    
-    /* open the file and test it for being a png */
-    FILE *fp = fopen(lpFileName, "rb");
-    if (!fp)
-    {
-        /*plog_fmt("Unable to open PNG file."); */
-        return (false);
-    }
+	bool update = false;
+	
+	/* open the file and test it for being a png */
+	//FILE *filePointer = fopen(lpFileName, "rb");Updating to safe version of fopen
+    errno_t fileErrorCode;
+    FILE *filePointer = NULL;
+    fileErrorCode = _tfopen_s(&filePointer, lpFileName, "rb");
+	if(fileErrorCode==0)//(!filePointer)
+	{
+		/*plog_fmt("Unable to open PNG file."); */
+		return (false);
+	}
 
-    fread(header, 1, 8, fp);
+    fread(header, 1, 8, filePointer);
     if (png_sig_cmp(header, 0, 8)) {
         /*plog_fmt("Unable to open PNG file - not a PNG file."); */
-        fclose(fp);
+        fclose(filePointer);
         return (false);
     }
     
@@ -91,7 +94,7 @@ bool ReadDIB2_PNG(HWND hWnd, LPSTR lpFileName, DIBINIT *pInfo, DIBINIT *pMask, b
     if(!png_ptr)
     {
         /*plog_fmt("Unable to initialize PNG library"); */
-        fclose(fp);
+        fclose(filePointer);
         return (false);
     }
     
@@ -101,12 +104,12 @@ bool ReadDIB2_PNG(HWND hWnd, LPSTR lpFileName, DIBINIT *pInfo, DIBINIT *pMask, b
     {
         png_destroy_read_struct(&png_ptr, (png_infopp)NULL, (png_infopp)NULL);
         /*plog_fmt("Failed to create PNG info structure."); */
-        fclose(fp);
+        fclose(filePointer);
         return false;
     }
     
     /* setup error handling for init */
-    png_set_read_fn(png_ptr, fp, ReadFileFunc);
+    png_set_read_fn(png_ptr, filePointer, ReadFileFunc);
     png_set_sig_bytes(png_ptr, 8);
 
     png_read_info(png_ptr, info_ptr);
@@ -162,7 +165,7 @@ bool ReadDIB2_PNG(HWND hWnd, LPSTR lpFileName, DIBINIT *pInfo, DIBINIT *pMask, b
     png_read_image(png_ptr, row_pointers);
 
     /* we are done with the file pointer, so close it */
-    fclose(fp);
+    fclose(filePointer);
 
     /* pre multiply the image colors by the alhpa if thats what we want */
     if (premultiply && (color_type == PNG_COLOR_TYPE_RGB_ALPHA)) {

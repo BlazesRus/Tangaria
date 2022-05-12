@@ -43,7 +43,6 @@ src/bcb6/Win64/Release/
 __astcache
 */__astcache/*
 SPLib/*
-src/SPProjectFiles/
 src/ObjectFiles/*
 src/Debug_Win32/*
 src/Debug_x64/*

@@ -1,0 +1,4 @@
+﻿  type42.c
+C:\UserFiles\Github\freetype\src\type42\t42parse.c(870,66): warning C4244: '=': conversion from '__int64' to 'FT_Int', possible loss of data
+     Creating library C:\UserFiles\Github\TangariaCoop\src\_SDL2VC\x64\FreetypeBlazesRus.lib and object C:\UserFiles\Github\TangariaCoop\src\_SDL2VC\x64\FreetypeBlazesRus.exp
+  FreetypeFork.vcxproj -> C:\UserFiles\Github\TangariaCoop\src\_SDL2VC\x64\FreetypeBlazesRus.dll

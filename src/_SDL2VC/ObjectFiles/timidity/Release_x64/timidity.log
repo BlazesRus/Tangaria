@@ -1,0 +1,11 @@
+﻿cl : command line warning D9002: ignoring unknown option '/arch:SSE'
+  common.c
+  instrum.c
+  mix.c
+  output.c
+  playmidi.c
+  readmidi.c
+  resample.c
+  tables.c
+  timidity.c
+  timidity.vcxproj -> C:\UserFiles\Github\TangeriaCoop\src\_SDL2VC\x64\timidity.lib

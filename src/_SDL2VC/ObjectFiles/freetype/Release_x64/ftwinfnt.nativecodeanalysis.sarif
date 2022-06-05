@@ -1,0 +1,417 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/stb/stb_sprintf.h"
+                },
+                "region": {
+                  "startLine": 1037,
+                  "startColumn": 30,
+                  "endLine": 1037,
+                  "endColumn": 47
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "stbsp_vsprintfcb",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '<<' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '<<' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/stb/stb_sprintf.h"
+                },
+                "region": {
+                  "startLine": 1037,
+                  "startColumn": 30,
+                  "endLine": 1037,
+                  "endColumn": 41
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "stbsp_vsprintfcb",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.29.30142.1",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "commandLine": "C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x64\\c1.dll -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x0039C1B0 -il C:\\Users\\Blaze\\AppData\\Local\\Temp\\_CL_4c5cdeabast -typedil -f ..\\src\\base\\ftwinfnt.c -Ze -D_MSC_EXTENSIONS -Zp16 -pc \\:/ -D_MSC_VER=1929 -D_MSC_FULL_VER=192930142 -D_MSC_BUILD=1 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -I C:\\UserFiles\\Github\\stb\\ -I C:\\UserFiles\\Github\\freetype\\VCToOtherDir\\include -nologo -W 4 -diagnostics:column -GF -Og -Ot -Oy -Oi -DCODE_ANALYSIS -DSTB_SPRINTF_IMPLEMENTATION -DWIN32 -DNDEBUG -D_LIB -D_CRT_SECURE_NO_WARNINGS -DFT2_BUILD_LIBRARY -D_WINDLL -DDLL_EXPORT -D_MT -D_DLL -GS -D__AVX__ -D_NO_PREFETCHW -D_M_FP_PRECISE -std:c17 -FoC:\\UserFiles\\Github\\TangariaCoop\\src\\_SDL2VC\\ObjectFiles\\freetype\\Release_x64\\ftwinfnt.obj -FdC:\\UserFiles\\Github\\TangariaCoop\\src\\_SDL2VC\\ObjectFiles\\freetype\\Release_x64\\vc142.pdb -external:W 4 -Gd -wd 4001 -analyze:projectdirectory C:\\UserFiles\\Github\\freetype\\VCToOtherDir -analyze:rulesetdirectory ;C:\\Compilers\\VisualStudioCommunity2019\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset C:\\Compilers\\VisualStudioCommunity2019\\Team Tools\\Static Analysis Tools\\Rule Sets\\AllRules.ruleset -analyze:quiet -analyze:plugin C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x86\\EspXEngine.dll -FC -errorreport:prompt -I C:\\UserFiles\\Github\\stb\\ -I C:\\UserFiles\\Github\\freetype\\include -I C:\\UserFiles\\Github\\freetype\\builds\\windows\\ -I C:\\UserFiles\\Github\\freetype\\VCToOtherDir\\%(IncludePath) -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\ucrt -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Auxiliary\\VS\\UnitTest\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -external:I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\include -external:I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -external:I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Auxiliary\\VS\\include -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Auxiliary\\VS\\include -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\ucrt -external:I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Auxiliary\\VS\\UnitTest\\include -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Auxiliary\\VS\\UnitTest\\include -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\um -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\shared -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\winrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\cppwinrt -external:I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -MPdiagMutex 00000000000001B4",
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/UserFiles/Github/stb/stb_sprintf.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "350698c6fc537cd3939e3f119a5f9109"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/base/ftpatent.c"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "850eec5b7799f3df3f848c9ba7bf440f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/freetype.h"
+          },
+          "hashes": {
+            "md5": "604960e4f9fadad40a0086f31010db4b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/ft2build.h"
+          },
+          "hashes": {
+            "md5": "3a9c993283e595ecc0152778138ebe99"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/ftheader.h"
+          },
+          "hashes": {
+            "md5": "994721dcd1316995d97ef7857dabfbc0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/ftconfig.h"
+          },
+          "hashes": {
+            "md5": "40167b149b9844ba27dc456fb22c2afe"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/ftoption.h"
+          },
+          "hashes": {
+            "md5": "7a102c94f668e7ec6a7b8fc1999ec18b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/ftstdlib.h"
+          },
+          "hashes": {
+            "md5": "6d78595e95df733bc273cee00c1367b0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/integer-types.h"
+          },
+          "hashes": {
+            "md5": "725479b24a09b223282e450767228e1b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/public-macros.h"
+          },
+          "hashes": {
+            "md5": "c24e0a19874656bfa6579f9808cd6387"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/mac-support.h"
+          },
+          "hashes": {
+            "md5": "e6dd79a7fc7d65149a0c712aec135241"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/fttypes.h"
+          },
+          "hashes": {
+            "md5": "9173819ff4431e6d16e8d0572d9aae16"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftsystem.h"
+          },
+          "hashes": {
+            "md5": "228495e24a0edd06974152fffe7330a6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftimage.h"
+          },
+          "hashes": {
+            "md5": "8c5ccba0bf81fb7610fa97f7d5c252e4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/fterrors.h"
+          },
+          "hashes": {
+            "md5": "b31ffe32f79b531d70679513df084bbf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftmoderr.h"
+          },
+          "hashes": {
+            "md5": "208e19e2621a304d01a5586b2e68b2c5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/fterrdef.h"
+          },
+          "hashes": {
+            "md5": "2f3eb20cc1cbb6090e46cb202f021da8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/tttags.h"
+          },
+          "hashes": {
+            "md5": "a157ab9f96a267fbf7a5e1e2d67f3aef"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftobjs.h"
+          },
+          "hashes": {
+            "md5": "d41dac64736fee21c78986f915e6e46c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftrender.h"
+          },
+          "hashes": {
+            "md5": "be84b3ddecbcdefab94372948d08b98d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftmodapi.h"
+          },
+          "hashes": {
+            "md5": "4892102eff8fa2469cf75a1d16bbbd6b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftglyph.h"
+          },
+          "hashes": {
+            "md5": "77e5cb533cde759c2cbeb5ead2a39598"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftsizes.h"
+          },
+          "hashes": {
+            "md5": "f45e95869c7aa15888e61c2c4c3be2a5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftlcdfil.h"
+          },
+          "hashes": {
+            "md5": "01a54a679687ba4b6550c17ffad2268c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftparams.h"
+          },
+          "hashes": {
+            "md5": "92ee0d17e4c75d77723e8ee89f706e58"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftmemory.h"
+          },
+          "hashes": {
+            "md5": "dbcef51dc968d441b311a6fdbfd47840"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/compiler-macros.h"
+          },
+          "hashes": {
+            "md5": "0262c6ad3b821da3052b78414a161659"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftgloadr.h"
+          },
+          "hashes": {
+            "md5": "8341d1eb046f5a82f54b2e2cdce3dee5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftdrv.h"
+          },
+          "hashes": {
+            "md5": "14942b849a0fa3e707277117b415e615"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/autohint.h"
+          },
+          "hashes": {
+            "md5": "88c2a1dec90f722687f45976acb45384"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftserv.h"
+          },
+          "hashes": {
+            "md5": "8d0a61ab56848016917abc6307b4c099"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftcalc.h"
+          },
+          "hashes": {
+            "md5": "e2023efe2eab189fefcaa3c4e51eb6fb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftincrem.h"
+          },
+          "hashes": {
+            "md5": "31cd7ddbb7b27745b706a67992f0a9bf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftstream.h"
+          },
+          "hashes": {
+            "md5": "e1cbe36dbb23eb939e498174b334feff"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svsfnt.h"
+          },
+          "hashes": {
+            "md5": "1b010e21f953768b5b321fd0692f944f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/tttables.h"
+          },
+          "hashes": {
+            "md5": "481c7deb586132d3708eb849057ef391"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svttglyf.h"
+          },
+          "hashes": {
+            "md5": "a800a145d7ec340636a3386bd1696ba2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/base/ftwinfnt.c"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "b83fa49372ffde94c41b1edb5d537930"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftdebug.h"
+          },
+          "hashes": {
+            "md5": "e1bbdef55ca7ce316e12bcb668dea294"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftwinfnt.h"
+          },
+          "hashes": {
+            "md5": "3a34e6b385fc32e1d44256bb255f0801"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svwinfnt.h"
+          },
+          "hashes": {
+            "md5": "a5ac9d458036e19b41b7cd240c553268"
+          }
+        }
+      ]
+    }
+  ]
+}

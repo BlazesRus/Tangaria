@@ -1,0 +1,304 @@
+﻿  autofit.c
+  ftbase.c
+  ftbbox.c
+  ftbdf.c
+  ftbitmap.c
+  ftcid.c
+  ftfstype.c
+  ftgasp.c
+  ftglyph.c
+  ftgxval.c
+  ftinit.c
+  ftmm.c
+  ftotval.c
+  ftpatent.c
+  ftpfr.c
+  ftstroke.c
+  ftsynth.c
+  fttype1.c
+  ftwinfnt.c
+  bdf.c
+  ftcache.c
+  cff.c
+  type1cid.c
+  dlgwrap.c
+  ftgzip.c
+  ftlzw.c
+  pcf.c
+  pfr.c
+  psaux.c
+  pshinter.c
+  psmodule.c
+  raster.c
+  sfnt.c
+C:\UserFiles\Github\freetype\src\psaux\t1decode.c(1996,27): warning C4267: '=': conversion from 'size_t' to 'FT_Int', possible loss of data (compiling source file ..\src\psaux\psaux.c)
+C:\UserFiles\Github\freetype\src\psaux\psintrp.c(1005,29): warning C4267: '=': conversion from 'size_t' to 'FT_Fast', possible loss of data (compiling source file ..\src\psaux\psaux.c)
+C:\UserFiles\Github\freetype\src\sfnt\sfdriver.c(859,32): warning C4267: '=': conversion from 'size_t' to 'FT_UInt', possible loss of data (compiling source file ..\src\sfnt\sfnt.c)
+C:\UserFiles\Github\freetype\src\sfnt\sfdriver.c(1011,44): warning C4244: 'function': conversion from '__int64' to 'const unsigned int', possible loss of data (compiling source file ..\src\sfnt\sfnt.c)
+  smooth.c
+  sdf.c
+  svg.c
+  truetype.c
+  type1.c
+  type42.c
+  winfnt.c
+C:\UserFiles\Github\freetype\src\smooth\ftgrays.c(1980,26): warning C4267: '+=': conversion from 'size_t' to 'TCoord', possible loss of data (compiling source file ..\src\smooth\smooth.c)
+  ftdebug.c
+  ftsystem.c
+C:\UserFiles\Github\freetype\src\sdf\ftsdf.c(2528): warning C4701: potentially uninitialized local variable 'nearest_point' used
+C:\UserFiles\Github\freetype\src\sdf\ftsdf.c(2854): warning C4701: potentially uninitialized local variable 'nearest_point' used
+C:\UserFiles\Github\freetype\src\sfnt\ttsvg.c(272): warning C4701: potentially uninitialized local variable 'mid_doc' used
+C:\UserFiles\Github\freetype\src\type1\t1driver.c(287,51): warning C4267: '=': conversion from 'size_t' to 'FT_ULong', possible loss of data (compiling source file ..\src\type1\type1.c)
+C:\UserFiles\Github\freetype\src\type1\t1driver.c(308,58): warning C4267: '=': conversion from 'size_t' to 'FT_ULong', possible loss of data (compiling source file ..\src\type1\type1.c)
+C:\UserFiles\Github\freetype\src\type1\t1driver.c(340,65): warning C4267: '=': conversion from 'size_t' to 'FT_ULong', possible loss of data (compiling source file ..\src\type1\type1.c)
+C:\UserFiles\Github\freetype\src\type1\t1driver.c(370,23): warning C4267: '=': conversion from 'size_t' to 'FT_UInt', possible loss of data (compiling source file ..\src\type1\type1.c)
+C:\UserFiles\Github\freetype\src\type1\t1driver.c(579,59): warning C4267: '=': conversion from 'size_t' to 'FT_ULong', possible loss of data (compiling source file ..\src\type1\type1.c)
+C:\UserFiles\Github\freetype\src\type1\t1driver.c(588,58): warning C4267: '=': conversion from 'size_t' to 'FT_ULong', possible loss of data (compiling source file ..\src\type1\type1.c)
+C:\UserFiles\Github\freetype\src\type1\t1driver.c(597,61): warning C4267: '=': conversion from 'size_t' to 'FT_ULong', possible loss of data (compiling source file ..\src\type1\type1.c)
+C:\UserFiles\Github\freetype\src\type1\t1driver.c(606,63): warning C4267: '=': conversion from 'size_t' to 'FT_ULong', possible loss of data (compiling source file ..\src\type1\type1.c)
+C:\UserFiles\Github\freetype\src\type1\t1driver.c(616,58): warning C4267: '=': conversion from 'size_t' to 'FT_ULong', possible loss of data (compiling source file ..\src\type1\type1.c)
+C:\UserFiles\Github\freetype\src\type1\t1load.c(1771,68): warning C4244: '=': conversion from '__int64' to 'FT_Int', possible loss of data (compiling source file ..\src\type1\type1.c)
+C:\UserFiles\Github\freetype\src\type1\t1load.c(1941,40): warning C4244: '=': conversion from '__int64' to 'FT_Int', possible loss of data (compiling source file ..\src\type1\type1.c)
+C:\UserFiles\Github\freetype\src\type42\t42parse.c(870,66): warning C4244: '=': conversion from '__int64' to 'FT_Int', possible loss of data (compiling source file ..\src\type42\type42.c)
+ftbase.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftbase.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftbase.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftbase.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftbase.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftbase.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftbbox.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftbbox.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftbbox.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftbbox.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftbbox.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftbbox.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftbdf.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftbdf.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftbdf.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftbdf.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftbdf.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftbdf.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftbitmap.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftbitmap.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftbitmap.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftbitmap.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftbitmap.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftbitmap.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftcid.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftcid.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftcid.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftcid.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftcid.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftcid.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftfstype.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftfstype.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftfstype.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftfstype.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftfstype.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftfstype.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftgasp.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftgasp.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftgasp.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftgasp.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftgasp.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftgasp.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftglyph.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftglyph.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftglyph.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftglyph.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftglyph.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftglyph.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftgxval.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftgxval.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftgxval.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftgxval.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftgxval.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftgxval.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftinit.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftinit.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftinit.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftinit.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftinit.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftinit.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftmm.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftmm.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftmm.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftmm.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftmm.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftmm.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftotval.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftotval.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftotval.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftotval.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftotval.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftotval.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftpatent.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftpatent.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftpatent.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftpatent.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftpatent.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftpatent.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftpfr.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftpfr.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftpfr.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftpfr.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftpfr.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftpfr.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftstroke.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftstroke.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftstroke.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftstroke.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftstroke.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftstroke.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftsynth.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftsynth.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftsynth.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftsynth.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftsynth.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftsynth.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+fttype1.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+fttype1.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+fttype1.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+fttype1.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+fttype1.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+fttype1.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftwinfnt.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftwinfnt.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftwinfnt.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftwinfnt.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftwinfnt.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftwinfnt.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+bdf.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+bdf.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+bdf.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+bdf.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+bdf.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+bdf.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftcache.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftcache.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftcache.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftcache.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftcache.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftcache.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+cff.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+cff.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+cff.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+cff.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+cff.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+cff.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+type1cid.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+type1cid.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+type1cid.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+type1cid.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+type1cid.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+type1cid.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftgzip.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftgzip.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftgzip.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftgzip.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftgzip.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftgzip.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftlzw.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftlzw.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftlzw.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftlzw.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftlzw.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftlzw.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+pcf.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+pcf.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+pcf.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+pcf.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+pcf.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+pcf.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+pfr.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+pfr.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+pfr.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+pfr.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+pfr.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+pfr.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+psaux.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+psaux.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+psaux.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+psaux.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+psaux.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+psaux.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+pshinter.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+pshinter.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+pshinter.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+pshinter.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+pshinter.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+pshinter.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+psmodule.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+psmodule.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+psmodule.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+psmodule.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+psmodule.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+psmodule.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+raster.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+raster.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+raster.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+raster.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+raster.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+raster.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+sfnt.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+sfnt.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+sfnt.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+sfnt.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+sfnt.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+sfnt.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+smooth.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+smooth.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+smooth.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+smooth.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+smooth.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+smooth.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+sdf.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+sdf.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+sdf.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+sdf.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+sdf.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+sdf.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+svg.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+svg.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+svg.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+svg.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+svg.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+svg.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+truetype.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+truetype.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+truetype.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+truetype.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+truetype.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+truetype.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+type1.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+type1.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+type1.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+type1.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+type1.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+type1.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+type42.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+type42.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+type42.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+type42.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+type42.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+type42.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+winfnt.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+winfnt.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+winfnt.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+winfnt.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+winfnt.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+winfnt.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftdebug.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftdebug.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftdebug.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftdebug.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftdebug.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftdebug.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+ftsystem.obj : error LNK2005: stbsp_set_separators already defined in autofit.obj
+ftsystem.obj : error LNK2005: stbsp_snprintf already defined in autofit.obj
+ftsystem.obj : error LNK2005: stbsp_sprintf already defined in autofit.obj
+ftsystem.obj : error LNK2005: stbsp_vsnprintf already defined in autofit.obj
+ftsystem.obj : error LNK2005: stbsp_vsprintf already defined in autofit.obj
+ftsystem.obj : error LNK2005: stbsp_vsprintfcb already defined in autofit.obj
+     Creating library C:\UserFiles\Github\TangariaCoop\src\_SDL2VC\x64\FreetypeBlazesRus.lib and object C:\UserFiles\Github\TangariaCoop\src\_SDL2VC\x64\FreetypeBlazesRus.exp
+C:\UserFiles\Github\TangariaCoop\src\_SDL2VC\x64\FreetypeBlazesRus.dll : fatal error LNK1169: one or more multiply defined symbols found

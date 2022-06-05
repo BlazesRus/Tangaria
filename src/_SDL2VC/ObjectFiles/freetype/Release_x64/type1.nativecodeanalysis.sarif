@@ -1,0 +1,2235 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/stb/stb_sprintf.h"
+                },
+                "region": {
+                  "startLine": 1037,
+                  "startColumn": 30,
+                  "endLine": 1037,
+                  "endColumn": 47
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "stbsp_vsprintfcb",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '<<' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '<<' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/stb/stb_sprintf.h"
+                },
+                "region": {
+                  "startLine": 1037,
+                  "startColumn": 30,
+                  "endLine": 1037,
+                  "endColumn": 41
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "stbsp_vsprintfcb",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1afm.c"
+                },
+                "region": {
+                  "startLine": 137,
+                  "startColumn": 10,
+                  "endLine": 137,
+                  "endColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "T1_Read_PFM",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1afm.c"
+                },
+                "region": {
+                  "startLine": 158,
+                  "startColumn": 14,
+                  "endLine": 158,
+                  "endColumn": 22
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "T1_Read_PFM",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1afm.c"
+                },
+                "region": {
+                  "startLine": 174,
+                  "startColumn": 17,
+                  "endLine": 174,
+                  "endColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "T1_Read_PFM",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                },
+                "region": {
+                  "startLine": 931,
+                  "startColumn": 46,
+                  "endLine": 931,
+                  "endColumn": 57
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "parse_blend_design_positions",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "Dereferencing NULL pointer 'map->design_points'. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                },
+                "region": {
+                  "startLine": 1066,
+                  "startColumn": 9,
+                  "endLine": 1066,
+                  "endColumn": 33
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "parse_blend_design_map",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 982,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 983,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 984,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 985,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 986,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 986,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 987,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 988,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 989,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 992,
+                            "startColumn": 1
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 994,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 999,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1007,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1008,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1010,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1011,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1013,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1015,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1018,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1018,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1020,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1021,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1022,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1023,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1023,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1026,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1028,
+                            "startColumn": 27
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1029,
+                            "startColumn": 27
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1030,
+                            "startColumn": 1
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1033,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1035,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1042,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1050,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1052,
+                            "startColumn": 25
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1053,
+                            "startColumn": 25
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1055,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1055,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1057,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1060,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1063,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1064,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1066,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1067,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1069,
+                            "startColumn": 1
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1055,
+                            "startColumn": 37
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1055,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1074,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1018,
+                            "startColumn": 33
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1018,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1020,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1021,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1022,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1023,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1023,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1026,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1028,
+                            "startColumn": 27
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1029,
+                            "startColumn": 27
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1030,
+                            "startColumn": 1
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1033,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1035,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1042,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1050,
+                            "startColumn": 12
+                          }
+                        },
+                        "message": {
+                          "text": "'map->design_points' may be NULL (Skip this branch)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1052,
+                            "startColumn": 25
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1053,
+                            "startColumn": 25
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1055,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1055,
+                            "startColumn": 22
+                          }
+                        },
+                        "message": {
+                          "text": "Enter this loop, (assume 'p<num_points')"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1057,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1060,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1063,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1064,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1066,
+                            "startColumn": 31
+                          }
+                        },
+                        "message": {
+                          "text": "'map->design_points' is dereferenced, but may still be NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "Dereferencing NULL pointer 'blend'. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                },
+                "region": {
+                  "startLine": 1136,
+                  "startColumn": 10,
+                  "endLine": 1136,
+                  "endColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "parse_weight_vector",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1091,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1092,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1093,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1094,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1095,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1096,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1097,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1098,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1099,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1100,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1103,
+                            "startColumn": 1
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1105,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1110,
+                            "startColumn": 27
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1119,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1121,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1122,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1124,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "'blend' may be NULL"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1136,
+                            "startColumn": 10
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '!blend->weight_vector' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                          },
+                          "region": {
+                            "startLine": 1136,
+                            "startColumn": 10
+                          }
+                        },
+                        "message": {
+                          "text": "'blend' is dereferenced, but may still be NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+                },
+                "region": {
+                  "startLine": 1380,
+                  "startColumn": 32,
+                  "endLine": 1380,
+                  "endColumn": 36
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "read_binary_data",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.29.30142.1",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "commandLine": "C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x64\\c1.dll -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x0039C1B0 -il C:\\Users\\Blaze\\AppData\\Local\\Temp\\_CL_e2def8dbast -typedil -f ..\\src\\type1\\type1.c -Ze -D_MSC_EXTENSIONS -Zp16 -pc \\:/ -D_MSC_VER=1929 -D_MSC_FULL_VER=192930142 -D_MSC_BUILD=1 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -I C:\\UserFiles\\Github\\stb\\ -I C:\\UserFiles\\Github\\freetype\\VCToOtherDir\\include -nologo -W 4 -diagnostics:column -GF -Og -Ot -Oy -Oi -DCODE_ANALYSIS -DSTB_SPRINTF_IMPLEMENTATION -DWIN32 -DNDEBUG -D_LIB -D_CRT_SECURE_NO_WARNINGS -DFT2_BUILD_LIBRARY -D_WINDLL -DDLL_EXPORT -D_MT -D_DLL -GS -D__AVX__ -D_NO_PREFETCHW -D_M_FP_PRECISE -std:c17 -FoC:\\UserFiles\\Github\\TangariaCoop\\src\\_SDL2VC\\ObjectFiles\\freetype\\Release_x64\\type1.obj -FdC:\\UserFiles\\Github\\TangariaCoop\\src\\_SDL2VC\\ObjectFiles\\freetype\\Release_x64\\vc142.pdb -external:W 4 -Gd -wd 4001 -analyze:projectdirectory C:\\UserFiles\\Github\\freetype\\VCToOtherDir -analyze:rulesetdirectory ;C:\\Compilers\\VisualStudioCommunity2019\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset C:\\Compilers\\VisualStudioCommunity2019\\Team Tools\\Static Analysis Tools\\Rule Sets\\AllRules.ruleset -analyze:quiet -analyze:plugin C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x86\\EspXEngine.dll -FC -errorreport:prompt -I C:\\UserFiles\\Github\\stb\\ -I C:\\UserFiles\\Github\\freetype\\include -I C:\\UserFiles\\Github\\freetype\\builds\\windows\\ -I C:\\UserFiles\\Github\\freetype\\VCToOtherDir\\%(IncludePath) -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\ucrt -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Auxiliary\\VS\\UnitTest\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -external:I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\include -external:I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -external:I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Auxiliary\\VS\\include -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Auxiliary\\VS\\include -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\ucrt -external:I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Auxiliary\\VS\\UnitTest\\include -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Auxiliary\\VS\\UnitTest\\include -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\um -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\shared -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\winrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\cppwinrt -external:I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -MPdiagMutex 00000000000001B4",
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/UserFiles/Github/stb/stb_sprintf.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "350698c6fc537cd3939e3f119a5f9109"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/base/ftcid.c"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "04f3d25e8ef6b2e4d8d1b412324ea912"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftcid.h"
+          },
+          "hashes": {
+            "md5": "650865aebad5d2b5cef8848261ab02da"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/freetype.h"
+          },
+          "hashes": {
+            "md5": "604960e4f9fadad40a0086f31010db4b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/ft2build.h"
+          },
+          "hashes": {
+            "md5": "3a9c993283e595ecc0152778138ebe99"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/ftheader.h"
+          },
+          "hashes": {
+            "md5": "994721dcd1316995d97ef7857dabfbc0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/ftconfig.h"
+          },
+          "hashes": {
+            "md5": "40167b149b9844ba27dc456fb22c2afe"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/ftoption.h"
+          },
+          "hashes": {
+            "md5": "7a102c94f668e7ec6a7b8fc1999ec18b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/ftstdlib.h"
+          },
+          "hashes": {
+            "md5": "6d78595e95df733bc273cee00c1367b0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/integer-types.h"
+          },
+          "hashes": {
+            "md5": "725479b24a09b223282e450767228e1b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/public-macros.h"
+          },
+          "hashes": {
+            "md5": "c24e0a19874656bfa6579f9808cd6387"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/mac-support.h"
+          },
+          "hashes": {
+            "md5": "e6dd79a7fc7d65149a0c712aec135241"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/fttypes.h"
+          },
+          "hashes": {
+            "md5": "9173819ff4431e6d16e8d0572d9aae16"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftsystem.h"
+          },
+          "hashes": {
+            "md5": "228495e24a0edd06974152fffe7330a6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftimage.h"
+          },
+          "hashes": {
+            "md5": "8c5ccba0bf81fb7610fa97f7d5c252e4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/fterrors.h"
+          },
+          "hashes": {
+            "md5": "b31ffe32f79b531d70679513df084bbf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftmoderr.h"
+          },
+          "hashes": {
+            "md5": "208e19e2621a304d01a5586b2e68b2c5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/fterrdef.h"
+          },
+          "hashes": {
+            "md5": "2f3eb20cc1cbb6090e46cb202f021da8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftobjs.h"
+          },
+          "hashes": {
+            "md5": "d41dac64736fee21c78986f915e6e46c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftrender.h"
+          },
+          "hashes": {
+            "md5": "be84b3ddecbcdefab94372948d08b98d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftmodapi.h"
+          },
+          "hashes": {
+            "md5": "4892102eff8fa2469cf75a1d16bbbd6b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftglyph.h"
+          },
+          "hashes": {
+            "md5": "77e5cb533cde759c2cbeb5ead2a39598"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftsizes.h"
+          },
+          "hashes": {
+            "md5": "f45e95869c7aa15888e61c2c4c3be2a5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftlcdfil.h"
+          },
+          "hashes": {
+            "md5": "01a54a679687ba4b6550c17ffad2268c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftparams.h"
+          },
+          "hashes": {
+            "md5": "92ee0d17e4c75d77723e8ee89f706e58"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftmemory.h"
+          },
+          "hashes": {
+            "md5": "dbcef51dc968d441b311a6fdbfd47840"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/compiler-macros.h"
+          },
+          "hashes": {
+            "md5": "0262c6ad3b821da3052b78414a161659"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftgloadr.h"
+          },
+          "hashes": {
+            "md5": "8341d1eb046f5a82f54b2e2cdce3dee5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftdrv.h"
+          },
+          "hashes": {
+            "md5": "14942b849a0fa3e707277117b415e615"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/autohint.h"
+          },
+          "hashes": {
+            "md5": "88c2a1dec90f722687f45976acb45384"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftserv.h"
+          },
+          "hashes": {
+            "md5": "8d0a61ab56848016917abc6307b4c099"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftcalc.h"
+          },
+          "hashes": {
+            "md5": "e2023efe2eab189fefcaa3c4e51eb6fb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftincrem.h"
+          },
+          "hashes": {
+            "md5": "31cd7ddbb7b27745b706a67992f0a9bf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svcid.h"
+          },
+          "hashes": {
+            "md5": "67e51251d64ed47f529a78e57dfe8f41"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/lzw/ftlzw.c"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "2df6d521805be4fe0c05fdf2fdcb28d8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftstream.h"
+          },
+          "hashes": {
+            "md5": "e1cbe36dbb23eb939e498174b334feff"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftdebug.h"
+          },
+          "hashes": {
+            "md5": "e1bbdef55ca7ce316e12bcb668dea294"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftlzw.h"
+          },
+          "hashes": {
+            "md5": "740ec5e2358252f591bce6661ab2fa02"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/lzw/ftzopen.h"
+          },
+          "hashes": {
+            "md5": "aa5a67c5c96178a51ab8299548b2a229"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/lzw/ftzopen.c"
+          },
+          "hashes": {
+            "md5": "ca64e07f0f8c55ee4ddd611281e1af7a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1afm.c"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "00000e85e4256b6ec1daaddf2a33e68c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/UserFiles/Github/freetype/src/type1/t1load.c"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "65c55c9b5c82608a2fcd96d72bd0acf8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/type1/type1.c"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "da7f696218bc6fd78eac7ef5040b7144"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/type1/t1afm.h"
+          },
+          "hashes": {
+            "md5": "84fbb41bf3d04d8fdbeb46460063e66c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/type1/t1objs.h"
+          },
+          "hashes": {
+            "md5": "6f94a4e013cd590a400dbac851a3cf1d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/t1types.h"
+          },
+          "hashes": {
+            "md5": "0cc719c51f63e976141bd09743193361"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/t1tables.h"
+          },
+          "hashes": {
+            "md5": "e1c153dba8d4f0643bc50a379125fefd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/pshints.h"
+          },
+          "hashes": {
+            "md5": "c07443cb2b65baaf04320606933e8180"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/fthash.h"
+          },
+          "hashes": {
+            "md5": "22bf450f253d114ec18910e975474d68"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svpscmap.h"
+          },
+          "hashes": {
+            "md5": "26adad968ad5cfbbeb280ccbee0315d0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/psaux.h"
+          },
+          "hashes": {
+            "md5": "1d126f4b11eca2e2d3ad40424f5a6349"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/tttypes.h"
+          },
+          "hashes": {
+            "md5": "824e746868796cc149a8dde5a1116707"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/tttables.h"
+          },
+          "hashes": {
+            "md5": "481c7deb586132d3708eb849057ef391"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftcolor.h"
+          },
+          "hashes": {
+            "md5": "56b1233f83dc96701fe52b817f9a8ae4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftmm.h"
+          },
+          "hashes": {
+            "md5": "66d490c36d9e90f6bc9da614617add3d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/cfftypes.h"
+          },
+          "hashes": {
+            "md5": "f491f03efd9d2970c7562cc11f1641a2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/cffotypes.h"
+          },
+          "hashes": {
+            "md5": "8fb736ebc2bac4867e03a6a3d97a3ab0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/type1/t1errors.h"
+          },
+          "hashes": {
+            "md5": "3b67f21ce2780332accd2d7ce13bbbe5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/type1/t1driver.c"
+          },
+          "hashes": {
+            "md5": "fa810be238b52623d8d00734c1385fa3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/type1/t1driver.h"
+          },
+          "hashes": {
+            "md5": "a26a6a67009139d2061122555649c8a5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/type1/t1gload.h"
+          },
+          "hashes": {
+            "md5": "4bedce79dba2d60b691d02c914fc364e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/type1/t1load.h"
+          },
+          "hashes": {
+            "md5": "355285541046857732280039b2a11956"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/type1/t1parse.h"
+          },
+          "hashes": {
+            "md5": "8f1e85874f6729bc4b0d976ce3afe0af"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftpsprop.h"
+          },
+          "hashes": {
+            "md5": "1ed6d856652bdf5ee71e133076cdfe28"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftdriver.h"
+          },
+          "hashes": {
+            "md5": "23c8e589ca170509f9c746d1e225583f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svmm.h"
+          },
+          "hashes": {
+            "md5": "64a4cc3e9bcadbd3bbc1419eb6118773"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftmmtypes.h"
+          },
+          "hashes": {
+            "md5": "a7c90372da20897cf5f385d58a48197a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svgldict.h"
+          },
+          "hashes": {
+            "md5": "dc2127d85a77ea298172e3f81bc37ade"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svfntfmt.h"
+          },
+          "hashes": {
+            "md5": "7003f940077c8dd4b86291569fd311c8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svpostnm.h"
+          },
+          "hashes": {
+            "md5": "36c61a6c8e33fe85ff5fe6f1ed95af63"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svpsinfo.h"
+          },
+          "hashes": {
+            "md5": "42978e01a8425e6c5e59cc5f7cf8d89c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svprop.h"
+          },
+          "hashes": {
+            "md5": "dec7480ee1868b108893789816d76fcd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svkern.h"
+          },
+          "hashes": {
+            "md5": "891e5b24798e2465c0b795919d4d0132"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/type1/t1gload.c"
+          },
+          "hashes": {
+            "md5": "83389beb7103dffae993237d29172a98"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftoutln.h"
+          },
+          "hashes": {
+            "md5": "df41213e9bedebab1121509bf4768512"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/type1/t1tokens.h"
+          },
+          "hashes": {
+            "md5": "88f3c53bd2ea1b4be55d6262945349ee"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/type1/t1objs.c"
+          },
+          "hashes": {
+            "md5": "16ae43ffdf0edac2e1bd346e1df75762"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ttnameid.h"
+          },
+          "hashes": {
+            "md5": "9a67b1a8cdd45a98137f50f7ba9010de"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/type1/t1parse.c"
+          },
+          "hashes": {
+            "md5": "d46b383e1c6107de5bdb4c169fb1bdc0"
+          }
+        }
+      ]
+    }
+  ]
+}

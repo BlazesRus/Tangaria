@@ -1,0 +1,31 @@
+﻿  Updating SDL Includes in Source of Game
+  C:\UserFiles\Github\SDL_image\SDL_image.h
+  1 File(s)
+  IMG.c
+  IMG_avif.c
+  IMG_bmp.c
+  IMG_gif.c
+  IMG_jpg.c
+  IMG_jxl.c
+  IMG_lbm.c
+  IMG_pcx.c
+  IMG_png.c
+C:\UserFiles\Github\SDL_image\IMG_png.c(144,37): warning C4129: 'G': unrecognized character escape sequence
+C:\UserFiles\Github\SDL_image\IMG_png.c(144,37): warning C4129: 'T': unrecognized character escape sequence
+C:\UserFiles\Github\SDL_image\IMG_png.c(144,37): warning C4129: 's': unrecognized character escape sequence
+C:\UserFiles\Github\SDL_image\IMG_png.c(144,37): warning C4129: 'w': unrecognized character escape sequence
+C:\UserFiles\Github\SDL_image\IMG_png.c(144,37): warning C4129: 'l': unrecognized character escape sequence
+  IMG_pnm.c
+  IMG_qoi.c
+  IMG_stb.c
+  IMG_svg.c
+  IMG_tga.c
+  IMG_tif.c
+  IMG_webp.c
+  IMG_xcf.c
+  IMG_xpm.c
+  IMG_xv.c
+  IMG_xxx.c
+  Generating Code...
+     Creating library C:\UserFiles\Github\TangariaCoop\src\_SDL2VC\x64\SDL2_image.lib and object C:\UserFiles\Github\TangariaCoop\src\_SDL2VC\x64\SDL2_image.exp
+  SDL_image.vcxproj -> C:\UserFiles\Github\TangariaCoop\src\_SDL2VC\x64\SDL2_image.dll

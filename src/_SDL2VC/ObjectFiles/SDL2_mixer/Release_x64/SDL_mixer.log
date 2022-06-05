@@ -1,0 +1,41 @@
+﻿  music_drflac.c
+  music_drmp3.c
+  music_ogg_stb.c
+  music_xmp.c
+  utils.c
+  effects_internal.c
+  effect_position.c
+  effect_stereoreverse.c
+  mixer.c
+  music.c
+  load_aiff.c
+  load_voc.c
+  mp3utils.c
+  music_cmd.c
+  music_flac.c
+  music_fluidsynth.c
+  music_modplug.c
+  music_mpg123.c
+  music_nativemidi.c
+  music_ogg.c
+  Generating Code...
+  Compiling...
+  music_opus.c
+  music_timidity.c
+  music_wav.c
+  Generating Code...
+  timidity.lib(timidity.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
+     Creating library C:\UserFiles\Github\TangariaCoop\src\_SDL2VC\x64\SDL2_mixer.lib and object C:\UserFiles\Github\TangariaCoop\src\_SDL2VC\x64\SDL2_mixer.exp
+  Generating code
+  Finished generating code
+  SDL_mixer.vcxproj -> C:\UserFiles\Github\TangariaCoop\src\_SDL2VC\x64\SDL2_mixer.dll
+  Copying SDL2_mixer
+  external\lib\x64\libFLAC-8.dll
+  external\lib\x64\libmodplug-1.dll
+  external\lib\x64\libmpg123-0.dll
+  external\lib\x64\libogg-0.dll
+  external\lib\x64\libopus-0.dll
+  external\lib\x64\libopusfile-0.dll
+  external\lib\x64\libvorbis-0.dll
+  external\lib\x64\libvorbisfile-3.dll
+  8 File(s) copied

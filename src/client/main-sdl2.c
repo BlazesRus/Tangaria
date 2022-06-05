@@ -20,7 +20,12 @@
 
 #ifdef USE_SDL2
 
-#ifdef WINDOWS
+#ifdef BUILDINGWithVS
+#include "SDL.h"
+#include "SDL_image.h"
+#include "SDL_ttf.h"
+
+#elif WINDOWS
 #include "..\_SDL2\SDL.h"
 #include "..\_SDL2\SDL_image.h"
 #include "..\_SDL2\SDL_ttf.h"
@@ -1123,13 +1128,13 @@ static SDL_Texture *make_subwindow_texture(const struct window *window, int w, i
     SDL_Texture *texture = SDL_CreateTexture(window->renderer,
             window->pixelformat, SDL_TEXTUREACCESS_TARGET, w, h);
     if (texture == NULL) {
-        quit_fmt("cant create texture for subwindow in window %u: %s",
+        quit_fmt("can't create texture for subwindow in window %u: %s",
                 window->index, SDL_GetError());
     }
 
     if (SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND) != 0) {
         SDL_DestroyTexture(texture);
-        quit_fmt("cant set blend mode for texture in window %u: %s",
+        quit_fmt("can't set blend mode for texture in window %u: %s",
                 window->index, SDL_GetError());
     }
 

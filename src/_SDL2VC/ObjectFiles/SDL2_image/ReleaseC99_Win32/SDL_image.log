@@ -1,0 +1,22 @@
+﻿  In file included from ..\IMG_jpg.c:695:
+../tiny_jpeg.h(636,9): warning : static function 'tjei_write' is used in an inline function with external linkage [-Wstatic-in-inline]
+../tiny_jpeg.h(616,1): message : use 'static' to give inline function 'tjei_write_bits' internal linkage
+../tiny_jpeg.h(176,27): message : expanded from macro 'TJEI_FORCE_INLINE'
+../tiny_jpeg.h(474,13): message : 'tjei_write' declared here
+../tiny_jpeg.h(640,13): warning : static function 'tjei_write' is used in an inline function with external linkage [-Wstatic-in-inline]
+../tiny_jpeg.h(616,1): message : use 'static' to give inline function 'tjei_write_bits' internal linkage
+../tiny_jpeg.h(176,27): message : expanded from macro 'TJEI_FORCE_INLINE'
+../tiny_jpeg.h(474,13): message : 'tjei_write' declared here
+  In file included from ..\IMG_png.c:699:
+../miniz.h(1037,19): warning : unused function 'mz_free' [-Wunused-function]
+../miniz.h(1735,7): warning : unused function 'tinfl_decompress_mem_to_heap' [-Wunused-function]
+../miniz.h(1763,8): warning : unused function 'tinfl_decompress_mem_to_mem' [-Wunused-function]
+../miniz.h(1770,5): warning : unused function 'tinfl_decompress_mem_to_callback' [-Wunused-function]
+../miniz.h(2792,7): warning : unused function 'tdefl_compress_mem_to_heap' [-Wunused-function]
+../miniz.h(2801,8): warning : unused function 'tdefl_compress_mem_to_mem' [-Wunused-function]
+../miniz.h(2751,14): warning : unused function 'tdefl_get_prev_return_status' [-Wunused-function]
+../miniz.h(2756,11): warning : unused function 'tdefl_get_adler32' [-Wunused-function]
+  In file included from ..\IMG_svg.c:73:
+../nanosvg.h(170,24): warning : unused function 'nsvgParseFromFile' [-Wunused-function]
+../nanosvg.h(177,23): warning : unused function 'nsvgDuplicatePath' [-Wunused-function]
+  SDL_image.vcxproj -> C:\UserFiles\Github\TangeriaCoop\src\_SDL2VC\Win32\SDL2_image.dll

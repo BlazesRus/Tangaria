@@ -1,0 +1,5 @@
+﻿  SDL_ttf.c
+C:\UserFiles\Github\SDL_ttf\SDL_ttf.c(3368,46): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  LINK : C:\UserFiles\Github\TangariaCoop\src\_SDL2VC\x64\SDL2_ttf.dll not found or not built by the last incremental link; performing full link
+     Creating library C:\UserFiles\Github\TangariaCoop\src\_SDL2VC\x64\SDL2_ttf.lib and object C:\UserFiles\Github\TangariaCoop\src\_SDL2VC\x64\SDL2_ttf.exp
+  SDL_ttf.vcxproj -> C:\UserFiles\Github\TangariaCoop\src\_SDL2VC\x64\SDL2_ttf.dll

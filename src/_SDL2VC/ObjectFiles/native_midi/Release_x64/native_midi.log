@@ -1,0 +1,5 @@
+﻿cl : command line warning D9002: ignoring unknown option '/arch:SSE'
+  native_midi_common.c
+  native_midi_win32.c
+  Generating Code...
+  native_midi.vcxproj -> C:\UserFiles\Github\TangeriaCoop\src\_SDL2VC\x64\native_midi.lib

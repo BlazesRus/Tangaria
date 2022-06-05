@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\UserFiles\Github\stb\</FILEPATH>
+      <FILENAME>stb_sprintf.h</FILENAME>
+      <LINE>1037</LINE>
+      <COLUMN>44</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>stbsp_vsprintfcb</FUNCTION>
+    <DECORATED>stbsp_vsprintfcb</DECORATED>
+    <FUNCLINE>349</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\UserFiles\Github\stb\</FILEPATH>
+      <FILENAME>stb_sprintf.h</FILENAME>
+      <LINE>1037</LINE>
+      <COLUMN>31</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '&lt;&lt;' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '&lt;&lt;' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>stbsp_vsprintfcb</FUNCTION>
+    <DECORATED>stbsp_vsprintfcb</DECORATED>
+    <FUNCLINE>349</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\UserFiles\Github\freetype\src\raster\</FILEPATH>
+      <FILENAME>ftraster.c</FILENAME>
+      <LINE>846</LINE>
+      <COLUMN>33</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>Finalize_Profile_Table</FUNCTION>
+    <DECORATED>Finalize_Profile_Table</DECORATED>
+    <FUNCLINE>815</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\UserFiles\Github\freetype\src\raster\</FILEPATH>
+      <FILENAME>ftraster.c</FILENAME>
+      <LINE>2198</LINE>
+      <COLUMN>30</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>Vertical_Sweep_Init</FUNCTION>
+    <DECORATED>Vertical_Sweep_Init</DECORATED>
+    <FUNCLINE>2192</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\UserFiles\Github\freetype\src\raster\</FILEPATH>
+      <FILENAME>ftraster.c</FILENAME>
+      <LINE>2501</LINE>
+      <COLUMN>45</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>Horizontal_Sweep_Span</FUNCTION>
+    <DECORATED>Horizontal_Sweep_Span</DECORATED>
+    <FUNCLINE>2466</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\UserFiles\Github\freetype\src\raster\</FILEPATH>
+      <FILENAME>ftraster.c</FILENAME>
+      <LINE>2523</LINE>
+      <COLUMN>45</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>Horizontal_Sweep_Span</FUNCTION>
+    <DECORATED>Horizontal_Sweep_Span</DECORATED>
+    <FUNCLINE>2466</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\UserFiles\Github\freetype\src\raster\</FILEPATH>
+      <FILENAME>ftraster.c</FILENAME>
+      <LINE>2628</LINE>
+      <COLUMN>45</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>Horizontal_Sweep_Drop</FUNCTION>
+    <DECORATED>Horizontal_Sweep_Drop</DECORATED>
+    <FUNCLINE>2538</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\UserFiles\Github\freetype\src\raster\</FILEPATH>
+      <FILENAME>ftraster.c</FILENAME>
+      <LINE>2646</LINE>
+      <COLUMN>44</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>Horizontal_Sweep_Drop</FUNCTION>
+    <DECORATED>Horizontal_Sweep_Drop</DECORATED>
+    <FUNCLINE>2538</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\UserFiles\Github\freetype\src\raster\</FILEPATH>
+      <FILENAME>ftraster.c</FILENAME>
+      <LINE>3111</LINE>
+      <COLUMN>51</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>Render_Glyph</FUNCTION>
+    <DECORATED>Render_Glyph</DECORATED>
+    <FUNCLINE>3078</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\UserFiles\Github\freetype\src\raster\</FILEPATH>
+      <FILENAME>ftraster.c</FILENAME>
+      <LINE>3273</LINE>
+      <COLUMN>28</COLUMN>
+    </SFA>
+    <DEFECTCODE>6201</DEFECTCODE>
+    <DESCRIPTION>Index '1' is out of valid index range '0' to '0' for possibly stack allocated buffer '&amp;buffer'.</DESCRIPTION>
+    <FUNCTION>ft_black_render</FUNCTION>
+    <DECORATED>ft_black_render</DECORATED>
+    <FUNCLINE>3224</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\UserFiles\Github\freetype\src\raster\</FILEPATH>
+      <FILENAME>ftraster.c</FILENAME>
+      <LINE>3224</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>6262</DEFECTCODE>
+    <DESCRIPTION>Function uses '16672' bytes of stack:  exceeds /analyze:stacksize '16384'.  Consider moving some data to heap.</DESCRIPTION>
+    <FUNCTION>ft_black_render</FUNCTION>
+    <DECORATED>ft_black_render</DECORATED>
+    <FUNCLINE>3224</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\UserFiles\Github\stb\</FILEPATH>
+      <FILENAME>stb_sprintf.h</FILENAME>
+      <LINE>1037</LINE>
+      <COLUMN>44</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>stbsp_vsprintfcb</FUNCTION>
+    <DECORATED>stbsp_vsprintfcb</DECORATED>
+    <FUNCLINE>349</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\UserFiles\Github\stb\</FILEPATH>
+      <FILENAME>stb_sprintf.h</FILENAME>
+      <LINE>1037</LINE>
+      <COLUMN>31</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '&lt;&lt;' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '&lt;&lt;' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>stbsp_vsprintfcb</FUNCTION>
+    <DECORATED>stbsp_vsprintfcb</DECORATED>
+    <FUNCLINE>349</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\UserFiles\Github\freetype\src\psnames\</FILEPATH>
+      <FILENAME>pstables.h</FILENAME>
+      <LINE>4164</LINE>
+      <COLUMN>42</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>ft_get_adobe_glyph_index</FUNCTION>
+    <DECORATED>ft_get_adobe_glyph_index</DECORATED>
+    <FUNCLINE>4143</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

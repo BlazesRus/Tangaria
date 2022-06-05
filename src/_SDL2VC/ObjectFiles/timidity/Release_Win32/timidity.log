@@ -1,0 +1,18 @@
+﻿  common.c
+C:\UserFiles\Github\SDL_mixer\src\codecs\timidity\common.c(11,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  instrum.c
+C:\UserFiles\Github\SDL_mixer\src\codecs\timidity\instrum.c(15,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  mix.c
+C:\UserFiles\Github\SDL_mixer\src\codecs\timidity\mix.c(10,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  output.c
+C:\UserFiles\Github\SDL_mixer\src\codecs\timidity\output.c(13,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  playmidi.c
+C:\UserFiles\Github\SDL_mixer\src\codecs\timidity\playmidi.c(11,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  readmidi.c
+C:\UserFiles\Github\SDL_mixer\src\codecs\timidity\readmidi.c(9,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  resample.c
+C:\UserFiles\Github\SDL_mixer\src\codecs\timidity\resample.c(12,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  tables.c
+C:\UserFiles\Github\SDL_mixer\src\codecs\timidity\tables.c(9,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  timidity.c
+C:\UserFiles\Github\SDL_mixer\src\codecs\timidity\timidity.c(9,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory

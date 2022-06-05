@@ -1,0 +1,4068 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/stb/stb_sprintf.h"
+                },
+                "region": {
+                  "startLine": 1037,
+                  "startColumn": 30,
+                  "endLine": 1037,
+                  "endColumn": 47
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "stbsp_vsprintfcb",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '<<' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '<<' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/stb/stb_sprintf.h"
+                },
+                "region": {
+                  "startLine": 1037,
+                  "startColumn": 30,
+                  "endLine": 1037,
+                  "endColumn": 41
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "stbsp_vsprintfcb",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/sfdriver.c"
+                },
+                "region": {
+                  "startLine": 318,
+                  "startColumn": 59,
+                  "endLine": 318,
+                  "endColumn": 69
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "murmur_hash_3_128",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/sfdriver.c"
+                },
+                "region": {
+                  "startLine": 369,
+                  "startColumn": 55,
+                  "endLine": 369,
+                  "endColumn": 65
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "murmur_hash_3_128",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/sfobjs.c"
+                },
+                "region": {
+                  "startLine": 689,
+                  "startColumn": 61,
+                  "endLine": 689,
+                  "endColumn": 72
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "sfnt_init_face",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttbdf.c"
+                },
+                "region": {
+                  "startLine": 105,
+                  "startColumn": 20,
+                  "endLine": 105,
+                  "endColumn": 28
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_load_bdf_props",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttbdf.c"
+                },
+                "region": {
+                  "startLine": 116,
+                  "startColumn": 19,
+                  "endLine": 116,
+                  "endColumn": 24
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_load_bdf_props",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttbdf.c"
+                },
+                "region": {
+                  "startLine": 163,
+                  "startColumn": 18,
+                  "endLine": 163,
+                  "endColumn": 22
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_find_bdf_prop",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttbdf.c"
+                },
+                "region": {
+                  "startLine": 186,
+                  "startColumn": 17,
+                  "endLine": 186,
+                  "endColumn": 22
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_find_bdf_prop",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 338,
+                  "startColumn": 26,
+                  "endLine": 338,
+                  "endColumn": 43
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap2_validate",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 338,
+                  "startColumn": 26,
+                  "endLine": 338,
+                  "endColumn": 37
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap2_validate",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 372,
+                  "startColumn": 39,
+                  "endLine": 372,
+                  "endColumn": 52
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap2_validate",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 378,
+                  "startColumn": 33,
+                  "endLine": 378,
+                  "endColumn": 46
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap2_validate",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 438,
+                  "startColumn": 15,
+                  "endLine": 438,
+                  "endColumn": 25
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap2_get_subheader",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 429,
+                  "startColumn": 14,
+                  "endLine": 429,
+                  "endColumn": 24
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap2_get_subheader",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 482,
+                  "startColumn": 15,
+                  "endLine": 482,
+                  "endColumn": 28
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap2_char_index",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 541,
+                  "startColumn": 20,
+                  "endLine": 541,
+                  "endColumn": 35
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap2_char_next",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 740,
+                  "startColumn": 36,
+                  "endLine": 740,
+                  "endColumn": 50
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_set_range",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 743,
+                  "startColumn": 25,
+                  "endLine": 743,
+                  "endColumn": 42
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_set_range",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 746,
+                  "startColumn": 25,
+                  "endLine": 746,
+                  "endColumn": 38
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_set_range",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 749,
+                  "startColumn": 16,
+                  "endLine": 749,
+                  "endColumn": 29
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_set_range",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 816,
+                  "startColumn": 34,
+                  "endLine": 816,
+                  "endColumn": 57
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_next",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 973,
+                  "startColumn": 32,
+                  "endLine": 973,
+                  "endColumn": 43
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_validate",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 974,
+                  "startColumn": 27,
+                  "endLine": 974,
+                  "endColumn": 38
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_validate",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 975,
+                  "startColumn": 27,
+                  "endLine": 975,
+                  "endColumn": 38
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_validate",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 976,
+                  "startColumn": 27,
+                  "endLine": 976,
+                  "endColumn": 38
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_validate",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 981,
+                  "startColumn": 20,
+                  "endLine": 981,
+                  "endColumn": 37
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_validate",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 1035,
+                  "startColumn": 24,
+                  "endLine": 1035,
+                  "endColumn": 44
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_validate",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 1035,
+                  "startColumn": 24,
+                  "endLine": 1035,
+                  "endColumn": 38
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_validate",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 1052,
+                  "startColumn": 24,
+                  "endLine": 1052,
+                  "endColumn": 44
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_validate",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 1052,
+                  "startColumn": 24,
+                  "endLine": 1052,
+                  "endColumn": 38
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_validate",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 1172,
+                  "startColumn": 16,
+                  "endLine": 1172,
+                  "endColumn": 48
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_char_map_linear",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 1268,
+                  "startColumn": 34,
+                  "endLine": 1268,
+                  "endColumn": 40
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_char_map_binary",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 1270,
+                  "startColumn": 16,
+                  "endLine": 1270,
+                  "endColumn": 20
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_char_map_binary",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 1316,
+                  "startColumn": 44,
+                  "endLine": 1316,
+                  "endColumn": 54
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_char_map_binary",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 1326,
+                  "startColumn": 22,
+                  "endLine": 1326,
+                  "endColumn": 26
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_char_map_binary",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 1342,
+                  "startColumn": 42,
+                  "endLine": 1342,
+                  "endColumn": 48
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_char_map_binary",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 1344,
+                  "startColumn": 24,
+                  "endLine": 1344,
+                  "endColumn": 28
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_char_map_binary",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 1360,
+                  "startColumn": 46,
+                  "endLine": 1360,
+                  "endColumn": 50
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_char_map_binary",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 1362,
+                  "startColumn": 28,
+                  "endLine": 1362,
+                  "endColumn": 32
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_char_map_binary",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 1392,
+                  "startColumn": 40,
+                  "endLine": 1392,
+                  "endColumn": 46
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_char_map_binary",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 1394,
+                  "startColumn": 22,
+                  "endLine": 1394,
+                  "endColumn": 26
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_char_map_binary",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 1410,
+                  "startColumn": 16,
+                  "endLine": 1410,
+                  "endColumn": 48
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap4_char_map_binary",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 1656,
+                  "startColumn": 12,
+                  "endLine": 1656,
+                  "endColumn": 16
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap6_char_index",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 1686,
+                  "startColumn": 11,
+                  "endLine": 1686,
+                  "endColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap6_char_next",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 2125,
+                  "startColumn": 16,
+                  "endLine": 2125,
+                  "endColumn": 20
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap10_char_index",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 2155,
+                  "startColumn": 11,
+                  "endLine": 2155,
+                  "endColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap10_char_next",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 2350,
+                  "startColumn": 41,
+                  "endLine": 2350,
+                  "endColumn": 46
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap12_next",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 2430,
+                  "startColumn": 31,
+                  "endLine": 2430,
+                  "endColumn": 36
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap12_char_map_binary",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 2698,
+                  "startColumn": 41,
+                  "endLine": 2698,
+                  "endColumn": 46
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap13_next",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 2761,
+                  "startColumn": 31,
+                  "endLine": 2761,
+                  "endColumn": 36
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap13_char_map_binary",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 3199,
+                  "startColumn": 33,
+                  "endLine": 3199,
+                  "endColumn": 37
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap14_char_map_def_binary",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 3233,
+                  "startColumn": 31,
+                  "endLine": 3233,
+                  "endColumn": 35
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap14_char_map_nondef_binary",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+                },
+                "region": {
+                  "startLine": 3266,
+                  "startColumn": 34,
+                  "endLine": 3266,
+                  "endColumn": 39
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_cmap14_find_variant",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcolr.c"
+                },
+                "region": {
+                  "startLine": 219,
+                  "startColumn": 1,
+                  "endLine": 219,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_load_colr",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcolr.c"
+                },
+                "region": {
+                  "startLine": 219,
+                  "startColumn": 1,
+                  "endLine": 219,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_load_colr",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcolr.c"
+                },
+                "region": {
+                  "startLine": 219,
+                  "startColumn": 1,
+                  "endLine": 219,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_load_colr",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcolr.c"
+                },
+                "region": {
+                  "startLine": 219,
+                  "startColumn": 1,
+                  "endLine": 219,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_load_colr",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcolr.c"
+                },
+                "region": {
+                  "startLine": 230,
+                  "startColumn": 11,
+                  "endLine": 230,
+                  "endColumn": 38
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_load_colr",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcolr.c"
+                },
+                "region": {
+                  "startLine": 294,
+                  "startColumn": 42,
+                  "endLine": 294,
+                  "endColumn": 48
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "find_base_glyph_record",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcolr.c"
+                },
+                "region": {
+                  "startLine": 473,
+                  "startColumn": 9,
+                  "endLine": 473,
+                  "endColumn": 43
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "read_paint",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcolr.c"
+                },
+                "region": {
+                  "startLine": 763,
+                  "startColumn": 44,
+                  "endLine": 763,
+                  "endColumn": 50
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "find_base_glyph_v1_record",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcolr.c"
+                },
+                "region": {
+                  "startLine": 883,
+                  "startColumn": 24,
+                  "endLine": 883,
+                  "endColumn": 38
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_get_color_glyph_clipbox",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcolr.c"
+                },
+                "region": {
+                  "startLine": 1002,
+                  "startColumn": 23,
+                  "endLine": 1002,
+                  "endColumn": 41
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_get_paint_layers",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcolr.c"
+                },
+                "region": {
+                  "startLine": 1008,
+                  "startColumn": 12,
+                  "endLine": 1008,
+                  "endColumn": 34
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_get_paint_layers",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcolr.c"
+                },
+                "region": {
+                  "startLine": 1049,
+                  "startColumn": 75
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_get_colorline_stops",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcolr.c"
+                },
+                "region": {
+                  "startLine": 1219,
+                  "startColumn": 13,
+                  "endLine": 1219,
+                  "endColumn": 45
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_colr_blend_layer",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcolr.c"
+                },
+                "region": {
+                  "startLine": 1220,
+                  "startColumn": 13,
+                  "endLine": 1220,
+                  "endColumn": 42
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_colr_blend_layer",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcolr.c"
+                },
+                "region": {
+                  "startLine": 1224,
+                  "startColumn": 11,
+                  "endLine": 1224,
+                  "endColumn": 11
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_colr_blend_layer",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcolr.c"
+                },
+                "region": {
+                  "startLine": 1286,
+                  "startColumn": 11,
+                  "endLine": 1286,
+                  "endColumn": 68
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_colr_blend_layer",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcolr.c"
+                },
+                "region": {
+                  "startLine": 1287,
+                  "startColumn": 11,
+                  "endLine": 1287,
+                  "endColumn": 49
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_colr_blend_layer",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcpal.c"
+                },
+                "region": {
+                  "startLine": 142,
+                  "startColumn": 12,
+                  "endLine": 142,
+                  "endColumn": 46
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_load_cpal",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcpal.c"
+                },
+                "region": {
+                  "startLine": 278,
+                  "startColumn": 41,
+                  "endLine": 278,
+                  "endColumn": 45
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_palette_set",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcpal.c"
+                },
+                "region": {
+                  "startLine": 285,
+                  "startColumn": 28,
+                  "endLine": 285,
+                  "endColumn": 41
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_palette_set",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsvg.c"
+                },
+                "region": {
+                  "startLine": 228,
+                  "startColumn": 43,
+                  "endLine": 228,
+                  "endColumn": 57
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "find_doc",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsvg.c"
+                },
+                "region": {
+                  "startLine": 229,
+                  "startColumn": 43,
+                  "endLine": 229,
+                  "endColumn": 55
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "find_doc",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsvg.c"
+                },
+                "region": {
+                  "startLine": 241,
+                  "startColumn": 44,
+                  "endLine": 241,
+                  "endColumn": 48
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "find_doc",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsvg.c"
+                },
+                "region": {
+                  "startLine": 247,
+                  "startColumn": 49,
+                  "endLine": 247,
+                  "endColumn": 63
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "find_doc",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsvg.c"
+                },
+                "region": {
+                  "startLine": 252,
+                  "startColumn": 47,
+                  "endLine": 252,
+                  "endColumn": 59
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "find_doc",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttkern.c"
+                },
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 29,
+                  "endLine": 123,
+                  "endColumn": 38
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_load_kern",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttkern.c"
+                },
+                "region": {
+                  "startLine": 234,
+                  "startColumn": 27,
+                  "endLine": 234,
+                  "endColumn": 36
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_get_kerning",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttkern.c"
+                },
+                "region": {
+                  "startLine": 253,
+                  "startColumn": 35,
+                  "endLine": 253,
+                  "endColumn": 39
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_get_kerning",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28182",
+          "message": {
+            "text": "Dereferencing NULL pointer. 'table->langTags' contains the same NULL value as 'entry' did. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                },
+                "region": {
+                  "startLine": 991,
+                  "startColumn": 75
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_load_name",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 834,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 835,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 836,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 836,
+                            "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 837,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 837,
+                            "startColumn": 34
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 838,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 839,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 840,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 842,
+                            "startColumn": 34
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 854,
+                            "startColumn": 34
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 869,
+                            "startColumn": 34
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 881,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 882,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 884,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 885,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 888,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 890,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 900,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 901,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 903,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 912,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 914,
+                            "startColumn": 55
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 918,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 921,
+                            "startColumn": 64
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 927,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 928,
+                            "startColumn": 21
+                          }
+                        },
+                        "message": {
+                          "text": "'entry' may be NULL"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 931,
+                            "startColumn": 23
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this loop, (assume 'entry<limit' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 948,
+                            "startColumn": 25
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 949,
+                            "startColumn": 25
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 952,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 954,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 958,
+                            "startColumn": 56
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '<branch condition>' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 964,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 965,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 966,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 969,
+                            "startColumn": 21
+                          }
+                        },
+                        "message": {
+                          "text": "Enter this loop, (assume 'count>0')"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 971,
+                            "startColumn": 14
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '<branch condition>' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 975,
+                            "startColumn": 34
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume 'entry->stringLength==0' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 979,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 980,
+                            "startColumn": 72
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '<branch condition>' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 989,
+                            "startColumn": 33
+                          }
+                        },
+                        "message": {
+                          "text": "Enter this branch, (assume '<branch condition>')"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+                          },
+                          "region": {
+                            "startLine": 991,
+                            "startColumn": 75
+                          }
+                        },
+                        "message": {
+                          "text": "'entry' is dereferenced, but may still be NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsbit.c"
+                },
+                "region": {
+                  "startLine": 410,
+                  "startColumn": 41,
+                  "endLine": 410,
+                  "endColumn": 45
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_load_strike_metrics",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsbit.c"
+                },
+                "region": {
+                  "startLine": 313,
+                  "startColumn": 41,
+                  "endLine": 313,
+                  "endColumn": 56
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_load_strike_metrics",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsbit.c"
+                },
+                "region": {
+                  "startLine": 526,
+                  "startColumn": 36,
+                  "endLine": 526,
+                  "endColumn": 41
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_sbit_decoder_init",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsbit.c"
+                },
+                "region": {
+                  "startLine": 741,
+                  "startColumn": 18,
+                  "endLine": 741,
+                  "endColumn": 43
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_sbit_decoder_load_byte_aligned",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsbit.c"
+                },
+                "region": {
+                  "startLine": 749,
+                  "startColumn": 14,
+                  "endLine": 749,
+                  "endColumn": 41
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_sbit_decoder_load_byte_aligned",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsbit.c"
+                },
+                "region": {
+                  "startLine": 749,
+                  "startColumn": 14,
+                  "endLine": 749,
+                  "endColumn": 22
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_sbit_decoder_load_byte_aligned",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsbit.c"
+                },
+                "region": {
+                  "startLine": 900,
+                  "startColumn": 14,
+                  "endLine": 900,
+                  "endColumn": 41
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_sbit_decoder_load_bit_aligned",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsbit.c"
+                },
+                "region": {
+                  "startLine": 900,
+                  "startColumn": 14,
+                  "endLine": 900,
+                  "endColumn": 22
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_sbit_decoder_load_bit_aligned",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsbit.c"
+                },
+                "region": {
+                  "startLine": 1001,
+                  "startColumn": 14,
+                  "endLine": 1001,
+                  "endColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_sbit_decoder_load_compound",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsbit.c"
+                },
+                "region": {
+                  "startLine": 1339,
+                  "startColumn": 12,
+                  "endLine": 1339,
+                  "endColumn": 32
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_sbit_decoder_load_image",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsbit.c"
+                },
+                "region": {
+                  "startLine": 1309,
+                  "startColumn": 12,
+                  "endLine": 1309,
+                  "endColumn": 32
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_sbit_decoder_load_image",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsbit.c"
+                },
+                "region": {
+                  "startLine": 1491,
+                  "startColumn": 32,
+                  "endLine": 1491,
+                  "endColumn": 36
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "tt_face_load_sbix_image",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.29.30142.1",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "commandLine": "C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x64\\c1.dll -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x0039C1B0 -il C:\\Users\\Blaze\\AppData\\Local\\Temp\\_CL_9f3ef8daast -typedil -f ..\\src\\sfnt\\sfnt.c -Ze -D_MSC_EXTENSIONS -Zp16 -pc \\:/ -D_MSC_VER=1929 -D_MSC_FULL_VER=192930142 -D_MSC_BUILD=1 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -I C:\\UserFiles\\Github\\stb\\ -I C:\\UserFiles\\Github\\freetype\\VCToOtherDir\\include -nologo -W 4 -diagnostics:column -GF -Og -Ot -Oy -Oi -DCODE_ANALYSIS -DSTB_SPRINTF_IMPLEMENTATION -DWIN32 -DNDEBUG -D_LIB -D_CRT_SECURE_NO_WARNINGS -DFT2_BUILD_LIBRARY -D_WINDLL -DDLL_EXPORT -D_MT -D_DLL -GS -D__AVX__ -D_NO_PREFETCHW -D_M_FP_PRECISE -std:c17 -FoC:\\UserFiles\\Github\\TangariaCoop\\src\\_SDL2VC\\ObjectFiles\\freetype\\Release_x64\\sfnt.obj -FdC:\\UserFiles\\Github\\TangariaCoop\\src\\_SDL2VC\\ObjectFiles\\freetype\\Release_x64\\vc142.pdb -external:W 4 -Gd -wd 4001 -analyze:projectdirectory C:\\UserFiles\\Github\\freetype\\VCToOtherDir -analyze:rulesetdirectory ;C:\\Compilers\\VisualStudioCommunity2019\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset C:\\Compilers\\VisualStudioCommunity2019\\Team Tools\\Static Analysis Tools\\Rule Sets\\AllRules.ruleset -analyze:quiet -analyze:plugin C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x86\\EspXEngine.dll -FC -errorreport:prompt -I C:\\UserFiles\\Github\\stb\\ -I C:\\UserFiles\\Github\\freetype\\include -I C:\\UserFiles\\Github\\freetype\\builds\\windows\\ -I C:\\UserFiles\\Github\\freetype\\VCToOtherDir\\%(IncludePath) -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\ucrt -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Auxiliary\\VS\\UnitTest\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -external:I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\include -external:I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -external:I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Auxiliary\\VS\\include -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Auxiliary\\VS\\include -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\ucrt -external:I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Auxiliary\\VS\\UnitTest\\include -I C:\\Compilers\\VisualStudioCommunity2019\\VC\\Auxiliary\\VS\\UnitTest\\include -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\um -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\shared -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\winrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22000.0\\cppwinrt -external:I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -MPdiagMutex 00000000000001B4",
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/UserFiles/Github/stb/stb_sprintf.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "350698c6fc537cd3939e3f119a5f9109"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/base/ftfstype.c"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "74a9da1ce60f2804c0308a9ef7cc6924"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/t1tables.h"
+          },
+          "hashes": {
+            "md5": "e1c153dba8d4f0643bc50a379125fefd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/freetype.h"
+          },
+          "hashes": {
+            "md5": "604960e4f9fadad40a0086f31010db4b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/ft2build.h"
+          },
+          "hashes": {
+            "md5": "3a9c993283e595ecc0152778138ebe99"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/ftheader.h"
+          },
+          "hashes": {
+            "md5": "994721dcd1316995d97ef7857dabfbc0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/ftconfig.h"
+          },
+          "hashes": {
+            "md5": "40167b149b9844ba27dc456fb22c2afe"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/ftoption.h"
+          },
+          "hashes": {
+            "md5": "7a102c94f668e7ec6a7b8fc1999ec18b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/ftstdlib.h"
+          },
+          "hashes": {
+            "md5": "6d78595e95df733bc273cee00c1367b0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/integer-types.h"
+          },
+          "hashes": {
+            "md5": "725479b24a09b223282e450767228e1b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/public-macros.h"
+          },
+          "hashes": {
+            "md5": "c24e0a19874656bfa6579f9808cd6387"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/config/mac-support.h"
+          },
+          "hashes": {
+            "md5": "e6dd79a7fc7d65149a0c712aec135241"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/fttypes.h"
+          },
+          "hashes": {
+            "md5": "9173819ff4431e6d16e8d0572d9aae16"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftsystem.h"
+          },
+          "hashes": {
+            "md5": "228495e24a0edd06974152fffe7330a6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftimage.h"
+          },
+          "hashes": {
+            "md5": "8c5ccba0bf81fb7610fa97f7d5c252e4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/fterrors.h"
+          },
+          "hashes": {
+            "md5": "b31ffe32f79b531d70679513df084bbf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftmoderr.h"
+          },
+          "hashes": {
+            "md5": "208e19e2621a304d01a5586b2e68b2c5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/fterrdef.h"
+          },
+          "hashes": {
+            "md5": "2f3eb20cc1cbb6090e46cb202f021da8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/tttables.h"
+          },
+          "hashes": {
+            "md5": "481c7deb586132d3708eb849057ef391"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftserv.h"
+          },
+          "hashes": {
+            "md5": "8d0a61ab56848016917abc6307b4c099"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/compiler-macros.h"
+          },
+          "hashes": {
+            "md5": "0262c6ad3b821da3052b78414a161659"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svpsinfo.h"
+          },
+          "hashes": {
+            "md5": "42978e01a8425e6c5e59cc5f7cf8d89c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/t1types.h"
+          },
+          "hashes": {
+            "md5": "0cc719c51f63e976141bd09743193361"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/pshints.h"
+          },
+          "hashes": {
+            "md5": "c07443cb2b65baaf04320606933e8180"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/fthash.h"
+          },
+          "hashes": {
+            "md5": "22bf450f253d114ec18910e975474d68"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svpscmap.h"
+          },
+          "hashes": {
+            "md5": "26adad968ad5cfbbeb280ccbee0315d0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftobjs.h"
+          },
+          "hashes": {
+            "md5": "d41dac64736fee21c78986f915e6e46c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftrender.h"
+          },
+          "hashes": {
+            "md5": "be84b3ddecbcdefab94372948d08b98d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftmodapi.h"
+          },
+          "hashes": {
+            "md5": "4892102eff8fa2469cf75a1d16bbbd6b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftglyph.h"
+          },
+          "hashes": {
+            "md5": "77e5cb533cde759c2cbeb5ead2a39598"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftsizes.h"
+          },
+          "hashes": {
+            "md5": "f45e95869c7aa15888e61c2c4c3be2a5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftlcdfil.h"
+          },
+          "hashes": {
+            "md5": "01a54a679687ba4b6550c17ffad2268c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftparams.h"
+          },
+          "hashes": {
+            "md5": "92ee0d17e4c75d77723e8ee89f706e58"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftmemory.h"
+          },
+          "hashes": {
+            "md5": "dbcef51dc968d441b311a6fdbfd47840"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftgloadr.h"
+          },
+          "hashes": {
+            "md5": "8341d1eb046f5a82f54b2e2cdce3dee5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftdrv.h"
+          },
+          "hashes": {
+            "md5": "14942b849a0fa3e707277117b415e615"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/autohint.h"
+          },
+          "hashes": {
+            "md5": "88c2a1dec90f722687f45976acb45384"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftcalc.h"
+          },
+          "hashes": {
+            "md5": "e2023efe2eab189fefcaa3c4e51eb6fb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftincrem.h"
+          },
+          "hashes": {
+            "md5": "31cd7ddbb7b27745b706a67992f0a9bf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/sfdriver.c"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "42f0f074bad7767d046e43995ad80448"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/sfobjs.c"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "66ab6647210970e4a046ebb4f62e3005"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttbdf.c"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "9ed005fb077428bcee9f6c3e51234657"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcmap.c"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "b00051871fb34821c8f25476ce025f3c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcolr.c"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "daa72fae07d1c14ce176129ae16d1923"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttcpal.c"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "589c9b0bcdd57c6a1830acebf6c37aa0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsvg.c"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "a64e7a4fb2f263d013a2b093a962768c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttkern.c"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "daddc1e17d782d95358ecb556fed6194"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttload.c"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "65393b76bb9045bc8c248b74a45f237a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/UserFiles/Github/freetype/src/sfnt/ttsbit.c"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "31dd7dea5d47526e1dd73259d3e7e087"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/sfnt.c"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "82798b660020affc043ce95ca0154ba8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/pngshim.c"
+          },
+          "hashes": {
+            "md5": "c4a988b24c66d8f8ddb74218b8a03bea"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftdebug.h"
+          },
+          "hashes": {
+            "md5": "e1bbdef55ca7ce316e12bcb668dea294"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftstream.h"
+          },
+          "hashes": {
+            "md5": "e1cbe36dbb23eb939e498174b334feff"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/tttags.h"
+          },
+          "hashes": {
+            "md5": "a157ab9f96a267fbf7a5e1e2d67f3aef"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/sfnt.h"
+          },
+          "hashes": {
+            "md5": "3d3f08c1445e5cc27528a9f5c63b1874"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/tttypes.h"
+          },
+          "hashes": {
+            "md5": "824e746868796cc149a8dde5a1116707"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftcolor.h"
+          },
+          "hashes": {
+            "md5": "56b1233f83dc96701fe52b817f9a8ae4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftmm.h"
+          },
+          "hashes": {
+            "md5": "66d490c36d9e90f6bc9da614617add3d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/wofftypes.h"
+          },
+          "hashes": {
+            "md5": "d37efb0e50683d092219baf78e26779e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ttnameid.h"
+          },
+          "hashes": {
+            "md5": "9a67b1a8cdd45a98137f50f7ba9010de"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/sfdriver.h"
+          },
+          "hashes": {
+            "md5": "0f6ed8ed4bf5aec95eeb17f60b58f874"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/ttload.h"
+          },
+          "hashes": {
+            "md5": "beb05794c15438de1a73603de4b38852"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/sfobjs.h"
+          },
+          "hashes": {
+            "md5": "183a8522fee9aa6590b4bdc2bcc7e5c3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/sferrors.h"
+          },
+          "hashes": {
+            "md5": "4eba350a63217db39c6ccc4e41a7c95d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/ttsbit.h"
+          },
+          "hashes": {
+            "md5": "73f9745203b175b445bd92c649b92437"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/ttcolr.h"
+          },
+          "hashes": {
+            "md5": "25504067ea6213bb427eef2b34c9e1e6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/ttcpal.h"
+          },
+          "hashes": {
+            "md5": "7c08d9919cba2f51d68d23871dc935a2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/ttsvg.h"
+          },
+          "hashes": {
+            "md5": "88440ece1624cfd1b453834a2e53c5ea"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/ttpost.h"
+          },
+          "hashes": {
+            "md5": "ec0b1156963f5021ed03ee6cc9f122e9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/ttbdf.h"
+          },
+          "hashes": {
+            "md5": "b92d6094a97d5cb9b97fe0ee0f953f92"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftbdf.h"
+          },
+          "hashes": {
+            "md5": "e6b5fbdfbcbbcf2596bc803889c8efbd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svbdf.h"
+          },
+          "hashes": {
+            "md5": "a2ddd481a0176b501adec9b11c1e483f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/ttcmap.h"
+          },
+          "hashes": {
+            "md5": "759b3535006648065f6c12e431d957f3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftvalid.h"
+          },
+          "hashes": {
+            "md5": "0cf3f382c0c4ecde351fb1e125a63d24"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svttcmap.h"
+          },
+          "hashes": {
+            "md5": "9e1ebcb6d043e8dc39860c5bb399099b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/ttcmapc.h"
+          },
+          "hashes": {
+            "md5": "19f7f7067bb3646b93de77d33de646c7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/ttkern.h"
+          },
+          "hashes": {
+            "md5": "7db2738360bfbdd207b6e4b8bb014091"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/ttmtx.h"
+          },
+          "hashes": {
+            "md5": "107e3e4528ec4dc7d5f4c3c62ea87928"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svgldict.h"
+          },
+          "hashes": {
+            "md5": "dc2127d85a77ea298172e3f81bc37ade"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svpostnm.h"
+          },
+          "hashes": {
+            "md5": "36c61a6c8e33fe85ff5fe6f1ed95af63"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svsfnt.h"
+          },
+          "hashes": {
+            "md5": "1b010e21f953768b5b321fd0692f944f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svmm.h"
+          },
+          "hashes": {
+            "md5": "64a4cc3e9bcadbd3bbc1419eb6118773"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/ftmmtypes.h"
+          },
+          "hashes": {
+            "md5": "a7c90372da20897cf5f385d58a48197a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/sfwoff.h"
+          },
+          "hashes": {
+            "md5": "6b354350d35d74ec3ff7cd9feb4b4448"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/sfwoff2.h"
+          },
+          "hashes": {
+            "md5": "45d303f4136b2829d56ae61f42411e0c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftsnames.h"
+          },
+          "hashes": {
+            "md5": "317177e37ee1b3d805f73bcab6fcb204"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/internal/services/svmetric.h"
+          },
+          "hashes": {
+            "md5": "17794731a0a1755fbaf64c14175024b8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/sfwoff.c"
+          },
+          "hashes": {
+            "md5": "b736d67bba5b915eef502b51520608bb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftgzip.h"
+          },
+          "hashes": {
+            "md5": "86b7ec932bddd7659271aa9925f79f67"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/sfwoff2.c"
+          },
+          "hashes": {
+            "md5": "7ade83f56e7ab54d3db4828a53f77fce"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/woff2tags.h"
+          },
+          "hashes": {
+            "md5": "59ce1373fa7a7485e8748ca064c9fc1f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/otsvg.h"
+          },
+          "hashes": {
+            "md5": "3ad6b12210be5fddb14af7609ac2f5f5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/ttmtx.c"
+          },
+          "hashes": {
+            "md5": "97150d83db067327f521a9460220d3be"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/ttpost.c"
+          },
+          "hashes": {
+            "md5": "0020ddec74666517a2db16b0803a1c98"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/include/freetype/ftbitmap.h"
+          },
+          "hashes": {
+            "md5": "dda1322d8e550ff190dd373271a97a9d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/pngshim.h"
+          },
+          "hashes": {
+            "md5": "af361003017648aede39e5898ba15686"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/userfiles/github/freetype/src/sfnt/woff2tags.c"
+          },
+          "hashes": {
+            "md5": "17dee0042cefb97ef6f56ca0a0dce72c"
+          }
+        }
+      ]
+    }
+  ]
+}

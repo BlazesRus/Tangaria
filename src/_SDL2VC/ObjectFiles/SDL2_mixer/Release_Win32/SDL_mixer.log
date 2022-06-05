@@ -1,0 +1,19 @@
+﻿  load_aiff.c
+  load_voc.c
+  mp3utils.c
+  music_drflac.c
+  music_drmp3.c
+  music_mad.c
+c1 : fatal error C1083: Cannot open source file: '..\src\codecs\music_mad.c': No such file or directory
+  music_modplug.c
+  music_nativemidi.c
+  music_ogg_stb.c
+  music_opus.c
+  music_timidity.c
+  music_wav.c
+  effect_position.c
+  effect_stereoreverse.c
+  effects_internal.c
+  mixer.c
+  music.c
+  Generating Code...

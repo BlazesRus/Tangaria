@@ -4178,6 +4178,11 @@ bool effect_handler_MON_TIMED_INC(effect_handler_context_t *context)
 bool effect_handler_NOURISH(effect_handler_context_t *context)
 {
     int amount = effect_calculate_value(context, false);
+    int special_race = 0; // some races has special behaviour
+
+    if (streq(context->origin->player->race->name, "Ent") ||
+        streq(context->origin->player->race->name, "Vempire"))
+        special_race = 1;
 
     if (context->self_msg && !player_undead(context->origin->player))
         msg(context->origin->player, context->self_msg);
@@ -4185,24 +4190,32 @@ bool effect_handler_NOURISH(effect_handler_context_t *context)
     amount *= z_info->food_value;
 
     /* Increase food level by amount */
-    if ((context->subtype == 0) && !streq(context->origin->player->race->name, "Ent"))
+    if (context->subtype == 0 && !special_race)
         player_inc_timed(context->origin->player, TMD_FOOD, MAX(amount, 0), false, false);
 
     /* Decrease food level by amount */
     else if (context->subtype == 1)
+    {
+        if (special_race)
+            amount /= 2;
         player_dec_timed(context->origin->player, TMD_FOOD, MAX(amount, 0), false);
-
+    }
     /* Set food level to amount, vomiting if necessary */
     else if (context->subtype == 2)
     {
         bool message = (context->origin->player->timed[TMD_FOOD] > amount);
 
+        // for special races - don't harm them (eg by traps) too much
+        if (special_race && (context->origin->player->timed[TMD_FOOD] < amount))
+            player_dec_timed(context->origin->player, TMD_FOOD, 1000, false);
+        else
+            player_set_timed(context->origin->player, TMD_FOOD, MAX(amount, 0), false);
+
         if (message) msg(context->origin->player, "You vomit!");
-        player_set_timed(context->origin->player, TMD_FOOD, MAX(amount, 0), false);
     }
 
     /* Increase food level to amount if needed */
-    else if ((context->subtype == 3) && (context->origin->player->timed[TMD_FOOD] < amount))
+    else if ((context->subtype == 3) && (context->origin->player->timed[TMD_FOOD] < amount) && !special_race)
         player_set_timed(context->origin->player, TMD_FOOD, MAX(amount + 1, 0), false);
 
     context->ident = true;

@@ -1,6 +1,7 @@
 /*
  * File: ui-event.h
  * Purpose: Generic input event handling
+ * Copyright (c) 2011 Andi Sidwell
  */
 
 #ifndef INCLUDED_UI_EVENT_H
@@ -28,6 +29,10 @@ typedef enum
     EVT_ABORT       = 0x0400,   /* Abort */
     EVT_ERROR       = 0x0800,   /* Error */
     EVT_DELAY       = 0x1000    /* Excessive delay */
+#ifndef DisableMouseEvents//From Angband
+    ,EVT_MOUSE	= 0x0002,   /* Mousepress */
+    EVT_BUTTON	= 0x0008   /* Button press */
+#endif
 
 } ui_event_type;
 
@@ -69,6 +74,8 @@ typedef enum
  * inclusive, then you should take 0x40 from the keycode and leave
  * KC_MOD_CONTROL unset.  Otherwise, leave the keycode alone and set
  * KC_MOD_CONTROL in mods.
+ *
+ * This macro returns true in the former case and false in the latter.
  */
 #define ENCODE_KTRL(v) \
     ((((v) >= 0x40) && ((v) <= 0x5F))? true: false)
@@ -144,12 +151,37 @@ struct keypress
     uint8_t mods;
 };
 
+/**
+ * Null keypress constant, for safe initialization.
+ */
+static struct keypress const KEYPRESS_NULL = {
+	.type = EVT_NONE,
+	.code = 0,
+	.mods = 0
+};
+
+#ifndef DisableMouseEvents//From Angband
+/**
+ * Struct holding all relevant info for mouse clicks.
+ */
+struct mouseclick {
+	ui_event_type type;
+	uint8_t x;
+	uint8_t y;
+	uint8_t button;
+	uint8_t mods;
+};
+#endif
+
 /*
  * Union type to hold information about any given event.
  */
 typedef union
 {
     ui_event_type type;
+#ifndef DisableMouseEvents//From Angband
+	struct mouseclick mouse;
+#endif
     struct keypress key;
 } ui_event;
 
@@ -189,6 +221,11 @@ extern keycode_t keycode_find_code(const char *str, size_t len);
  */
 extern const char *keycode_find_desc(keycode_t kc);
 
+/**
+ * Given a keycode, return whether it corresponds to a printable character.
+ */
+bool keycode_isprint(keycode_t kc);//From Angband
+
 /*
  * Convert a textual representation of keypresses into actual keypresses
  */
@@ -201,9 +238,19 @@ extern void keypress_to_text(char *buf, size_t len, const struct keypress *src,
     bool expand_backslash);
 
 /*
- * Convert a keypress into something the user can read (not designed to be used
- * internally)
+ * Convert a keypress into something the user can read
+ * (not designed to be used internally)
  */
 extern void keypress_to_readable(char *buf, size_t len, struct keypress src);
+
+extern bool char_matches_key(wchar_t c, keycode_t key);//From Angband
+
+#ifndef DisableMouseEvents//From Angband
+bool event_is_key(ui_event e, keycode_t key);
+
+bool event_is_mouse(ui_event e, uint8_t button);
+
+bool event_is_mouse_m(ui_event e, uint8_t button, uint8_t mods);
+#endif
 
 #endif

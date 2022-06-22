@@ -272,9 +272,9 @@ struct keypress inkey(void)
     ui_event ke = EVENT_EMPTY;
 
     /* Only accept a keypress and mouse events(ignore abort) */
-#ifdef DisableMouseEvents//From Angband
+#ifdef DisableMouseEvents
     while (ke.type != EVT_KBRD)
-#else
+#else//From Angband
 	while (ke.type != EVT_ESCAPE && ke.type != EVT_KBRD &&
 		   ke.type != EVT_MOUSE && ke.type != EVT_BUTTON)
 #endif

@@ -97,6 +97,17 @@ const char *keycode_find_desc(keycode_t kc)
     return NULL;
 }
 
+/**
+ * Given a keycode, return whether it corresponds to a printable character.
+ */
+bool keycode_isprint(keycode_t kc)//From Angband
+{
+	/*
+	 * Exclude ESCAPE (not part of the Unicode standard).  Otherwise,
+	 * treat the keycode as a Unicode code point.
+	 */
+	return kc != ESCAPE && utf32_isprint(kc);
+}
 
 /*
  * Convert a hexidecimal-digit into a decimal
@@ -365,3 +376,45 @@ void keypress_to_readable(char *buf, size_t len, struct keypress src)
     /* Terminate */
     buf[end] = '\0';
 }
+
+/**
+ * Return whether the given display char matches an entered symbol
+ *
+ * Horrible hack. TODO UTF-8 find some way of entering mb chars
+ */
+bool char_matches_key(wchar_t c, keycode_t key)//From Angband
+{
+	wchar_t keychar[2];
+	char k[2] = {'\0', '\0'};
+
+	k[0] = (char)key;
+	text_mbstowcs(keychar, k, 1);
+	return (c == keychar[0]);
+}
+
+#ifndef DisableMouseEvents//From Angband
+/**
+ * Check if a UI event matches a certain keycode ('a', 'b', etc)
+ */
+bool event_is_key(ui_event e, keycode_t key)
+{
+	return e.type == EVT_KBRD && e.key.code == key;
+}
+
+/**
+ * Check if a UI event matches a certain mouse button (1, 2, 3)
+ */
+bool event_is_mouse(ui_event e, uint8_t button)
+{
+	return e.type == EVT_MOUSE && e.mouse.button == button;
+}
+
+/**
+ * Check if a UI event matches a certain mouse button (1, 2, 3) and has
+ * specific modifiers (KC_MOD_*)
+ */
+bool event_is_mouse_m(ui_event e, uint8_t button, uint8_t mods)
+{
+	return e.type == EVT_MOUSE && e.mouse.button == button && (e.mouse.mods & mods);
+}
+#endif

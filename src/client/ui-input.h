@@ -47,6 +47,11 @@ extern struct command_list cmds_all[MAX_COMMAND_LIST];
 typedef bool (*keypress_handler)(char *buf, size_t buflen, size_t *curs, size_t *len,
     struct keypress keypress, bool firsttime);
 
+#ifndef DisableMouseEvents//Based on int (*mouse_h)(char *, size_t, size_t *, size_t *, struct mouseclick, bool) from Angband argument 
+typedef bool (*mousepress_handler)(char* buf, size_t buflen, size_t* curs, size_t* len,
+    struct mouseclick mouseclick, bool firsttime);
+#endif
+
 extern struct keypress *inkey_next;
 extern bool first_escape;
 extern char inkey_scan;
@@ -79,6 +84,8 @@ int askfor_aux_mouse(char *buf, size_t buflen, size_t *curs, size_t *len,
 bool askfor_aux_ext(char *buf, size_t len,
 	bool (*keypress_h)(char *, size_t, size_t *, size_t *, struct keypress, bool),
 	int (*mouse_h)(char *, size_t, size_t *, size_t *, struct mouseclick, bool));
+void anykey(void);
+ui_event inkey_m(void);
 #endif
 
 extern int askfor_ex(char *buf, int len, keypress_handler keypress_h, bool priv);

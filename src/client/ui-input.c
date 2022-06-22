@@ -263,6 +263,20 @@ ui_event inkey_ex(void)
     return (ke);
 }
 
+#ifndef DisableMouseEvents//From Angband
+/**
+ * Get a keypress or mouse click from the user and ignore it.
+ */
+void anykey(void)
+{
+	ui_event ke = EVENT_EMPTY;
+  
+	/* Only accept a keypress or mouse click */
+	while (ke.type != EVT_MOUSE && ke.type != EVT_KBRD)
+		ke = inkey_ex();
+}
+#endif
+
 
 /*
  * Get a keypress from the user.
@@ -309,6 +323,31 @@ struct keypress inkey(void)
 
     return ke.key;
 }
+
+#ifndef DisableMouseEvents//From Angband
+/**
+ * Get a "keypress" or a "mousepress" from the user.
+ * on return the event must be either a key press or a mouse press
+ */
+ui_event inkey_m(void)
+{
+	ui_event ke = EVENT_EMPTY;
+
+	/* Only accept a keypress */
+	while (ke.type != EVT_ESCAPE && ke.type != EVT_KBRD	&&
+		   ke.type != EVT_MOUSE  && ke.type != EVT_BUTTON)
+		ke = inkey_ex();
+	if (ke.type == EVT_ESCAPE) {
+		ke.type = EVT_KBRD;
+		ke.key.code = ESCAPE;
+		ke.key.mods = 0;
+	} else if (ke.type == EVT_BUTTON) {
+		ke.type = EVT_KBRD;
+	}
+
+  return ke;
+}
+#endif
 
 
 void prt_icky(const char *str, int row, int col)
@@ -612,16 +651,15 @@ bool askfor_aux(char *buf, int len, keypress_handler keypress_h)
  * handled.  The sixth argument is whether or not this is the first call to the
  * keypress handler or mouse handler in this editing session.
  */
-bool askfor_aux_ext(char *buf, size_t len,
-	bool (*keypress_h)(char *, size_t, size_t *, size_t *, struct keypress, bool),
-	int (*mouse_h)(char *, size_t, size_t *, size_t *, struct mouseclick, bool))
+bool askfor_aux_ext(char *buf, int len, keypress_handler keypress_h,
+    mousepress_handler mouse_h)
 {
     int y, x;
     size_t k = 0;   /* Cursor position */
     size_t nul = 0; /* Position of the null byte in the string */
     bool done = false;
     bool firsttime = true;
-    ui_event input;
+    bool accepted = true;
 
     if (keypress_h == NULL)
         keypress_h = askfor_aux_keypress;
@@ -653,53 +691,53 @@ bool askfor_aux_ext(char *buf, size_t len,
     Term_erase(x, y, len);
     Term_putstr(x, y, -1, COLOUR_YELLOW, buf);
 
+    ui_event input;
+
     /* Process input */
     while (!done)
     {
         /* Place cursor */
         Term_gotoxy(x + k, y);
 
-		/*
-		 * Get input.  Emulate what inkey() does without the coercing
-		 * mouse events to look like keystrokes.
-		 */
-		while (1) {
-			input = inkey_ex();
-			if (input.type == EVT_KBRD || input.type == EVT_MOUSE) {
-				break;
-			}
-			if (input.type == EVT_BUTTON) {
-				input.type = EVT_KBRD;
-				break;
-			}
-			if (input.type == EVT_ESCAPE) {
-				input.type = EVT_KBRD;
-				input.key.code = ESCAPE;
-				input.key.mods = 0;
-				break;
-			}
-		}
+        //Get input.  Emulate what inkey() does without the coercing mouse events to look like keystrokes.
+        while (1) {
+            input = inkey_ex();
+            if (input.type == EVT_KBRD || input.type == EVT_MOUSE) {
+                break;
+            }
+            if (input.type == EVT_BUTTON) {
+                input.type = EVT_KBRD;
+                break;
+            }
+            if (input.type == EVT_ESCAPE) {
+                input.type = EVT_KBRD;
+                input.key.code = ESCAPE;
+                input.key.mods = 0;
+                break;
+            }
+        }
 
-		/* Pass on to the appropriate handler. */
-		if (input.type == EVT_KBRD) {
+        if (input.type == EVT_KBRD)
+        {
             /* Evil hack -- pretend quote is Return */
-            if (prompt_quote_hack && (input.code == '"')) input.code = KC_ENTER;
-            /* Let the keypress handler deal with the keypress */
-			done = keypress_h(buf, len, &k, &nul, input.key,
-				firsttime);
-			accepted = (input.key.code != ESCAPE);
-		} else if (input.type == EVT_MOUSE) {
-			int result = mouse_h(buf, len, &k, &nul, in.mouse,
-				firsttime);
+            if (prompt_quote_hack && (input.key.code == '"')) input.key.code = KC_ENTER;
 
-			if (result != 0) {
-				done = true;
-				accepted = (result == 1);
-			}
-		}
+            /* Let the keypress handler deal with the keypress */
+            done = keypress_h(buf, len, &k, &nul, input.key, firsttime);
+
+            accepted = (input.key.code != ESCAPE);
+        } else if (input.type == EVT_MOUSE) {
+            int result = mouse_h(buf, len, &k, &nul, input.mouse,
+                firsttime);
+
+            if (result != 0) {
+                done = true;
+                accepted = (result == 1);
+            }
+        }
 
         /* Update the entry */
-        Term_erase(x, y, len);
+        Term_erase(x, y, (int)len);
         Term_putstr(x, y, -1, COLOUR_WHITE, buf);
 
         /* Not the first time round anymore */
@@ -714,7 +752,7 @@ bool askfor_aux_ext(char *buf, size_t len,
     prompt_quote_hack = false;
 
     /* Done */
-    return (input.code != ESCAPE);
+    return accepted;
 }
 #endif
 
@@ -824,7 +862,7 @@ static bool textui_get_string(const char *prompt, char *buf, int len)
 #ifdef DisableMouseEvents
     res = askfor_aux(buf, len, NULL);
 #else
-    res = askfor_aux_ext(buf, buflen, get_name_keypress, handle_name_mouse);
+    res = askfor_aux_ext(buf, len, NULL, NULL);
 #endif
 
     /* Clear prompt */
@@ -974,7 +1012,11 @@ static bool textui_get_check(const char *prompt)
     prt(buf, 0, 0);
 
     /* Get an acceptable answer */
+#ifdef DisableMouseEvents
     ke = inkey();
+#else//From Angband
+    ke = inkey_m();
+#endif
 
     /* Erase the prompt */
     prt("", 0, 0);
@@ -1128,7 +1170,11 @@ static bool textui_get_com_ex(const char *prompt, ui_event *command)
     prt(prompt, 0, 0);
 
     /* Get a key */
+#ifdef DisableMouseEvents
     ke = inkey_ex();
+#else
+	ke = inkey_m();
+#endif
 
     /* Clear the prompt */
     prt("", 0, 0);
@@ -1143,8 +1189,16 @@ static bool textui_get_com_ex(const char *prompt, ui_event *command)
     Flush_queue();
 
     /* Done */
+#ifdef DisableMouseEvents
     if ((ke.type == EVT_KBRD) && (ke.key.code == ESCAPE)) return false;
     return true;
+#else//From Angband
+	if ((ke.type == EVT_KBRD && ke.key.code != ESCAPE) ||
+		(ke.type == EVT_MOUSE))
+		return true;
+	else
+		return false;
+#endif
 }
 
 

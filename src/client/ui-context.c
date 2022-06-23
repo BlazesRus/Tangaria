@@ -34,6 +34,25 @@ enum context_menu_object_value_e
 {
     MENU_VALUE_INSPECT = CMD_MAX,
     MENU_VALUE_DROP_ALL
+#if !defined(DisableMouseEvents)&&defined(ENABLEFeatureExtraContextMenus)
+	MENU_VALUE_LOOK,
+    MENU_VALUE_SELECTCURRENTABILITY,//Use for selecting ability to use for casting on target
+	//MENU_VALUE_RECALL,
+	//MENU_VALUE_REST,
+	//MENU_VALUE_INVENTORY,
+	//MENU_VALUE_CENTER_MAP,
+	//MENU_VALUE_FLOOR,
+	//MENU_VALUE_CHARACTER,
+	//MENU_VALUE_OTHER,
+	//MENU_VALUE_KNOWLEDGE,
+	//MENU_VALUE_MAP,
+	//MENU_VALUE_MESSAGES,
+	//MENU_VALUE_OBJECTS,
+	//MENU_VALUE_MONSTERS,
+	//MENU_VALUE_TOGGLE_IGNORED,
+	//MENU_VALUE_OPTIONS,
+	//MENU_VALUE_HELP,
+#endif
 };
 
 
@@ -139,6 +158,403 @@ static bool object_is_carried(const struct object *obj)
     return false;
 }
 
+#if !defined(DisableMouseEvents)&&defined(ENABLEFeatureExtraContextMenus)
+int context_menu_player(int mx, int my)
+{//Editing to only enable partial context menu options(when user right clicks?)
+	struct menu *m;
+	int selected;
+	char *labels;
+	bool allowed = true;
+	int mode = OPT(player, rogue_like_commands) ? KEYMAP_MODE_ROGUE : KEYMAP_MODE_ORIG;
+	unsigned char cmdkey;
+	struct object *obj;
+
+	m = menu_dynamic_new();
+	if (!m) {
+		return 0;
+	}
+
+	labels = string_make(lower_case);
+	m->selections = labels;
+
+	ADD_LABEL("Use", CMD_USE, MN_ROW_VALID);
+
+	/* if player can cast, add casting option */
+	if (player_can_cast(player, false)) {
+		ADD_LABEL("Cast", CMD_CAST, MN_ROW_VALID);
+	}
+
+	/* if player is on stairs add option to use them */
+	if (square_isupstairs(cave, player->grid)) {
+		ADD_LABEL("Go Up", CMD_GO_UP, MN_ROW_VALID);
+	}
+	else if (square_isdownstairs(cave, player->grid)) {
+		ADD_LABEL("Go Down", CMD_GO_DOWN, MN_ROW_VALID);
+	}
+
+	/* Looking has different keys, but we don't have a way to look them up
+	 * (see ui-game.c). */
+	cmdkey = (mode == KEYMAP_MODE_ORIG) ? 'l' : 'x';
+	menu_dynamic_add_label(m, "Look", cmdkey, MENU_VALUE_LOOK, labels);
+
+	///* 'R' is used for resting in both keymaps. */
+	//menu_dynamic_add_label(m, "Rest", 'R', MENU_VALUE_REST, labels);
+
+	/* 'i' is used for inventory in both keymaps. */
+	menu_dynamic_add_label(m, "Inventory", 'i', MENU_VALUE_INVENTORY, labels);
+
+	/* if object under player add pickup option */
+	obj = square_object(cave, player->grid);
+	if (obj && !ignore_item_ok(player, obj)) {
+			menu_row_validity_t valid;
+
+			/* 'f' isn't in rogue keymap, so we can use it here. */
+  			menu_dynamic_add_label(m, "Floor", 'f', MENU_VALUE_FLOOR, labels);
+			valid = (inven_carry_okay(obj)) ? MN_ROW_VALID : MN_ROW_INVALID;
+			ADD_LABEL("Pick up", CMD_PICKUP, valid);
+	}
+
+	///* 'C' is used for the character sheet in both keymaps. */
+	//menu_dynamic_add_label(m, "Character", 'C', MENU_VALUE_CHARACTER, labels);
+
+	//if (!OPT(player, center_player)) {
+	//	menu_dynamic_add_label(m, "^Center Map", 'L', MENU_VALUE_CENTER_MAP,
+	//						   labels);
+	//}
+
+	menu_dynamic_add_label(m, "Other", ' ', MENU_VALUE_OTHER, labels);
+
+	/* Hack -- no flush needed */
+	msg_flag = false;
+	screen_save();
+
+	menu_dynamic_calc_location(m, mx, my);
+	region_erase_bordered(&m->boundary);
+
+	prt("(Enter to select, ESC) Command:", 0, 0);
+	selected = menu_dynamic_select(m);
+
+	menu_dynamic_free(m);
+	string_free(labels);
+
+	screen_load();
+
+	cmdkey = cmd_lookup_key(selected, mode);
+
+	/* Check the command to see if it is allowed. */
+	switch(selected) {
+		case -1:
+			/* User cancelled the menu. */
+			return 3;
+
+		case CMD_USE:
+		case CMD_CAST:
+		case CMD_GO_UP:
+		case CMD_GO_DOWN:
+		case CMD_PICKUP:
+			/* Only check for ^ inscriptions, since we don't have an object
+			 * selected (if we need one). */
+			allowed = key_confirm_command(cmdkey);
+			break;
+
+		//case MENU_VALUE_REST:
+		//	allowed = key_confirm_command('R');
+		//	break;
+
+		//case MENU_VALUE_INVENTORY:
+		case MENU_VALUE_LOOK:
+		//case MENU_VALUE_CHARACTER:
+		case MENU_VALUE_OTHER:
+		case MENU_VALUE_FLOOR:
+		//case MENU_VALUE_CENTER_MAP:
+			allowed = true;
+			break;
+
+		default:
+			/* Invalid command; prevent anything from happening. */
+			bell();
+			allowed = false;
+			break;
+	}
+
+	if (!allowed)
+		return 1;
+
+	/* Perform the command. */
+	switch(selected) {
+		case CMD_USE:
+		case CMD_CAST:
+			cmdkey = cmd_lookup_key(selected, mode);
+			Term_keypress(cmdkey, 0);
+			break;//Cast only saved spell instead
+
+		case CMD_GO_UP:
+		case CMD_GO_DOWN:
+		case CMD_PICKUP:
+			cmdq_push(selected);
+			break;
+
+		//case MENU_VALUE_REST:
+		//	Term_keypress('R', 0);
+		//	break;
+
+		//case MENU_VALUE_INVENTORY:
+		//	Term_keypress('i', 0);
+		//	break;
+
+		case MENU_VALUE_LOOK:
+			if (target_set_interactive(TARGET_LOOK, player->grid.x, player->grid.y))
+				msg("Target Selected.");
+			break;
+
+		//case MENU_VALUE_CHARACTER:
+		//	Term_keypress('C', 0);
+		//	break;
+
+		case MENU_VALUE_OTHER:
+			context_menu_player_2(mx, my);
+			break;
+
+		case MENU_VALUE_FLOOR:
+			context_menu_player_display_floor();
+			break;
+
+		//case MENU_VALUE_CENTER_MAP:
+		//	do_cmd_center_map();
+		//	break;
+
+		default:
+			break;
+	}
+
+	return 1;
+}
+
+int context_menu_cave(struct chunk *c, int y, int x, int adjacent, int mx,
+					  int my)
+{
+	struct menu *m;
+	int selected;
+	char *labels;
+	bool allowed = true;
+	int mode = OPT(player, rogue_like_commands) ? KEYMAP_MODE_ROGUE : KEYMAP_MODE_ORIG;
+	unsigned char cmdkey;
+	struct loc grid = loc(x, y);
+	struct object *square_obj = square_object(c, grid);
+
+	m = menu_dynamic_new();
+	if (!m)
+		return 0;
+
+	labels = string_make(lower_case);
+	m->selections = labels;
+
+	/* Looking has different keys, but we don't have a way to look them up
+	 * (see ui-game.c). */
+	cmdkey = (mode == KEYMAP_MODE_ORIG) ? 'l' : 'x';
+	menu_dynamic_add_label(m, "Look At", cmdkey, MENU_VALUE_LOOK, labels);
+
+	if (square(c, grid)->mon)
+		/* '/' is used for recall in both keymaps. */
+		menu_dynamic_add_label(m, "Recall Info", '/', MENU_VALUE_RECALL,
+							   labels);
+
+	ADD_LABEL("Use Item On", CMD_USE, MN_ROW_VALID);
+
+	if (player_can_cast(player, false))
+		ADD_LABEL("Cast On", CMD_CAST, MN_ROW_VALID);
+
+	if (adjacent) {
+		struct object *obj = chest_check(player, grid, CHEST_ANY);
+		ADD_LABEL((square(c, grid)->mon) ? "Attack" : "Alter", CMD_ALTER,
+				  MN_ROW_VALID);
+
+		if (obj && !ignore_item_ok(player, obj)) {
+			if (obj->known->pval) {
+				if (is_locked_chest(obj)) {
+					ADD_LABEL("Disarm Chest", CMD_DISARM, MN_ROW_VALID);
+					ADD_LABEL("Open Chest", CMD_OPEN, MN_ROW_VALID);
+				} else {
+					ADD_LABEL("Open Disarmed Chest", CMD_OPEN, MN_ROW_VALID);
+				}
+			} else {
+				ADD_LABEL("Open Chest", CMD_OPEN, MN_ROW_VALID);
+			}
+		}
+
+		if ((square(c, grid)->mon > 0) && player_has(player, PF_STEAL)) {
+			ADD_LABEL("Steal", CMD_STEAL, MN_ROW_VALID);
+		}
+
+		if (square_isdisarmabletrap(c, grid)) {
+			ADD_LABEL("Disarm", CMD_DISARM, MN_ROW_VALID);
+			ADD_LABEL("Jump Onto", CMD_JUMP, MN_ROW_VALID);
+		}
+
+		if (square_isopendoor(c, grid)) {
+			ADD_LABEL("Close", CMD_CLOSE, MN_ROW_VALID);
+		}
+		else if (square_iscloseddoor(c, grid)) {
+			ADD_LABEL("Open", CMD_OPEN, MN_ROW_VALID);
+			ADD_LABEL("Lock", CMD_DISARM, MN_ROW_VALID);
+		}
+		else if (square_isdiggable(c, grid)) {
+			ADD_LABEL("Tunnel", CMD_TUNNEL, MN_ROW_VALID);
+		}
+
+		ADD_LABEL("Walk Towards", CMD_WALK, MN_ROW_VALID);
+	} else {
+		/* ',' is used for ignore in rogue keymap, so we'll just swap letters */
+		cmdkey = (mode == KEYMAP_MODE_ORIG) ? ',' : '.';
+		menu_dynamic_add_label(m, "Pathfind To", cmdkey, CMD_PATHFIND, labels);
+
+		ADD_LABEL("Walk Towards", CMD_WALK, MN_ROW_VALID);
+		ADD_LABEL("Run Towards", CMD_RUN, MN_ROW_VALID);
+	}
+
+	if (player_can_fire(player, false)) {
+		ADD_LABEL("Fire On", CMD_FIRE, MN_ROW_VALID);
+	}
+
+	ADD_LABEL("Throw To", CMD_THROW, MN_ROW_VALID);
+
+	/* Hack -- no flush needed */
+	msg_flag = false;
+	screen_save();
+
+	menu_dynamic_calc_location(m, mx, my);
+	region_erase_bordered(&m->boundary);
+
+	if (player->timed[TMD_IMAGE]) {
+		prt("(Enter to select command, ESC to cancel) You see something strange:", 0, 0);
+	} else if (square(c, grid)->mon) {
+		char m_name[80];
+		struct monster *mon = square_monster(c, grid);
+
+		/* Get the monster name ("a kobold") */
+		monster_desc(m_name, sizeof(m_name), mon, MDESC_IND_VIS);
+
+		prt(format("(Enter to select command, ESC to cancel) You see %s:",
+				   m_name), 0, 0);
+	} else if (square_obj && !ignore_item_ok(player, square_obj)) {
+		char o_name[80];
+
+		/* Obtain an object description */
+		object_desc(o_name, sizeof (o_name), square_obj,
+			ODESC_PREFIX | ODESC_FULL, player);
+
+		prt(format("(Enter to select command, ESC to cancel) You see %s:",
+				   o_name), 0, 0);
+	} else {
+		/* Feature (apply mimic) */
+		const char *name = square_apparent_name(player->cave, grid);
+		const char *prefix = square_apparent_look_prefix(player->cave, grid);
+
+		prt(format("(Enter to select command, ESC to cancel) You see %s%s:", prefix, name), 0, 0);
+	}
+
+	selected = menu_dynamic_select(m);
+
+	menu_dynamic_free(m);
+	string_free(labels);
+
+	screen_load();
+
+	cmdkey = cmd_lookup_key(selected, mode);
+
+	/* Check the command to see if it is allowed. */
+	switch (selected) {
+		case -1:
+			/* User cancelled the menu. */
+			return 3;
+
+		case MENU_VALUE_LOOK:
+		case MENU_VALUE_RECALL:
+		case CMD_PATHFIND:
+			allowed = true;
+			break;
+
+		case CMD_ALTER:
+		case CMD_STEAL:
+		case CMD_DISARM:
+		case CMD_JUMP:
+		case CMD_CLOSE:
+		case CMD_OPEN:
+		case CMD_TUNNEL:
+		case CMD_WALK:
+		case CMD_RUN:
+		case CMD_CAST:
+		case CMD_FIRE:
+		case CMD_THROW:
+		case CMD_USE:
+			/* Only check for ^ inscriptions, since we don't have an object
+			 * selected (if we need one). */
+			allowed = key_confirm_command(cmdkey);
+			break;
+
+		default:
+			/* Invalid command; prevent anything from happening. */
+			bell();
+			allowed = false;
+			break;
+	}
+
+	if (!allowed)
+		return 1;
+
+	/* Perform the command. */
+	switch (selected) {
+		case MENU_VALUE_LOOK:
+			/* Look at the spot */
+			if (target_set_interactive(TARGET_LOOK, x, y)) {
+				msg("Target Selected.");
+			}
+			break;
+
+		case MENU_VALUE_RECALL: {
+			/* Recall monster Info */
+			struct monster *mon = square_monster(c, grid);
+			if (mon) {
+				struct monster_lore *lore = get_lore(mon->race);
+				lore_show_interactive(mon->race, lore);
+			}
+		}
+			break;
+
+		case CMD_PATHFIND:
+			cmdq_push(selected);
+			cmd_set_arg_point(cmdq_peek(), "point", loc(x, y));
+			break;
+
+		case CMD_ALTER:
+		case CMD_STEAL:
+		case CMD_DISARM:
+		case CMD_JUMP:
+		case CMD_CLOSE:
+		case CMD_OPEN:
+		case CMD_TUNNEL:
+		case CMD_WALK:
+		case CMD_RUN:
+			cmdq_push(selected);
+			cmd_set_arg_direction(cmdq_peek(), "direction",
+								  motion_dir(player->grid, loc(x, y)));
+			break;
+
+		case CMD_CAST:
+		case CMD_FIRE:
+		case CMD_THROW:
+		case CMD_USE:
+			cmdq_push(selected);
+			cmd_set_arg_target(cmdq_peek(), "target", DIR_TARGET);
+			break;
+
+		default:
+			break;
+	}
+
+	return 1;
+}
+#endif
 
 /*
  * Pick the context menu options appropriate for the item
@@ -389,6 +805,128 @@ int context_menu_object(struct object *obj)
     return 1;
 }
 
+#ifndef DisableMouseEvents
+/**
+ * Handle a textui mouseclick.
+ */
+void textui_process_click(ui_event e)
+{
+	int x, y;
+
+	if (!OPT(player, mouse_movement)) return;
+
+	y = KEY_GRID_Y(e);
+	x = KEY_GRID_X(e);
+
+	/* Check for a valid location */
+	if (!square_in_bounds_fully(cave, loc(x, y))) return;
+
+	/* XXX show context menu here */
+	if (loc_eq(player->grid, loc(x, y))) {
+		if (e.mouse.mods & KC_MOD_SHIFT) {
+			/* shift-click - cast magic */
+			if (e.mouse.button == 1) {
+				cmdq_push(CMD_CAST);
+			} else if (e.mouse.button == 2) {
+				Term_keypress('i',0);
+			}
+		} else if (e.mouse.mods & KC_MOD_CONTROL) {
+			/* ctrl-click - use feature / use inventory item */
+			/* switch with default */
+			if (e.mouse.button == 1) {
+				if (square_isupstairs(cave, player->grid))
+					cmdq_push(CMD_GO_UP);
+				else if (square_isdownstairs(cave, player->grid))
+					cmdq_push(CMD_GO_DOWN);
+			} else if (e.mouse.button == 2) {
+				cmdq_push(CMD_USE);
+			}
+		} else if (e.mouse.mods & KC_MOD_ALT) {
+			/* alt-click - show char screen */
+			/* XXX call a platform specific hook */
+			if (e.mouse.button == 1) {
+				Term_keypress('C',0);
+			}
+		} else {
+			if (e.mouse.button == 1) {
+				if (square_object(cave, loc(x, y))) {
+					cmdq_push(CMD_PICKUP);
+				} else {
+					cmdq_push(CMD_HOLD);
+				}
+			} else if (e.mouse.button == 2) {
+				/* Show a context menu */
+				context_menu_player(e.mouse.x, e.mouse.y);
+			}
+		}
+	} else if (e.mouse.button == 1) {
+		if (player->timed[TMD_CONFUSED]) {
+			cmdq_push(CMD_WALK);
+		} else {
+			if (e.mouse.mods & KC_MOD_SHIFT) {
+				/* shift-click - run */
+				cmdq_push(CMD_RUN);
+				cmd_set_arg_direction(cmdq_peek(), "direction",
+									  motion_dir(player->grid, loc(x, y)));
+			} else if (e.mouse.mods & KC_MOD_CONTROL) {
+				/* control-click - alter */
+				cmdq_push(CMD_ALTER);
+				cmd_set_arg_direction(cmdq_peek(), "direction",
+									  motion_dir(player->grid, loc(x, y)));
+			} else if (e.mouse.mods & KC_MOD_ALT) {
+				/* alt-click - look */
+				if (target_set_interactive(TARGET_LOOK, x, y)) {
+					msg("Target Selected.");
+				}
+			} else {
+				/* Pathfind does not work well on trap detection borders,
+				 * so if the click is next to the player, force a walk step */
+				if ((y - player->grid.y >= -1) && (y - player->grid.y <= 1)	&&
+					(x - player->grid.x >= -1) && (x - player->grid.x <= 1)) {
+					cmdq_push(CMD_WALK);
+					cmd_set_arg_direction(cmdq_peek(), "direction",
+										  motion_dir(player->grid, loc(x, y)));
+				} else {
+					cmdq_push(CMD_PATHFIND);
+					cmd_set_arg_point(cmdq_peek(), "point", loc(x, y));
+				}
+			}
+		}
+	} else if (e.mouse.button == 2) {
+		struct monster *m = square_monster(cave, loc(x, y));
+		if (m && target_able(m)) {
+			/* Set up target information */
+			monster_race_track(player->upkeep, m->race);
+			health_track(player->upkeep, m);
+			target_set_monster(m);
+		} else {
+			target_set_location(y, x);
+		}
+
+		if (e.mouse.mods & KC_MOD_SHIFT) {
+			/* shift-click - cast spell at target */
+			cmdq_push(CMD_CAST);
+			cmd_set_arg_target(cmdq_peek(), "target", DIR_TARGET);
+		} else if (e.mouse.mods & KC_MOD_CONTROL) {
+			/* control-click - fire at target */
+			cmdq_push(CMD_USE);
+			cmd_set_arg_target(cmdq_peek(), "target", DIR_TARGET);
+		} else if (e.mouse.mods & KC_MOD_ALT) {
+			/* alt-click - throw at target */
+			cmdq_push(CMD_THROW);
+			cmd_set_arg_target(cmdq_peek(), "target", DIR_TARGET);
+		} else {
+			/* see if the click was adjacent to the player */
+			if ((y - player->grid.y >= -1) && (y - player->grid.y <= 1)	&&
+				(x - player->grid.x >= -1) && (x - player->grid.x <= 1)) {
+				context_menu_cave(cave,y,x,1,e.mouse.x, e.mouse.y);
+			} else {
+				context_menu_cave(cave,y,x,0,e.mouse.x, e.mouse.y);
+			}
+		}
+	}
+}
+#endif
 
 /*
  * Menu functions

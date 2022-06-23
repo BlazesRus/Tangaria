@@ -24,9 +24,12 @@
 #ifdef WINDOWS
 #  include "SDL.h"
 #  include "SDL_mixer.h"
-#else
+#elif SOUND_SDL
 #  include <SDL/SDL.h>
 #  include <SDL/SDL_mixer.h>
+#else//SOUND_SDL2
+#  include <SDL.h>
+#  include <SDL_mixer.h>
 #endif
 
 /* Supported file types */

@@ -53,4 +53,12 @@ OP(disturb_nomove, "Nonmoving monsters disturb running", ADVANCED, true, true)
 OP(disturb_effect_end, "Disturb when effects end", ADVANCED, true, true)
 OP(confirm_recall, "Confirm recall out of non-reentrable dungeons", ADVANCED, true, true)
 OP(hide_slaves, "Hide controlled monsters in monster lists", ADVANCED, false, true)
-
+//From Angband
+#ifndef DisableMouseEvents
+OP(mouse_movement, "Allow mouse clicks to move the player", INTERFACE, true, true)
+#endif
+//OP(birth_stacking, "Stack objects on the floor", BIRTH, true, true)
+//OP(birth_know_runes, "Know all runes on birth", BIRTH, false, false)
+//OP(birth_know_flavors, "Know all flavors on birth", BIRTH, false, false)
+//OP(birth_lose_arts, "Lose artifacts when leaving level", BIRTH, false, false)
+//OP(birth_connect_stairs,  "Generate connected stairs", BIRTH, true, true)

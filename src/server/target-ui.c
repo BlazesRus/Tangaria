@@ -19,7 +19,37 @@
 
 
 #include "s-angband.h"
-
+#ifdef EnableOld_UI_TARGET_Code
+#include "ui-event.h"
+#endif
+#ifdef EnableOld_UI_TARGET_OtherHeaders
+#include "cave.h"
+#include "game-input.h"
+#include "init.h"
+#include "mon-desc.h"
+#include "mon-lore.h"
+#include "mon-predicate.h"
+#include "monster.h"
+#include "obj-desc.h"
+#include "obj-pile.h"
+#include "obj-util.h"
+#include "player-attack.h"
+#include "player-calcs.h"
+#include "player-timed.h"
+#include "project.h"
+#include "target.h"
+#include "trap.h"
+#include "ui-display.h"
+#include "ui-game.h"
+#include "ui-input.h"
+#include "ui-keymap.h"
+#include "ui-map.h"
+#include "ui-mon-lore.h"
+#include "ui-object.h"
+#include "ui-output.h"
+#include "ui-target.h"
+#include "ui-term.h"
+#endif
 
 enum target_aux_result
 {
@@ -115,6 +145,91 @@ static bool adjust_panel_help(struct player *p, int y, int x)
     return (modify_panel(p, &grid));
 }
 
+#ifdef EnableOld_UI_TARGET_Code//Old code from UI_target in angband(target_set_interactive in both files almost same)
+/**
+ * Convert a "key event" into a "location" (Y)
+ */
+#define KEY_GRID_Y(K) \
+  ((int) (((K.mouse.y - ROW_MAP) / tile_height) + Term->offset_y))
+
+/**
+ * Convert a "key event" into a "location" (X)
+ */
+#define KEY_GRID_X(K) \
+	((int) (((K.mouse.x - COL_MAP) / tile_width) + Term->offset_x))
+
+/**
+ * Display the object name of the selected object and allow for full object
+ * recall. Returns an event that occurred display.
+ *
+ * This will only work for a single object on the ground and not a pile. This
+ * loop is similar to the monster recall loop in target_set_interactive_aux().
+ * The out_val array size needs to match the size that is passed in (since
+ * this code was extracted from there).
+ *
+ * \param obj is the object to describe.
+ * \param y is the cave row of the object.
+ * \param x is the cave column of the object.
+ * \param out_val is the string that holds the name of the object and is
+ * returned to the caller.
+ * \param s1 is part of the output string.
+ * \param s2 is part of the output string.
+ * \param s3 is part of the output string.
+ * \param coords is part of the output string
+ */
+static ui_event target_recall_loop_object(struct object *obj, int y, int x,
+		char out_val[TARGET_OUT_VAL_SIZE],
+		const char *s1,
+		const char *s2,
+		const char *s3,
+		const char *coords,
+		const struct player *p)
+{
+	bool recall = false;
+	ui_event press;
+
+	while (1) {
+		if (recall) {
+			display_object_recall_interactive(cave->objects[obj->oidx]);
+			press = inkey_m();
+		} else {
+			char o_name[80];
+
+			/* Obtain an object description */
+			object_desc(o_name, sizeof(o_name),
+				cave->objects[obj->oidx],
+				ODESC_PREFIX | ODESC_FULL, p);
+
+			/* Describe the object */
+			if (player->wizard) {
+				strnfmt(out_val, TARGET_OUT_VAL_SIZE,
+						"%s%s%s%s, %s (%d:%d, noise=%d, scent=%d).", s1, s2, s3,
+						o_name, coords, y, x, (int)cave->noise.grids[y][x],
+						(int)cave->scent.grids[y][x]);
+			} else {
+				strnfmt(out_val, TARGET_OUT_VAL_SIZE,
+						"%s%s%s%s, %s.", s1, s2, s3, o_name, coords);
+			}
+
+			prt(out_val, 0, 0);
+			move_cursor_relative(y, x);
+			press = inkey_m();
+		}
+
+		if ((press.type == EVT_MOUSE) && (press.mouse.button == 1) &&
+			(KEY_GRID_X(press) == x) && (KEY_GRID_Y(press) == y))
+			recall = !recall;
+		else if ((press.type == EVT_KBRD) && (press.key.code == 'r'))
+			recall = !recall;
+		else
+			break;
+	}
+
+	return press;
+}
+
+
+#endif
 
 /*
  * Do we need to inform client about target info?
@@ -224,7 +339,7 @@ static enum target_aux_result aux_reinit(struct chunk *c, struct player *p,
 
 
 /*
- * Help target_set_interactive_aux(): handle hallucination.
+ * Help target_set_interactive_aux(): handle hallucination.(Same as aux_hallucinate from Angband)
  */
 static enum target_aux_result aux_hallucinate(struct chunk *c, struct player *p,
     struct target_aux_state *auxst)
@@ -411,6 +526,12 @@ static enum target_aux_result aux_monster(struct chunk *c, struct player *p,
 
     /* Interact */
     recall = false;
+#ifndef DisableMouseEvents
+    if (auxst->press.type == EVT_MOUSE && auxst->press.mouse.button == 1
+	&& KEY_GRID_X(auxst->press) == auxst->grid.x && KEY_GRID_Y(auxst->press) == auxst->grid.y)
+        recall = true;
+    else
+#endif
     if ((auxst->press == 'r') && (p->tt_step == TARGET_MON))
         recall = true;
 
@@ -439,6 +560,17 @@ static enum target_aux_result aux_monster(struct chunk *c, struct player *p,
         }
     }
 
+#ifndef DisableMouseEvents
+	if (auxst->press.type == EVT_MOUSE) {
+		/* Stop on right click */
+		if (auxst->press.mouse.button == 2)
+            return TAR_BREAK;
+
+		/* Sometimes stop at "space" key */
+		if (auxst->press.mouse.button && !(auxst->mode & (TARGET_LOOK)))
+            return TAR_BREAK;
+	} else {
+#endif
     /* Stop on everything but "return"/"space" */
     if ((auxst->press != KC_ENTER) && (auxst->press != ' ')) return TAR_BREAK;
 
@@ -590,8 +722,14 @@ static enum target_aux_result aux_object(struct chunk *c, struct player *p,
         }
 
         /* Display objects */
-        if (auxst->press == 'r')
-        {
+#ifndef DisableMouseEvents
+        if ((auxst->press.type == EVT_MOUSE && auxst->press.mouse.button == 1
+		&& KEY_GRID_X(auxst->press) == auxst->grid.x
+        && KEY_GRID_Y(auxst->press) == auxst->grid.y)
+		|| (auxst->press.type == EVT_KBRD && auxst->press.key.code == 'r')) {
+#else
+        if (auxst->press == 'r'){
+#endif
             msg(p, "You see:");
             display_floor(p, c, floor_list, floor_num, false);
             show_floor(p, OLIST_WEIGHT | OLIST_GOLD);
@@ -618,7 +756,15 @@ static enum target_aux_result aux_object(struct chunk *c, struct player *p,
         object_desc(p, o_name, sizeof(o_name), obj, ODESC_PREFIX | ODESC_FULL);
 
         /* Interact */
-        if ((auxst->press == 'r') && (p->tt_step == TARGET_OBJ))
+#ifndef DisableMouseEvents
+        if ((auxst->press.type == EVT_MOUSE && auxst->press.mouse.button == 1
+		&& KEY_GRID_X(auxst->press) == auxst->grid.x
+        && KEY_GRID_Y(auxst->press) == auxst->grid.y)
+		|| (auxst->press.type == EVT_KBRD && auxst->press.key.code == 'r')
+#else
+        if (auxst->press == 'r'
+#endif
+        && (p->tt_step == TARGET_OBJ))
             recall = true;
 
         /* Recall */
@@ -729,8 +875,15 @@ static enum target_aux_result aux_terrain(struct chunk *c, struct player *p,
         }
     }
 
-    /* Stop on everything but "return"/"space" */
-    if ((auxst->press != KC_ENTER) && (auxst->press != ' ')) return TAR_BREAK;
+    /* Stop on everything but "return"/"space" (optional stop on right click of mouse)*/
+#ifndef DisableMouseEvents
+    if((auxst->press.type == EVT_MOUSE && auxst->press.mouse.button == 2)
+	|| (auxst->press.type != EVT_MOUSE && auxst->press.key.code != KC_ENTER
+	&& auxst->press.key.code != ' '))
+#else
+    if ((auxst->press != KC_ENTER) && (auxst->press != ' '))
+#endif
+        return TAR_BREAK;
 
     return TAR_NEXT;
 }
@@ -743,6 +896,12 @@ static enum target_aux_result aux_terrain(struct chunk *c, struct player *p,
 static enum target_aux_result aux_wrapup(struct chunk *c, struct player *p,
     struct target_aux_state *auxst)
 {
+#ifndef DisableMouseEvents
+	if (auxst->press.type == EVT_MOUSE) {
+		/* Stop on right click. */
+		return auxst->press.mouse.button != 2;
+	}
+#endif
     /* Stop on everything but "return" */
     if (auxst->press != KC_ENTER) return TAR_BREAK;
 
@@ -822,6 +981,45 @@ static bool target_set_interactive_aux(struct player *p, struct loc *grid, int m
     return false;
 }
 
+#ifdef EnableOld_UI_TARGET_Code
+/**
+ * Target command
+ */
+void textui_target(void)
+{
+	if (target_set_interactive(TARGET_KILL, -1, -1))
+		msg("Target Selected.");
+	else
+		msg("Target Aborted.");
+}
+
+/**
+ * Target closest monster.
+ *
+ * XXX: Move to using CMD_TARGET_CLOSEST at some point instead of invoking
+ * target_set_closest() directly.
+ */
+void textui_target_closest(void)
+{
+	if (target_set_closest(TARGET_KILL, NULL)) {
+		bool visibility;
+		struct loc target;
+
+		target_get(&target);
+
+		/* Visual cue */
+		Term_fresh();
+		Term_get_cursor(&visibility);
+		(void)Term_set_cursor(true);
+		move_cursor_relative(target.y, target.x);
+		Term_redraw_section(target.y, target.x, target.y, target.x);
+
+		/* TODO: what's an appropriate amount of time to spend highlighting */
+		Term_xtra(TERM_XTRA_DELAY, 150);
+		(void)Term_set_cursor(visibility);
+	}
+}
+#endif
 
 /*
  * Draw a visible path over the squares between (x1,y1) and (x2,y2).
@@ -1224,6 +1422,93 @@ bool target_set_interactive(struct player *p, int mode, uint32_t press, int step
         if (p->path_drawn) load_path(p, p->path_n, p->path_g);
 
         /* Handle an input event */
+#ifndef DisableMouseEvents
+		if (event_is_mouse_m(press, 2, KC_MOD_CONTROL) || event_is_mouse(press, 3)) {
+			/* Set a target and done */
+			y = KEY_GRID_Y(press);
+			x = KEY_GRID_X(press);
+			if (use_free_mode) {
+				/* Free mode: Target a location */
+				target_set_location(y, x);
+				done = true;
+			} else {
+				/* Interesting mode: Try to target a monster and done, or bell */
+				struct monster *m_local = square_monster(cave, loc(x, y));
+
+				if (target_able(m_local)) {
+					/* Monster race and health tracked by target_set_interactive_aux() */
+					target_set_monster(m_local);
+					done = true;
+				} else {
+					bell();
+					if (!square_in_bounds(cave, loc(x, y))) {
+						x = player->grid.x;
+						y = player->grid.y;
+					}
+				}
+			}
+
+		} else if (event_is_mouse_m(press, 2, KC_MOD_ALT)) {
+			/* Navigate to location and done */
+			y = KEY_GRID_Y(press);
+			x = KEY_GRID_X(press);
+			cmdq_push(CMD_PATHFIND);
+			cmd_set_arg_point(cmdq_peek(), "point", loc(x, y));
+			done = true;
+
+		} else if (event_is_mouse(press, 2)) {
+			/* Cancel and done */
+			if (use_free_mode && (mode & TARGET_KILL)
+					&& y == KEY_GRID_Y(press) && x == KEY_GRID_X(press)) {
+				/* Free/kill mode: Clicked current location, set target */
+				target_set_location(y, x);
+			}
+			done = true;
+
+		} else if (event_is_mouse(press, 1)) {
+			/* Relocate cursor */
+			y = KEY_GRID_Y(press);
+			x = KEY_GRID_X(press);
+
+			/* If they clicked on an edge of the map, drag the cursor further
+			   to trigger a panel scroll */
+			if (press.mouse.y <= 1) {
+				y--;
+			} else if (press.mouse.y >= Term->hgt - 2) {
+				y++;
+			} else if (press.mouse.x <= COL_MAP) {
+				x--;
+			} else if (press.mouse.x >= Term->wid - 2) {
+				x++;
+			}
+
+			/* Restrict cursor to inbounds */
+			x = MAX(0, MIN(x, cave->width - 1));
+			y = MAX(0, MIN(y, cave->height - 1));
+
+			/* Adjust panel if needed */
+			if (adjust_panel_help(y, x, help)) {
+				handle_stuff(player);
+
+				/* Recalculate interesting grids */
+				point_set_dispose(targets);
+				targets = target_get_monsters(mode, NULL, true);
+			}
+
+			/* Turn interesting mode off if they clicked a boring spot... */
+			show_interesting = false;
+
+			/* ...but turn it on if they clicked an interesting spot */
+			for (int i = 0; i < point_set_size(targets); ++i) {
+				if (y == targets->pts[i].y && x == targets->pts[i].x) {
+					target_index = i;
+					show_interesting = true;
+					break;
+				}
+			}
+
+		} else
+#endif
         if (event_is_key(press, ESCAPE) || event_is_key(press, 'q') || event_is_key(press, 'r'))
         {
             /* Cancel */

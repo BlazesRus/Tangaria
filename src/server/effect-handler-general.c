@@ -4190,32 +4190,34 @@ bool effect_handler_NOURISH(effect_handler_context_t *context)
     amount *= z_info->food_value;
 
     /* Increase food level by amount */
+    // NOURISH:INC_BY
     if (context->subtype == 0 && !special_race)
         player_inc_timed(context->origin->player, TMD_FOOD, MAX(amount, 0), false, false);
 
     /* Decrease food level by amount */
+    // NOURISH:DEC_BY
     else if (context->subtype == 1)
     {
-        if (special_race)
-            amount /= 2;
         player_dec_timed(context->origin->player, TMD_FOOD, MAX(amount, 0), false);
     }
     /* Set food level to amount, vomiting if necessary */
+    // NOURISH:SET_TO
     else if (context->subtype == 2)
     {
         bool message = (context->origin->player->timed[TMD_FOOD] > amount);
 
         // for special races - don't harm them (eg by traps) too much
-        if (special_race && (context->origin->player->timed[TMD_FOOD] < amount))
-            player_dec_timed(context->origin->player, TMD_FOOD, 1000, false);
-        else
-            player_set_timed(context->origin->player, TMD_FOOD, MAX(amount, 0), false);
+        if (special_race && (amount < 10))
+            amount = 15;
+
+        player_set_timed(context->origin->player, TMD_FOOD, MAX(amount, 0), false);
 
         if (message) msg(context->origin->player, "You vomit!");
     }
 
     /* Increase food level to amount if needed */
-    else if ((context->subtype == 3) && (context->origin->player->timed[TMD_FOOD] < amount) && !special_race)
+    // NOURISH:INC_TO
+    else if ((context->subtype == 3) && (context->origin->player->timed[TMD_FOOD] < amount))
         player_set_timed(context->origin->player, TMD_FOOD, MAX(amount + 1, 0), false);
 
     context->ident = true;
@@ -4440,9 +4442,10 @@ bool effect_handler_RECALL(effect_handler_context_t *context)
     if (!context->origin->player->word_recall)
     {
         /* Ask for confirmation if we try to recall from non-reentrable dungeon */
+        // to prevent ID cheeze - require 15 lvl to work
         if ((context->origin->player->current_value == ITEM_REQUEST) &&
             OPT(context->origin->player, confirm_recall) &&
-            forbid_reentrance(context->origin->player))
+            forbid_reentrance(context->origin->player) && context->origin->player->lev > 14)
         {
             get_item(context->origin->player, HOOK_CONFIRM, "");
             return false;
@@ -6047,12 +6050,14 @@ bool effect_handler_TIMED_SET(effect_handler_context_t *context)
     /* Hack -- Touch of Death */
     if (context->subtype == TMD_DEADLY)
     {
-        if (context->origin->player->state.stat_use[STAT_STR] < 18+120)
+        if (streq(context->origin->player->clazz->name, "Warlock") &&
+            context->origin->player->state.stat_use[STAT_STR] < 18+120)
         {
             msg(context->origin->player, "You're not strong enough to use the Touch of Death.");
             return false;
         }
-        if (context->origin->player->state.stat_use[STAT_DEX] < 18+120)
+        if (streq(context->origin->player->clazz->name, "Warlock") &&
+            context->origin->player->state.stat_use[STAT_DEX] < 18+120)
         {
             msg(context->origin->player, "You're not dextrous enough to use the Touch of Death.");
             return false;

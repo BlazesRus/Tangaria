@@ -861,6 +861,11 @@ static int average_spell_stat(struct player *p, struct player_state *state)
     char realm[120];
     struct class_book *book = &p->clazz->magic.books[0];
 
+    // non-magic users skills based on STR/DEX
+    // migrate later on to: if (streq(book->realm->name, "common")) .. will be "skillbook"
+    if (streq(p->clazz->name, "Fighter"))
+        return ((p->state.stat_ind[STAT_STR] + p->state.stat_ind[STAT_INT]) / 2);
+
     my_strcpy(realm, book->realm->name, sizeof(realm));
 
     sum += state->stat_ind[book->realm->stat];
@@ -875,7 +880,7 @@ make primary race stat bonuses work right.
     if (streq(p->race->name, "Dragon") || streq(p->race->name, "Hydra"))
     {
         return ((p->state.stat_ind[STAT_INT] + p->state.stat_ind[STAT_WIS]) / 2);
-    }        
+    }
     
     if (streq(p->race->name, "Troll"))
     {
@@ -1272,6 +1277,9 @@ static void calc_mana(struct player *p, struct player_state *state, bool update)
     
     if (streq(p->race->name, "Halfling") && !equipped_item_by_slot_name(p, "feet"))
         exmsp += 1;   
+
+    if (streq(p->race->name, "Vampire") && is_daytime())
+        exmsp -= 1;   
 
     // Cap extra mana capacity from _racial_ boni at +15..
     if (exmsp > 15) exmsp = 15;
@@ -2180,7 +2188,7 @@ void calc_bonuses(struct player *p, struct player_state *state, bool known_only,
         }
     }
 
-    if (streq(p->clazz->name, "Mesmer") && p->lev > 30)
+    if (streq(p->clazz->name, "Timeturner") && p->lev > 30)
         state->speed += (p->lev - 30) / 2;
 
     if (streq(p->race->name, "Halfling") && !equipped_item_by_slot_name(p, "feet"))
@@ -2227,7 +2235,7 @@ void calc_bonuses(struct player *p, struct player_state *state, bool known_only,
         state->skills[SKILL_STEALTH] = 1;
         state->skills[SKILL_SEARCH] += 10;
         state->skills[SKILL_TO_HIT_MELEE] += 7;
-        state->skills[SKILL_TO_HIT_BOW] -= 15;
+        state->skills[SKILL_TO_HIT_BOW] -= 25 + p->lev;
         state->skills[SKILL_DIGGING] += 1;
         state->stat_add[STAT_STR] += 3;
         state->stat_add[STAT_INT] -= 3;
@@ -2264,7 +2272,7 @@ void calc_bonuses(struct player *p, struct player_state *state, bool known_only,
         if (p->lev > 25)
         {
             state->skills[SKILL_TO_HIT_MELEE] -= 3;
-            state->skills[SKILL_TO_HIT_BOW] -= 7;
+            state->skills[SKILL_TO_HIT_BOW] -= 7 + p->lev;
         }
     }
 
@@ -2767,7 +2775,7 @@ void calc_bonuses(struct player *p, struct player_state *state, bool known_only,
 
         // Knights good only with crossbows
         if (streq(p->clazz->name, "Knight") && state->ammo_tval != TV_BOLT)
-            state->skills[SKILL_TO_HIT_BOW] = 1;
+            state->skills[SKILL_TO_HIT_BOW] = p->lev;
 
         /* Rangers with bows are good at shooting */
         if (player_has(p, PF_FAST_SHOT) && (state->ammo_tval == TV_ARROW))

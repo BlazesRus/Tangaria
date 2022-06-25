@@ -140,7 +140,8 @@ static int chance_of_missile_hit_base(struct player *p, struct object *missile,
         chance = p->state.skills[SKILL_TO_HIT_BOW] + bonus * BTH_PLUS_ADJ;
         
         // magic classes are bad in shooting until high lvl
-        if (player_of_has(p, OF_CLUMSY) && one_in_(2))
+        // also BAD_SHOOTER are bad in using weapons
+        if ((player_of_has(p, OF_CLUMSY) || player_of_has(p, OF_BAD_SHOOTER)) && one_in_(2))
         {
             chance -= 50 - p->lev;
             if (chance < 5) chance = 5;
@@ -324,7 +325,7 @@ static int critical_melee(struct player *p, struct source *target, int weight, i
     if (p->timed[TMD_DEADLY] && magik(25))
     {
         *msg_type = MSG_HIT_HI_CRITICAL;
-        new_dam = 4 * dam + 30;
+        new_dam = 4 * dam; // + 30;
     }
     // now regular attacks
     else if (randint1(5000) > chance)
@@ -451,7 +452,8 @@ static int ranged_damage(struct player *p, struct object *missile, struct object
         dam += to_d;
         
         // magic classes are bad in shooting until high lvl
-        if (player_of_has(p, OF_CLUMSY) && p->lev < 25 && one_in_(2))
+        // also BAD_SHOOTER are bad in using weapons
+        if ((player_of_has(p, OF_CLUMSY) || player_of_has(p, OF_BAD_SHOOTER)) && p->lev < 25 && one_in_(2))
             dam /= 2;
     }
     else if (of_has(missile->flags, OF_THROWING))

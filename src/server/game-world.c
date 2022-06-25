@@ -273,9 +273,9 @@ static void play_ambient_sound(struct player *p)
     {
         if (in_town(&p->wpos))
         {
-            if ((p->wpos.grid.x ==  0 && p->wpos.grid.y ==  1) && one_in_(2))
+            if ((p->wpos.grid.x ==  0 && p->wpos.grid.y ==  1) && one_in_(3))
             {
-                if (one_in_(5))
+                if (one_in_(6))
                     sound(p, MSG_TOWN_RARE);
                 else
                     sound(p, MSG_TOWN);
@@ -337,21 +337,9 @@ static void play_ambient_sound(struct player *p)
             {
                 // Snow
                 Send_weather(p, 2, randint1(4), randint1(3));
+                sound(p, MSG_WILD_GLACIER);
 
                 if (one_in_(5))
-                {
-                    // Stop weather
-                    Send_weather(p, 256, 0, 0);
-                }
-            }
-            else if (streq(p->locname, "Sandworm Lair"))
-            {
-                if (one_in_(3))
-                {
-                    // Sandstorm
-                    Send_weather(p, 3, randint1(4), randint1(3));
-                }
-                else if (one_in_(5))
                 {
                     // Stop weather
                     Send_weather(p, 256, 0, 0);
@@ -362,7 +350,7 @@ static void play_ambient_sound(struct player *p)
             {
                 if ((p->weather_type == 0) || (p->weather_type == 256))
                 {
-                    if (one_in_(3))
+                    if (one_in_(5))
                     {
                         // Rain
                         Send_weather(p, 1, randint1(4), randint1(3));
@@ -2072,10 +2060,13 @@ static void generate_new_level(struct player *p)
     if (!chunk_has_players(&p->wpos)) return;
 
 ////* Play ambient sound on change of level. */
-    
+
     // north areas always got snow
     if (p->wpos.depth == 0 && p->wpos.grid.x == 0 && p->wpos.grid.y == 4) // Helcaraxe
     {
+        // check if it's raining then stop playback
+        if (p->weather_type == 1) sound(p, MSG_SILENT0);
+
         Send_weather(p, 2, randint1(4), randint1(3));
         sound(p, MSG_WILD_GLACIER);
     }

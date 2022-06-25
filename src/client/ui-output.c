@@ -79,6 +79,19 @@ void region_erase(const region *loc)
         Term_erase(calc.col, calc.row + i, calc.width);
 }
 
+#ifndef DisableMouseEvents//From Angband
+bool region_inside(const region *loc, const ui_event *key)
+{
+	if ((loc->col > key->mouse.x) || (loc->col + loc->width <= key->mouse.x))
+		return false;
+
+	if ((loc->row > key->mouse.y) ||
+		(loc->row + loc->page_rows <= key->mouse.y))
+		return false;
+
+	return true;
+}
+#endif
 
 /*
  * text_out hook for screen display

@@ -25,6 +25,13 @@ extern void region_erase_bordered(const region *loc);
 /* Given a region with relative values, make them absolute */
 extern region region_calculate(region loc);
 
+#ifndef DisableMouseEvents//From Angband
+/**
+ * Check whether a (mouse) event is inside a region
+ */
+bool region_inside(const region *loc, const ui_event *key);
+#endif
+
 /*
  * Screen loading/saving
  */

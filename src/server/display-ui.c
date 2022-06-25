@@ -5764,6 +5764,7 @@ static void display_message_aux(struct player *p, int type, const char *msg)
     char multiplier[12];
     int16_t ptr;
 
+#ifndef LogServerMessagesOnlyOnError//Don't care about saving log of chat for CoOp builds (not worth the writes to drives)
     /* Excludes all channels but #public from the log file */
     if (type > MSG_CHAT) log = false;
 
@@ -5824,6 +5825,7 @@ static void display_message_aux(struct player *p, int type, const char *msg)
             plog(msg);
         }
     }
+#endif
 
     /* Hack -- repeated message of the same type */
     if (dup && (type == p->msg_last_type))

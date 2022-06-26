@@ -195,6 +195,100 @@ static bool option_toggle_handle(struct menu *m, const ui_event *event, int oid)
     return true;
 }
 
+#ifndef DisableMouseEvents//From Angband
+/**
+ * Present a context menu for the birth or interface options so what's
+ * accessible via the keyboard can also be done if only using a mouse.
+ *
+ * \param m is the structure describing the menu for the options.
+ * \param in is the event triggering the context menu.  in->type must be
+ * EVT_MOUSE.
+ * \param out is the event to be passed upstream (to internal handling in
+ * menu_select() or, potentially, menu_select()'s caller).
+ * \return true if the event was handled; otherwise, return false.
+ *
+ * Logic here overlaps with what's done in option_toggle_handle().
+ */
+static bool use_option_context_menu(struct menu *m, const ui_event *in,
+		ui_event *out)
+{
+	enum {
+		ACT_CTX_OPT_SAVE,
+		ACT_CTX_OPT_RESTORE,
+		ACT_CTX_OPT_RESET
+	};
+	/*
+	 * As a bit of a hack, get the type of options involved from the first
+	 * option selected by the menu's filter.
+	 */
+	int page = option_type(m->filter_list[0]);
+	char *labels = string_make(lower_case);
+	struct menu *cm = menu_dynamic_new();
+	bool refresh = false;
+	char save_label[40];
+	int selected;
+	char dummy;
+
+	cm->selections = labels;
+	strnfmt(save_label, sizeof(save_label), "Save as default %s options",
+		option_type_name(page));
+	menu_dynamic_add_label(cm, save_label, 's', ACT_CTX_OPT_SAVE, labels);
+	if (m->flags == MN_DBL_TAP) {
+		menu_dynamic_add_label(cm, "Restore from saved defaults", 'r',
+			ACT_CTX_OPT_RESTORE, labels);
+		menu_dynamic_add_label(cm, "Reset to factory defaults", 'x',
+			ACT_CTX_OPT_RESET, labels);
+	}
+
+	screen_save();
+
+	assert(in->type == EVT_MOUSE);
+	menu_dynamic_calc_location(cm, in->mouse.x, in->mouse.y);
+	region_erase_bordered(&cm->boundary);
+
+	selected = menu_dynamic_select(cm);
+
+	menu_dynamic_free(cm);
+	string_free(labels);
+
+	switch (selected) {
+	case ACT_CTX_OPT_SAVE:
+		if (options_save_custom(&player->opts, page)) {
+			get_com("Successfully saved.  Press any key to "
+				"continue.", &dummy);
+		} else {
+			get_com("Save failed.  Press any key to continue.",
+				&dummy);
+		}
+		break;
+
+	case ACT_CTX_OPT_RESTORE:
+		if (options_restore_custom(&player->opts, page)) {
+			refresh = true;
+		} else {
+			get_com("Restore failed.  Press any key to continue.",
+				&dummy);
+		}
+		break;
+
+	case ACT_CTX_OPT_RESET:
+		options_restore_maintainer(&player->opts, page);
+		refresh = true;
+		break;
+
+	default:
+		/* There's nothing to do. */
+		break;
+	}
+
+	screen_load();
+	if (refresh) {
+		menu_refresh(m, false);
+	}
+
+	return true;
+}
+#endif
 
 /*
  * Toggle option menu display and handling functions
@@ -356,7 +450,34 @@ static void do_cmd_options_win(const char *name, int row)
 
         /* Exit */
         if (is_exit(ke)) break;
+#ifndef DisableMouseEvents//From Angband 
+		/* Mouse interaction */
+		else if (ke.type == EVT_MOUSE) {
+			int choicey = ke.mouse.y - 5;
+			int choicex = (ke.mouse.x - 35)/5;
 
+			if (ke.mouse.button == 2)
+				break;
+
+			if ((choicey >= 0) && (choicey < PW_MAX_FLAGS)
+				&& (choicex > 0) && (choicex < ANGBAND_TERM_MAX)
+				&& !(ke.mouse.x % 5)) {
+				if ((choicey == y) && (choicex == x)) {
+					uint32_t flag = ((uint32_t) 1) << y;
+
+					/* Toggle flag (off) */
+					if (new_flags[x] & flag)
+						new_flags[x] &= ~flag;
+					/* Toggle flag (on) */
+					else
+						new_flags[x] |= flag;
+				} else {
+					y = choicey;
+					x = (ke.mouse.x - 35)/5;
+				}
+			}
+		}
+#endif
         /* Keyboard interaction */
         else if (ke.type == EVT_KBRD)
         {

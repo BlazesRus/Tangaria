@@ -17,15 +17,14 @@
  *    and not for profit purposes provided that this copyright and statement
  *    are included in all such copies.  Other copyrights may also apply.
  */
+#ifdef USE_SDL
 
 #include "c-angband.h"
 
-#ifdef USE_SDL
-
 #ifdef WINDOWS
-#include "..\_SDL\SDL.h"
-#include "..\_SDL\SDL_ttf.h"
-#include "..\_SDL\SDL_image.h"
+#include "SDL.h"
+#include "SDL_image.h"
+#include "SDL_ttf.h"
 #else
 #include <SDL/SDL.h>
 #include <SDL/SDL_ttf.h>

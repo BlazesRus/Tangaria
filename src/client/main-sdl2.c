@@ -19,9 +19,15 @@
 
 #include "c-angband.h"
 
+#ifdef WINDOWS
 #include "SDL.h"
 #include "SDL_image.h"
 #include "SDL_ttf.h"
+#else
+#include <SDL/SDL.h>
+#include <SDL/SDL_ttf.h>
+#include <SDL/SDL_image.h>
+#endif
 
 #define MAX_SUBWINDOWS \
     ANGBAND_TERM_MAX

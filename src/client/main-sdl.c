@@ -2529,10 +2529,10 @@ static void sdl_HandleMouseEvent(SDL_Event *event)
                 {
                     term_window *snapper = &windows[i];
 
-                    /* Can't snap to self... */
+                    /* cannot snap to self... */
                     if (i == SelectedTerm) continue;
 
-                    /* Can't snap to the invisible */
+                    /* cannot snap to the invisible */
                     if (!snapper->visible) continue;
 
                     /* Check the windows are across from each other */
@@ -3954,7 +3954,7 @@ static void init_gfx(void)
 
             if (!file_exists(path))
             {
-                plog_fmt("Can't find file %s - graphics mode '%s' will be disabled.", path,
+                plog_fmt("cannot find file %s - graphics mode '%s' will be disabled.", path,
                     mode->menuname);
                 mode->file[0] = 0;
             }

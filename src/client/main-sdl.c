@@ -18,7 +18,7 @@
  *    are included in all such copies.  Other copyrights may also apply.
  */
 #define USE_SDL2
-#if defined(USE_SDL)||defined(USE_SDL2)
+#if defined(USE_SDL)||defined(USE_SDL2)||defined(USE_AlternativeSDL2)
 
 #include "c-angband.h"
 
@@ -10627,7 +10627,7 @@ errr init_sdl(void)
     SDL_SetHint(SDL_HINT_ORIENTATIONS, "LandscapeLeft LandscapeRight");
 #endif
 
-#elif USE_AlternativeSDL2
+#if USE_AlternativeSDL2
 
 #elif USE_SDL2
     init_systems();
@@ -10651,10 +10651,14 @@ errr init_sdl(void)
     //SDL_Swap64(0);
 #endif
 
+#ifndef USE_AlternativeSDL2
     /* Activate hooks */
     plog_aux = hack_plog;
+#endif
 
-#ifdef USE_SDL2
+#if USE_AlternativeSDL2
+    
+#elif USE_SDL2
     quit_aux = quit_hook;
 #else/* defined(USE_SDL) */
 

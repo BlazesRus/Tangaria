@@ -18,7 +18,7 @@
  *    and not for profit purposes provided that this copyright and statement
  *    are included in all such copies.  Other copyrights may also apply.
  */
-#if defined(SOUND_SDL)||defined(SOUND_SDL2)
+#if defined(SOUND_SDL)||defined(SOUND_SDL2)||defined(SOUND_AlternativeSDL2)
 #include "c-angband.h"
 
 #ifdef WINDOWS

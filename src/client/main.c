@@ -40,12 +40,8 @@ static errr init_error(void)
  */
 static const struct module modules[] =
 {
-#ifdef USE_SDL
+#if defined(USE_SDL)||defined(USE_SDL2)||defined(USE_AlternativeSDL2)
     {"sdl", init_sdl},
-#endif
-
-#ifdef USE_SDL2
-	{"sdl2", init_sdl2},
 #endif
 
 #ifdef USE_GCU

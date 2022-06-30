@@ -32,13 +32,59 @@
 #include <SDL/SDL_image.h>
 #endif
 
+/**
+ * This file helps Angband work with at least some computers capable of running
+ * SDL, a set of simple and quite popular game development libraries that work
+ * on many different operating systems, including Windows, most flavours of
+ * UNIX or similar, and Mac OS X.  It requires a 32-bit (or higher) machine
+ * capable of displaying at least 640x480 in 256 colors.  A Pentium or better
+ * is strongly recommended (for speed reasons treated more fully below).
+ *
+ * To use this file, use an appropriate "Makefile" or "Project File", install
+ * the required libraries (described below), make sure that 
+ * "USE_SDL" or "USE_SDL2" or "USEAlternativeSDL2" is
+ * defined somewhere, and obtain various extra files (described below).  If
+ * you are new to all this, read "makefile.sdl".
+ *
+ * This port uses the following libraries:  SDL (v1.2+), SDL_image, and  SDL_ttf.
+ * All are available as source code, pre-compiled libs for developers,
+ * and libs (or dlls) for players from www.libsdl.org
+ *
+ *
+ * Other files used by this port:
+ * - The game must have a collection of bitmap .fon files in /lib/fonts.
+ *
+ * - It also needs some .png graphics files in /lib/tiles, 
+ *   such as "16x16.png" and "16x16m.bmp".
+ *
+ * - The "lib/customize/pref-sdl.prf" file contains keymaps, macro definitions,
+ *   and/or color redefinitions.
+ * - The "lib/customize/font-sdl.prf" contains attr/char mappings for use with
+ *   the normal "*.fon" font files in the "lib/fonts/" directory.
+ *
+ *
+ *
+ * "Term" framework by Ben Harrison (benh@phial.com).
+ *
+ * Original Sangband SDL port and the "intrface" module by Leon Marrick
+ * (www.runegold.org/sangband).
+ *
+ * Additional helpful ideas by:
+ * 2001 Gregory Velichansky <hmaon@bumba.net>, creator of the first Angband SDL
+ * port.
+ * 2006 Eric Stevens <sdltome@gmail.com>, main author of the TOME SDL port.
+ */
+
+#define MAX_FONTS 128
+/* Default font size */
+#define DEFAULT_FONT_SIZE    12
+
 #ifdef USE_SDL2
 
 #define MAX_SUBWINDOWS \
     ANGBAND_TERM_MAX
 /* that should be plenty... */
 #define MAX_WINDOWS 4
-#define MAX_FONTS 128
 #define MAX_BUTTONS 32
 
 #define INIT_SDL_FLAGS \
@@ -91,7 +137,6 @@
     (DEFAULT_BORDER * 2)
 #define DEFAULT_VISIBLE_BORDER 2
 
-#define DEFAULT_FONT_SIZE 0
 /* XXX hack: the widest character present in a font
  * for determining font advance (width) */
 #define GLYPH_FOR_ADVANCE 'W'
@@ -189,7 +234,8 @@
 
 #define CHECK_BUTTON_DATA_TYPE(button, data_type) \
     assert((button)->data.type == (data_type))
-#else
+	
+#else//defined(USE_SDL)
 
 #define MIN_SCREEN_WIDTH    640
 #define MIN_SCREEN_HEIGHT   480
@@ -233,12 +279,9 @@ static char *sdl_settings_file;
  */
 static const char *DEFAULT_FONT_FILE = "6x10x.fon";
 
-#define MAX_FONTS 60
 char *FontList[MAX_FONTS];
 static int num_fonts = 0;
 
-/* Default font size */
-#define DEFAULT_FONT_SIZE    12
 #endif
 
 #ifdef USE_SDL2
@@ -5902,33 +5945,6 @@ static void hack_plog(const char *str)
     return;
 }
 
-errr init_sdl2(void)
-{
-#ifdef ON_ANDROID
-    SDL_SetHint(SDL_HINT_ORIENTATIONS, "LandscapeLeft LandscapeRight");
-#endif
-    init_systems();
-    init_globals();
-
-    if (!init_graphics_modes()) {
-        quit_systems();
-        return 1;
-    }
-
-    if (!read_config_file()) {
-        create_defaults();
-    }
-
-    start_windows();
-    load_terms();
-
-    /* Activate hooks */
-    plog_aux = hack_plog;
-    quit_aux = quit_hook;
-
-    return 0;
-}
-
 /* the string ANGBAND_DIR_USER is freed before calling quit_hook(),
  * so we need to save the path to config file here */
 static char g_config_file[4096];
@@ -10600,18 +10616,47 @@ static void init_paths(void)
     my_dclose(dir);
 }
 
+#endif/* USE_SDL */
 
 /*
  * The SDL port's "main()" function.
  */
 errr init_sdl(void)
 {
-    /* Remove W8080 warnings: SDL_Swap16/64 is declared but never used */
-    SDL_Swap16(0);
-    SDL_Swap64(0);
+#ifdef ON_ANDROID
+    SDL_SetHint(SDL_HINT_ORIENTATIONS, "LandscapeLeft LandscapeRight");
+#endif
 
-    /* Activate hook */
-    plog_aux = hook_plog;
+#elif USE_AlternativeSDL2
+
+#elif USE_SDL2
+    init_systems();
+    init_globals();
+
+    if (!init_graphics_modes()) {
+        quit_systems();
+        return 1;
+    }
+
+    if (!read_config_file()) {
+        create_defaults();
+    }
+
+    start_windows();
+    load_terms();
+
+#else/* defined(USE_SDL) */
+    ///* Remove W8080 warnings: SDL_Swap16/64 is declared but never used */
+    //SDL_Swap16(0);
+    //SDL_Swap64(0);
+#endif
+
+    /* Activate hooks */
+    plog_aux = hack_plog;
+
+#ifdef USE_SDL2
+    quit_aux = quit_hook;
+#else/* defined(USE_SDL) */
 
     /* Initialize SDL:  Timer, video, and audio functions */
     if (SDL_Init(SDL_INIT_VIDEO) < 0)
@@ -10665,10 +10710,11 @@ errr init_sdl(void)
         quit("Could not set control handler");
 #endif
 
+#endif
+
     /* Paranoia */
     return (0);
 }
-#endif/* USE_SDL */
 
 #endif 
 

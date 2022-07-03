@@ -4199,6 +4199,10 @@ bool effect_handler_NOURISH(effect_handler_context_t *context)
     else if (context->subtype == 1)
     {
         player_dec_timed(context->origin->player, TMD_FOOD, MAX(amount, 0), false);
+
+        // fix negative value (or it will generate fake RIP tombstone without dump; player survive)
+        if (context->origin->player->timed[TMD_FOOD] < 0)
+            player_set_timed(context->origin->player, TMD_FOOD, 1, false);
     }
     /* Set food level to amount, vomiting if necessary */
     // NOURISH:SET_TO

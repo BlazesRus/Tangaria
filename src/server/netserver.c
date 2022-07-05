@@ -456,6 +456,8 @@ static int Setup_connection(uint32_t account, char *real, char *nick, char *addr
 static int Check_names(char *nick_name, char *real_name, char *host_name)
 {
     char *ptr;
+    struct hint *v;
+    char nick_test[NORMAL_WID];
 
     /** Realname / Hostname **/
 
@@ -494,6 +496,24 @@ static int Check_names(char *nick_name, char *real_name, char *host_name)
         !my_stricmp(nick_name, "players"))
     {
         return E_INVAL;
+    }
+
+    /* Can't pick a name from the list of swear words */
+    my_strcpy(nick_test, nick_name, sizeof(nick_test));
+    for (ptr = (char*)nick_test; *ptr; ptr++) *ptr = tolower((unsigned char)*ptr);
+    for (v = swear; v; v = v->next)
+    {
+        /* Check full word */
+        if (v->hint[0] == '@')
+        {
+            if (streq(nick_test, &v->hint[1])) return E_INVAL;
+        }
+
+        /* Check substring */
+        else
+        {
+            if (strstr(nick_test, v->hint)) return E_INVAL;
+        }
     }
 
     return SUCCESS;
@@ -556,10 +576,13 @@ static void Contact(int fd, int arg)
              *
              * PWMAngband: when running the server in debug mode, we get a lot of
              * TCP connection failures with errno = 0, which doesn't make any sense.
-             * In this case, we just return without quitting.
+             * In this case, we just return without logging the error and quitting.
              */
-            plog_fmt("Could not accept TCP Connection, socket error = %d", errno);
-            if (errno) quit("Couldn't accept TCP connection.");
+            if (errno)
+            {
+                plog_fmt("Could not accept TCP Connection, socket error = %d", errno);
+                quit("Couldn't accept TCP connection.");
+            }
             return;
         }
         install_input(Contact, newsock, 2);
@@ -2136,6 +2159,11 @@ int Send_death_cause(struct player *p)
 {
     connection_t *connp = get_connp(p, "death_cause");
     if (connp == NULL) return 0;
+
+    if (p->death_info.lev < 1 || p->death_info.lev > 50)
+    {
+        int crush = 0; // breakpoint to catch the bug with fake tombstone due (?)hunger(?)
+    }
 
     return Packet_printf(&connp->c, "%b%s%hd%ld%ld%hd%hd%hd%s%s", (unsigned)PKT_DEATH_CAUSE,
         p->death_info.title, (int)p->death_info.lev, p->death_info.exp,
@@ -6846,6 +6874,7 @@ static int Receive_message(int ind)
     char buf[MSG_LEN];
     int n;
     uint8_t ch;
+    struct hint *v;
 
     buf[0] = '\0';
 
@@ -6856,6 +6885,72 @@ static int Receive_message(int ind)
     }
 
     p = player_get(get_player_index(connp));
+
+    /* Find any swear word in the message, replace with asterisks */
+    for (v = swear; v; v = v->next)
+    {
+        /* Check full word */
+        if (v->hint[0] == '@')
+        {
+            char *scan = buf;
+            char *hint = &v->hint[1];
+
+            while (*scan)
+            {
+                char *ptr = stristr(scan, hint);
+
+                if (ptr)
+                {
+                    char *str = ptr + strlen(hint);
+
+                    if (!*str || *str == ' ')
+                    {
+                        char tmp[MSG_LEN];
+                        char *replace = mem_zalloc(strlen(hint) + 1);
+
+                        memset(replace, '*', strlen(hint));
+                        my_strcpy(tmp, scan, 1 + ptr - scan);
+                        my_strcat(tmp, replace, sizeof(tmp));
+                        my_strcat(tmp, ptr + strlen(hint), sizeof(tmp));
+                        my_strcpy(buf, tmp, sizeof(buf));
+                        mem_free(replace);
+                    }
+
+                    scan = str;
+                }
+                else
+                    break;
+            }
+        }
+
+        /* Check substring */
+        else
+        {
+            char *scan = buf;
+
+            while (*scan)
+            {
+                char *ptr = stristr(scan, v->hint);
+
+                if (ptr)
+                {
+                    char tmp[MSG_LEN];
+                    char *replace = mem_zalloc(strlen(v->hint) + 1);
+
+                    memset(replace, '*', strlen(v->hint));
+                    my_strcpy(tmp, scan, 1 + ptr - scan);
+                    my_strcat(tmp, replace, sizeof(tmp));
+                    my_strcat(tmp, ptr + strlen(v->hint), sizeof(tmp));
+                    my_strcpy(buf, tmp, sizeof(buf));
+                    mem_free(replace);
+
+                    scan = ptr + strlen(v->hint);
+                }
+                else
+                    break;
+            }
+        }
+    }
 
     do_cmd_message(p, buf);
 

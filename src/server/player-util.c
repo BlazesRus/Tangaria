@@ -1099,6 +1099,13 @@ uint8_t player_cannot_cast(struct player *p, bool show_msg)
         return 3;
     }
 
+    // druid class can cast spells only in normal form
+    if (p->poly_race && streq(p->clazz->name, "Druid"))
+    {
+        if (show_msg) msg(p, "You cannot cast spells while in animal form!");
+        return 4;
+    }
+
     return 0;
 }
 
@@ -1960,7 +1967,7 @@ int player_digest(struct player *p)
     if (player_of_has(p, OF_SLOW_DIGEST)) i /= 2;
     
     /* 2x slow digestion takes much less food */
-    if (player_of_has(p, OF_SLOW_DIGEST_2)) i /= 2;
+    if (player_of_has(p, OF_SLOW_DIGEST_2) || (p->poly_race && streq(p->poly_race->name, "boar-form"))) i /= 2;
 
     // make high speed a bit less cruel for lvl 50 players
     if (p->lev > 49 && speed > 110)

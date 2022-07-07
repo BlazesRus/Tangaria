@@ -2300,47 +2300,40 @@ void calc_bonuses(struct player *p, struct player_state *state, bool known_only,
             {
                 extra_moves += 3 + p->lev / 10;
                 state->to_d -= 15;
-                // can fly over trees and water
             }
             else if (streq(p->poly_race->name, "rat-form"))
             {
                 state->skills[SKILL_STEALTH] += 1 + p->lev / 10;
                 state->to_d -= 10;
-                // can penetrate through walls
             }
             else if (streq(p->poly_race->name, "boar-form"))
             {
                 state->stat_add[STAT_CON] += p->lev / 10;
                 state->stat_add[STAT_WIS] += p->lev / 10;
-                // consume less food
             }
             else if (streq(p->poly_race->name, "cat-form"))
             {
-                state->stat_add[STAT_DEX] += p->lev / 15;
+                state->stat_add[STAT_DEX] += p->lev / 10;
                 state->skills[SKILL_STEALTH] += p->lev / 10;
                 state->to_h += p->lev / 2;
-                state->speed += p->lev / 15;
-                extra_moves -= p->lev / 15;
-                // can jump (tele-to) with 'y'
             }
             else if (streq(p->poly_race->name, "wolf-form"))
             {
                 state->stat_add[STAT_STR] += p->lev / 24;
                 state->stat_add[STAT_DEX] += p->lev / 24;
                 state->skills[SKILL_SAVE] -= p->lev / 2;
+                state->to_a -= p->lev / 2;
                 state->to_d += 1 + p->lev / 5;
                 extra_blows += p->lev / 10;
-                // can howl 'y' (very rarely can summon friend)
             }
             else if (streq(p->poly_race->name, "bear-form"))
             {
                 state->stat_add[STAT_STR] += p->lev / 15;
                 state->stat_add[STAT_CON] += p->lev / 10;
                 state->stat_add[STAT_DEX] -= p->lev / 15;
+                state->skills[SKILL_STEALTH] -= p->lev / 15;
                 state->to_a += p->lev;
                 state->skills[SKILL_SAVE] += p->lev / 2;
-                extra_blows -= p->lev / 10;
-                state->to_d -= 1 + p->lev / 5;
                 // also reduce -10% inc damage
             }
         }
@@ -2575,6 +2568,7 @@ void calc_bonuses(struct player *p, struct player_state *state, bool known_only,
     {
         state->stat_add[STAT_STR] += 1;
         state->stat_add[STAT_DEX] += 3;
+        state->skills[SKILL_STEALTH] -= p->lev / 15;
         state->to_a -= p->lev;
         state->skills[SKILL_SAVE] -= p->lev / 2;
         state->to_h -= p->lev / 2;
